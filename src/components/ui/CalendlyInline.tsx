@@ -17,11 +17,18 @@ declare global {
 const CALENDLY_CSS = "https://assets.calendly.com/assets/external/widget.css";
 const CALENDLY_JS = "https://assets.calendly.com/assets/external/widget.js";
 
-function loadCalendly(): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (typeof window === "undefined") return;
+export function CalendlyInline({ url, minHeight = 700 }: Props) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState(false);
 
-    // CSS
+  useEffect(() => {
+    let cancelled = false;
+    let attempts = 0;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const themedUrl = `${url}?hide_gdpr_banner=1&background_color=0a0a12&text_color=ffffff&primary_color=2563eb`;
+
+    // Inject Calendly stylesheet once
     if (!document.querySelector(`link[href="${CALENDLY_CSS}"]`)) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
@@ -29,57 +36,54 @@ function loadCalendly(): Promise<void> {
       document.head.appendChild(link);
     }
 
-    // Already loaded
-    if (window.Calendly) {
-      resolve();
-      return;
-    }
-
-    // Script already in flight
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${CALENDLY_JS}"]`);
-    if (existing) {
-      existing.addEventListener("load", () => resolve());
-      existing.addEventListener("error", () => reject());
-      // In case it finished loading between checks
-      if (window.Calendly) resolve();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = CALENDLY_JS;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject();
-    document.body.appendChild(script);
-  });
-}
-
-export function CalendlyInline({ url, minHeight = 700 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [failed, setFailed] = useState(false);
-  const themedUrl = `${url}?hide_event_type_details=0&hide_gdpr_banner=1&background_color=0a0a12&text_color=ffffff&primary_color=2563eb`;
-
-  useEffect(() => {
-    let cancelled = false;
-
-    loadCalendly()
-      .then(() => {
-        if (cancelled || !ref.current || !window.Calendly) return;
+    const tryInit = (): boolean => {
+      if (cancelled || !ref.current) return false;
+      if (window.Calendly?.initInlineWidget) {
         // Clear any prior render then init explicitly (survives SPA navigation)
         ref.current.innerHTML = "";
         window.Calendly.initInlineWidget({
           url: themedUrl,
           parentElement: ref.current,
         });
-      })
-      .catch(() => {
-        if (!cancelled) setFailed(true);
-      });
+        return true;
+      }
+      return false;
+    };
+
+    // Poll until Calendly's global is ready — robust against script caching,
+    // load-event races and client-side navigation.
+    const poll = () => {
+      if (cancelled) return;
+      if (tryInit()) return;
+      attempts += 1;
+      if (attempts > 75) {
+        setFailed(true);
+        return;
+      }
+      timer = setTimeout(poll, 200);
+    };
+
+    // Ensure script is present
+    if (!window.Calendly) {
+      const existing = document.querySelector<HTMLScriptElement>(`script[src="${CALENDLY_JS}"]`);
+      if (!existing) {
+        const script = document.createElement("script");
+        script.src = CALENDLY_JS;
+        script.async = true;
+        script.onerror = () => {
+          if (!cancelled) setFailed(true);
+        };
+        document.body.appendChild(script);
+      }
+    }
+
+    poll();
 
     return () => {
       cancelled = true;
+      clearTimeout(timer);
     };
-  }, [themedUrl]);
+  }, [url]);
 
   if (failed) {
     return (

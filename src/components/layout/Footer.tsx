@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://www.instagram.com/oliwier.kochanowicz/"
+                  href="https://www.instagram.com/olik.management/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 text-base text-white/70 hover:text-white transition-colors font-medium"
@@ -116,7 +116,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="group inline-flex items-center gap-2 text-base text-white/70 hover:text-white transition-colors font-medium">
+                <a
+                  href="https://www.linkedin.com/in/olik-management/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-base text-white/70 hover:text-white transition-colors font-medium"
+                >
                   <span className="link-underline">LinkedIn</span>
                   <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
@@ -136,26 +141,6 @@ export function Footer() {
             </span>
             <span className="text-xs text-[var(--color-text-dim)]">{t("copyright")}</span>
           </div>
-          <Link href="/" className="text-sm text-[var(--color-text-dim)] hover:text-white transition-colors">
-            {t("privacy")}
-          </Link>
-        </div>
-
-        {/* Watermark */}
-        <div className="mt-10 select-none pointer-events-none overflow-hidden">
-          <p
-            className="text-[13vw] md:text-[8.5vw] font-bold leading-[0.85] text-center"
-            style={{
-              fontFamily: "var(--font-display)",
-              letterSpacing: "-0.04em",
-              background: "linear-gradient(180deg, rgba(59,130,246,0.18) 0%, rgba(168,85,247,0.10) 50%, transparent 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            OLIK MANAGEMENT
-          </p>
         </div>
       </div>
     </footer>
