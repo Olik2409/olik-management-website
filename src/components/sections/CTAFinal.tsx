@@ -12,7 +12,7 @@ export function CTAFinal() {
   const t = useTranslations("cta_final");
 
   return (
-    <section id="contact" className="relative py-20 md:py-28 overflow-hidden ambient-multi">
+    <section id="contact" className="relative pt-20 md:pt-28 pb-12 md:pb-16 overflow-hidden ambient-multi">
       {/* Multi-color LED ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -34,7 +34,7 @@ export function CTAFinal() {
       </div>
 
       <div className="relative container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-20">
+        <div className="grid grid-cols-12 gap-6 items-stretch">
           <div className="col-span-12 md:col-span-7">
             <SectionReveal>
               <Badge number="09">{t("badge")}</Badge>
