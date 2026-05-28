@@ -12,141 +12,65 @@ const fragmentShader = `
   uniform float iTime;
   uniform vec2 iResolution;
 
-  // FBM (Fractional Brownian Motion) noise
-  vec2 hash2(vec2 p) {
-    p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
-    return -1.0 + 2.0 * fract(sin(p) * 43758.5453123);
+  #define NUM_OCTAVES 3
+
+  float rand(vec2 n) {
+    return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
   }
 
   float noise(vec2 p) {
-    vec2 i = floor(p);
-    vec2 f = fract(p);
-    vec2 u = f * f * (3.0 - 2.0 * f);
-    return mix(
-      mix(dot(hash2(i + vec2(0.0, 0.0)), f - vec2(0.0, 0.0)),
-          dot(hash2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0)), u.x),
-      mix(dot(hash2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0)),
-          dot(hash2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0)), u.x), u.y);
+    vec2 ip = floor(p);
+    vec2 u = fract(p);
+    u = u*u*(3.0-2.0*u);
+
+    float res = mix(
+      mix(rand(ip), rand(ip + vec2(1.0, 0.0)), u.x),
+      mix(rand(ip + vec2(0.0, 1.0)), rand(ip + vec2(1.0, 1.0)), u.x), u.y);
+    return res * res;
   }
 
-  float fbm(vec2 p, int octaves) {
-    float value = 0.0;
-    float amplitude = 0.5;
-    float frequency = 1.0;
-    for (int i = 0; i < 3; i++) {
-      if (i >= octaves) break;
-      value += amplitude * noise(p * frequency);
-      frequency *= 2.0;
-      amplitude *= 0.5;
+  vec4 tanh4(vec4 x) {
+    vec4 e = exp(2.0 * x);
+    return (e - 1.0) / (e + 1.0);
+  }
+
+  float fbm(vec2 x) {
+    float v = 0.0;
+    float a = 0.3;
+    vec2 shift = vec2(100);
+    mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.5));
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+      v += a * noise(x);
+      x = rot * x * 2.0 + shift;
+      a *= 0.4;
     }
-    return value;
-  }
-
-  // Particle glow
-  float particle(vec2 uv, vec2 pos, float size) {
-    float d = length(uv - pos);
-    return size / (d * d + size * 0.01);
+    return v;
   }
 
   void main() {
-    vec2 uv = (gl_FragCoord.xy - 0.5 * iResolution.xy) / iResolution.y;
-    float t = iTime * 0.12;
+    vec2 shake = vec2(sin(iTime * 1.2) * 0.005, cos(iTime * 2.1) * 0.005);
+    vec2 p = ((gl_FragCoord.xy + shake * iResolution.xy) - iResolution.xy * 0.5) / iResolution.y * mat2(6.0, -4.0, 4.0, 6.0);
+    vec2 v;
+    vec4 o = vec4(0.0);
 
-    // Base dark background matching --color-bg: #05050f
-    vec3 col = vec3(0.02, 0.02, 0.06);
+    float f = 2.0 + fbm(p + vec2(iTime * 5.0, 0.0)) * 0.5;
 
-    // Aurora bands – multiple color layers
-    for (int i = 0; i < 3; i++) {
-      float fi = float(i);
-      float yOffset = -0.2 + fi * 0.25;
-      float speed = 0.7 + fi * 0.3;
-      vec2 noiseCoord = vec2(uv.x * 1.2 + t * speed, (uv.y + yOffset) * 0.6);
-      float n = fbm(noiseCoord, 3);
-
-      float band = exp(-pow((uv.y - yOffset - n * 0.35) * 4.0, 2.0));
-      band *= smoothstep(-0.6, 0.6, uv.x + 0.5) * smoothstep(1.4, 0.4, uv.x + 0.5);
-
-      // LED palette colors: blue, violet, green
-      vec3 auroraColor;
-      if (i == 0) {
-        auroraColor = vec3(0.23, 0.51, 0.96);  // blue #3b82f6
-      } else if (i == 1) {
-        auroraColor = vec3(0.66, 0.33, 0.97);  // violet #a855f7
-      } else {
-        auroraColor = vec3(0.0, 1.0, 0.62);    // green #00ff9d
-      }
-      col += auroraColor * band * (0.09 + 0.05 * sin(t * 1.5 + fi * 2.0));
-    }
-
-    // 35 scattered LED particles
-    vec2 positions[35];
-    positions[0]  = vec2(-0.82, 0.38);
-    positions[1]  = vec2(-0.65, -0.12);
-    positions[2]  = vec2(-0.51, 0.51);
-    positions[3]  = vec2(-0.40, -0.35);
-    positions[4]  = vec2(-0.28, 0.22);
-    positions[5]  = vec2(-0.18, 0.62);
-    positions[6]  = vec2(-0.09, -0.48);
-    positions[7]  = vec2(0.04,  0.41);
-    positions[8]  = vec2(0.13,  -0.25);
-    positions[9]  = vec2(0.22,  0.55);
-    positions[10] = vec2(0.31,  -0.41);
-    positions[11] = vec2(0.43,  0.18);
-    positions[12] = vec2(0.52,  0.67);
-    positions[13] = vec2(0.61,  -0.32);
-    positions[14] = vec2(0.71,  0.10);
-    positions[15] = vec2(0.79,  0.48);
-    positions[16] = vec2(0.88,  -0.55);
-    positions[17] = vec2(-0.74, 0.05);
-    positions[18] = vec2(-0.57, -0.58);
-    positions[19] = vec2(-0.33, 0.75);
-    positions[20] = vec2(-0.14, -0.72);
-    positions[21] = vec2(0.07,  0.85);
-    positions[22] = vec2(0.24,  -0.68);
-    positions[23] = vec2(0.47,  0.42);
-    positions[24] = vec2(0.64,  -0.18);
-    positions[25] = vec2(0.81,  0.72);
-    positions[26] = vec2(-0.90, -0.28);
-    positions[27] = vec2(-0.44, 0.44);
-    positions[28] = vec2(-0.21, 0.08);
-    positions[29] = vec2(0.36,  0.80);
-    positions[30] = vec2(0.55,  -0.62);
-    positions[31] = vec2(0.72,  0.30);
-    positions[32] = vec2(-0.69, -0.44);
-    positions[33] = vec2(-0.05, 0.58);
-    positions[34] = vec2(0.90,  -0.10);
-
-    vec3 particleColors[4];
-    particleColors[0] = vec3(0.23, 0.51, 0.96);  // blue
-    particleColors[1] = vec3(0.66, 0.33, 0.97);  // violet
-    particleColors[2] = vec3(0.0, 1.0, 0.62);    // green
-    particleColors[3] = vec3(0.96, 0.45, 0.71);  // pink #f472b6
-
-    for (int i = 0; i < 35; i++) {
-      float fi = float(i);
-      // Animate particles with individual drift
-      vec2 animPos = positions[i] + vec2(
-        sin(t * (0.5 + mod(fi, 5.0) * 0.2) + fi) * 0.04,
-        cos(t * (0.4 + mod(fi, 3.0) * 0.3) + fi * 1.3) * 0.04
+    for (float i = 0.0; i < 35.0; i++) {
+      v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
+      float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
+      vec4 auroraColors = vec4(
+        0.1 + 0.3 * sin(i * 0.2 + iTime * 0.4),
+        0.3 + 0.5 * cos(i * 0.3 + iTime * 0.5),
+        0.7 + 0.3 * sin(i * 0.4 + iTime * 0.3),
+        1.0
       );
-
-      float pulse = 0.5 + 0.5 * sin(t * (2.0 + mod(fi, 7.0) * 0.5) + fi * 2.1);
-      float size = 0.000008 * (0.4 + 0.6 * pulse);
-      float glow = particle(uv, animPos, size);
-
-      vec3 pCol = particleColors[int(mod(fi, 4.0))];
-      col += pCol * glow * 0.6;
+      vec4 currentContribution = auroraColors * exp(sin(i * i + iTime * 0.8)) / length(max(v, vec2(v.x * f * 0.015, v.y * 1.5)));
+      float thinnessFactor = smoothstep(0.0, 1.0, i / 35.0) * 0.6;
+      o += currentContribution * (1.0 + tailNoise * 0.8) * thinnessFactor;
     }
 
-    // Subtle vignette
-    float vignette = 1.0 - smoothstep(0.4, 1.2, length(uv * vec2(1.0, 1.4)));
-    col *= 0.6 + 0.4 * vignette;
-
-    // Tone mapping
-    col = col / (col + vec3(0.7));
-    col = pow(col, vec3(0.9));
-
-    gl_FragColor = vec4(col, 1.0);
+    o = tanh4(pow(o / 100.0, vec4(1.6)));
+    gl_FragColor = o * 1.5;
   }
 `;
 
