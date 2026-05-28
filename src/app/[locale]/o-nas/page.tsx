@@ -3,6 +3,7 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { AuroraShader } from "@/components/ui/animated-shader-background";
+import Image from "next/image";
 
 export default function ONasPage() {
   return (
@@ -41,15 +42,27 @@ export default function ONasPage() {
       </section>
 
       {/* Founder */}
-      <section className="py-16 md:py-24 bg-[var(--color-bg-elevated)]">
-        <div className="container-wide">
+      <section className="relative py-16 md:py-24 bg-[var(--color-bg-elevated)] overflow-hidden">
+        {/* Aurora background effect */}
+        <AuroraShader />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "rgba(10,10,18,0.6)" }}
+        />
+
+        <div className="relative container-wide">
           <div className="grid grid-cols-12 gap-6 md:gap-12 items-center">
             <div className="col-span-12 md:col-span-5">
               <SectionReveal>
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08]">
-                  <AuroraShader />
-                  {/* subtle vignette to blend edges */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+                  <Image
+                    src="/images/brand/Owner.png"
+                    alt="Oliwier Kochanowicz – Olik Management"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
               </SectionReveal>
             </div>
