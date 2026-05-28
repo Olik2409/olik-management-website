@@ -16,7 +16,7 @@ export function Manifesto() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 1, 1, 0.2]);
 
   return (
-    <section ref={ref} id="manifesto" className="relative py-32 md:py-56 overflow-hidden">
+    <section ref={ref} id="manifesto" className="relative py-20 md:py-28 overflow-hidden ambient-blue-violet">
       {/* LED line on left */}
       <motion.div
         initial={{ scaleY: 0 }}
@@ -47,7 +47,7 @@ export function Manifesto() {
             splitBy="word"
             stagger={0.04}
             duration={0.9}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] text-balance"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-white leading-[1.05] text-balance"
             style={{ fontFamily: "var(--font-display)" }}
           />
           <SplitText
@@ -57,7 +57,7 @@ export function Manifesto() {
             stagger={0.04}
             delay={0.3}
             duration={0.9}
-            className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[var(--color-text-muted)] italic leading-[1.05] text-balance"
+            className="mt-4 md:mt-6 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-[var(--color-text-muted)] italic leading-[1.05] text-balance"
             style={{ fontFamily: "var(--font-display)" }}
           />
           <SplitText
@@ -67,7 +67,7 @@ export function Manifesto() {
             stagger={0.04}
             delay={0.6}
             duration={0.9}
-            className="mt-4 md:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-balance"
+            className="mt-4 md:mt-6 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold leading-[1.05] text-balance"
             style={{ fontFamily: "var(--font-display)", color: "var(--color-led-green-bright)", textShadow: "0 0 30px var(--color-led-green-glow)" }}
           />
         </motion.div>

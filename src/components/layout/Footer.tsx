@@ -18,11 +18,11 @@ export function Footer() {
       />
 
       <div className="relative container-wide py-20 md:py-28">
-        <div className="mb-16 md:mb-24 grid grid-cols-12 gap-6">
+        <div className="mb-12 md:mb-16 grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
             <p className="eyebrow mb-6">{t("links_title")}</p>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] text-white text-balance"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95] text-white text-balance"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {t("tagline")}
@@ -138,7 +138,7 @@ export function Footer() {
 
         <div className="mt-16 select-none pointer-events-none overflow-hidden">
           <p
-            className="text-[20vw] md:text-[14vw] font-bold leading-[0.8] text-center"
+            className="text-[14vw] md:text-[10vw] font-bold leading-[0.8] text-center"
             style={{
               fontFamily: "var(--font-display)",
               letterSpacing: "-0.04em",

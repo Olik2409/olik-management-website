@@ -16,7 +16,7 @@ export default function ONasPage() {
       />
 
       {/* Manifesto */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-24">
         <div className="container-tight">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8 md:col-start-3">
@@ -25,7 +25,7 @@ export default function ONasPage() {
               </SectionReveal>
               <SectionReveal delay={0.1}>
                 <p
-                  className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight font-medium text-balance"
+                  className="text-xl md:text-2xl lg:text-3xl text-white leading-tight font-medium text-balance"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Większość agencji sprzedaje
@@ -41,7 +41,7 @@ export default function ONasPage() {
       </section>
 
       {/* Founder */}
-      <section className="py-24 md:py-32 bg-[var(--color-bg-elevated)]">
+      <section className="py-16 md:py-24 bg-[var(--color-bg-elevated)]">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-6 md:gap-12 items-center">
             <div className="col-span-12 md:col-span-5">
@@ -73,7 +73,7 @@ export default function ONasPage() {
               </SectionReveal>
               <SectionReveal delay={0.15}>
                 <h2
-                  className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[0.95]"
+                  className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[0.95]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Performance marketing &nbsp;
@@ -96,14 +96,14 @@ export default function ONasPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-24">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8">
               <SectionReveal><Badge number="02">Zasady</Badge></SectionReveal>
               <SectionReveal delay={0.1}>
                 <h2
-                  className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance leading-[0.95]"
+                  className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance leading-[0.95]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Jak pracujemy.

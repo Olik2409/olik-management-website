@@ -16,7 +16,7 @@ export function Numbers() {
   const t = useTranslations("numbers");
 
   return (
-    <section className="relative py-32 md:py-48 overflow-hidden">
+    <section className="relative py-20 md:py-28 overflow-hidden ambient-pink-violet">
       {/* Warm scenario ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -26,14 +26,14 @@ export function Numbers() {
       />
 
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
           <div className="col-span-12 md:col-span-8">
             <SectionReveal>
               <Badge number="04">{t("badge")}</Badge>
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>{" "}

@@ -11,7 +11,7 @@ export function CTAFinal() {
   const t = useTranslations("cta_final");
 
   return (
-    <section id="contact" className="relative py-32 md:py-48 overflow-hidden">
+    <section id="contact" className="relative py-20 md:py-28 overflow-hidden ambient-multi">
       {/* Multi-color LED ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -29,7 +29,7 @@ export function CTAFinal() {
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>{" "}

@@ -13,7 +13,7 @@ export function FAQ() {
   const [open, setOpen] = useState<string | null>("q1");
 
   return (
-    <section id="faq" className="relative py-32 md:py-48 bg-[var(--color-bg-elevated)] overflow-hidden">
+    <section id="faq" className="relative py-20 md:py-28 bg-[var(--color-bg-elevated)] overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none opacity-50"
         style={{
@@ -29,7 +29,7 @@ export function FAQ() {
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>

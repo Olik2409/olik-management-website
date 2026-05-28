@@ -24,7 +24,7 @@ export function Results() {
   const t = useTranslations("results");
 
   return (
-    <section id="results" className="relative py-32 md:py-48 overflow-hidden">
+    <section id="results" className="relative py-20 md:py-28 overflow-hidden ambient-green-blue">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -33,14 +33,14 @@ export function Results() {
       />
 
       <div className="relative container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
           <div className="col-span-12 md:col-span-8">
             <SectionReveal>
               <Badge number="06">{t("badge")}</Badge>
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>{" "}
@@ -63,7 +63,7 @@ export function Results() {
         </div>
 
         <SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden mb-24 md:mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden mb-16 md:mb-20">
             {metricKeys.map((key, i) => (
               <motion.div
                 key={key}

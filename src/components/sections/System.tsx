@@ -33,7 +33,7 @@ export function System() {
     <section
       ref={ref}
       id="system"
-      className="relative py-32 md:py-48 overflow-hidden bg-[var(--color-bg-elevated)]"
+      className="relative py-20 md:py-28 overflow-hidden bg-[var(--color-bg-elevated)]"
     >
       {/* Ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -52,14 +52,14 @@ export function System() {
       </div>
 
       <div className="relative container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
           <div className="col-span-12 md:col-span-7">
             <SectionReveal>
               <Badge number="03">{t("badge")}</Badge>
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>{" "}
@@ -153,7 +153,7 @@ export function System() {
 
                   <div className="col-span-12 md:col-span-4">
                     <h3
-                      className="text-2xl md:text-3xl lg:text-4xl font-bold text-white transition-colors duration-300"
+                      className="text-xl md:text-2xl lg:text-3xl font-bold text-white transition-colors duration-300"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
                       {t(`steps.${key}.name`)}

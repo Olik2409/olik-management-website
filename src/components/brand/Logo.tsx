@@ -1,101 +1,120 @@
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  variant?: "full" | "mark";
+  variant?: "full" | "mark" | "wordmark";
   className?: string;
   monochrome?: boolean;
 };
 
+const BLUE = "#2563eb";
+
 export function Logo({ variant = "full", className, monochrome = false }: LogoProps) {
-  const blue = monochrome ? "#ffffff" : "#2563eb";
+  const blue = monochrome ? "#ffffff" : BLUE;
+  const ink = monochrome ? "#0a0a12" : "#ffffff";
 
-  if (variant === "mark") {
-    return (
-      <svg
-        viewBox="0 0 64 64"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cn("block", className)}
-        aria-hidden="true"
-      >
-        <defs>
-          <radialGradient id="olik-mark-grad" cx="50%" cy="35%" r="65%">
-            <stop offset="0%" stopColor="#60a5fa" />
-            <stop offset="60%" stopColor={blue} />
-            <stop offset="100%" stopColor="#1e3a8a" />
-          </radialGradient>
-          <filter id="olik-mark-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="b" />
-            <feMerge>
-              <feMergeNode in="b" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <circle cx="32" cy="32" r="30" fill={monochrome ? "#ffffff" : "url(#olik-mark-grad)"} />
-        <path
-          d="M18 33 L28 43 L46 22"
-          stroke={monochrome ? "#0a0a12" : "#ffffff"}
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-          filter="url(#olik-mark-glow)"
-        />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 280 88"
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn("block", className)}
-      aria-label="Olik Management"
-    >
-      <defs>
-        <radialGradient id="olik-logo-grad" cx="50%" cy="35%" r="65%">
-          <stop offset="0%" stopColor="#60a5fa" />
-          <stop offset="60%" stopColor={blue} />
-          <stop offset="100%" stopColor="#1e3a8a" />
-        </radialGradient>
-      </defs>
-
-      {/* Circle mark */}
-      <circle cx="40" cy="44" r="36" fill={monochrome ? "#ffffff" : "url(#olik-logo-grad)"} />
+  // The brand mark: thick blue ring with white checkmark whose long arm
+  // breaks out beyond the upper-right edge of the ring.
+  const Mark = (
+    <g>
+      <circle
+        cx="50"
+        cy="50"
+        r="34"
+        fill="none"
+        stroke={blue}
+        strokeWidth="14"
+      />
       <path
-        d="M22 45 L34 57 L58 31"
-        stroke={monochrome ? "#0a0a12" : "#ffffff"}
-        strokeWidth="7"
+        d="M22 52 L42 70 L86 18"
+        stroke={ink}
+        strokeWidth="13"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
       />
+    </g>
+  );
 
-      {/* OLIK wordmark */}
-      <text
-        x="92"
-        y="50"
-        fill={monochrome ? "#ffffff" : "#ffffff"}
-        fontFamily="var(--font-display), 'Syne', sans-serif"
-        fontWeight="800"
-        fontSize="34"
-        letterSpacing="-0.5"
+  if (variant === "mark") {
+    return (
+      <svg
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        className={cn("block", className)}
+        aria-hidden="true"
       >
-        OLIK
-      </text>
+        {Mark}
+      </svg>
+    );
+  }
 
-      {/* MANAGEMENT subline */}
-      <text
-        x="93"
-        y="72"
-        fill={monochrome ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.7)"}
-        fontFamily="'JetBrains Mono', monospace"
-        fontWeight="500"
-        fontSize="10"
-        letterSpacing="4.5"
+  if (variant === "wordmark") {
+    return (
+      <svg
+        viewBox="0 0 320 110"
+        xmlns="http://www.w3.org/2000/svg"
+        className={cn("block", className)}
+        aria-label="Olik Management"
       >
-        MANAGEMENT
-      </text>
+        <text
+          x="0"
+          y="74"
+          fill={monochrome ? "#0a0a12" : "#ffffff"}
+          fontFamily="var(--font-display), 'Syne', system-ui, sans-serif"
+          fontWeight="800"
+          fontSize="92"
+          letterSpacing="-2"
+        >
+          OLIK
+        </text>
+        <text
+          x="2"
+          y="100"
+          fill={monochrome ? "rgba(10,10,18,0.85)" : "rgba(255,255,255,0.95)"}
+          fontFamily="var(--font-display), 'Syne', system-ui, sans-serif"
+          fontWeight="700"
+          fontSize="18"
+          letterSpacing="5.5"
+        >
+          MANAGEMENT
+        </text>
+      </svg>
+    );
+  }
+
+  // Full: mark + wordmark side by side, sized to match the brand proportions
+  return (
+    <svg
+      viewBox="0 0 420 110"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("block", className)}
+      aria-label="Olik Management"
+    >
+      <g transform="translate(0,5)">{Mark}</g>
+      <g transform="translate(115,0)">
+        <text
+          x="0"
+          y="74"
+          fill={monochrome ? "#0a0a12" : "#ffffff"}
+          fontFamily="var(--font-display), 'Syne', system-ui, sans-serif"
+          fontWeight="800"
+          fontSize="78"
+          letterSpacing="-1.5"
+        >
+          OLIK
+        </text>
+        <text
+          x="3"
+          y="98"
+          fill={monochrome ? "rgba(10,10,18,0.85)" : "rgba(255,255,255,0.95)"}
+          fontFamily="var(--font-display), 'Syne', system-ui, sans-serif"
+          fontWeight="700"
+          fontSize="15"
+          letterSpacing="4.8"
+        >
+          MANAGEMENT
+        </text>
+      </g>
     </svg>
   );
 }

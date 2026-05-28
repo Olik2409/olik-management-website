@@ -240,10 +240,55 @@
   .mesh-bg {
     background-color: var(--color-bg);
     background-image:
-      radial-gradient(at 20% 30%, rgba(37,99,235,0.15) 0px, transparent 50%),
-      radial-gradient(at 80% 70%, rgba(168,85,247,0.12) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, rgba(0,255,157,0.08) 0px, transparent 50%),
-      radial-gradient(at 90% 10%, rgba(244,114,182,0.1) 0px, transparent 50%);
+      radial-gradient(at 20% 30%, rgba(37,99,235,0.18) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, rgba(168,85,247,0.14) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(0,255,157,0.09) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, rgba(244,114,182,0.12) 0px, transparent 50%);
+  }
+
+  /* Premium section ambient backgrounds */
+  .ambient-blue-violet {
+    background-image:
+      radial-gradient(ellipse 70% 60% at 15% 30%, rgba(37,99,235,0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 50% at 90% 70%, rgba(168,85,247,0.10) 0%, transparent 65%);
+  }
+  .ambient-green-blue {
+    background-image:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0,255,157,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 10% 80%, rgba(37,99,235,0.10) 0%, transparent 65%);
+  }
+  .ambient-pink-violet {
+    background-image:
+      radial-gradient(ellipse 50% 50% at 20% 20%, rgba(244,114,182,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 85% 85%, rgba(168,85,247,0.12) 0%, transparent 65%);
+  }
+  .ambient-multi {
+    background-image:
+      radial-gradient(ellipse 50% 40% at 12% 18%, rgba(37,99,235,0.14) 0%, transparent 60%),
+      radial-gradient(ellipse 45% 40% at 88% 30%, rgba(168,85,247,0.11) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 45% at 50% 95%, rgba(0,255,157,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 35% at 92% 85%, rgba(244,114,182,0.10) 0%, transparent 60%);
+  }
+
+  /* Section divider with LED accent */
+  .led-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(59,130,246,0.4) 30%,
+      rgba(168,85,247,0.4) 50%,
+      rgba(0,255,157,0.4) 70%,
+      transparent 100%);
+  }
+
+  /* Animated gradient border conic */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
   }
 }
 
