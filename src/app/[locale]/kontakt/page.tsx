@@ -2,6 +2,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { CalendlyInline } from "@/components/ui/CalendlyInline";
 import { Badge } from "@/components/ui/Badge";
+import { AuroraShader } from "@/components/ui/animated-shader-background";
 
 export default function KontaktPage() {
   return (
@@ -14,8 +15,15 @@ export default function KontaktPage() {
         description="Wybierz dogodny termin w kalendarzu. Porozmawiamy o Twoim biznesie, celach i o tym, czy nasz system jest tym, czego potrzebujesz."
       />
 
-      <section className="py-10 md:py-16 pb-16 md:pb-24">
-        <div className="container-wide">
+      <section className="relative py-10 md:py-16 pb-16 md:pb-24 overflow-hidden">
+        {/* Aurora background effect */}
+        <AuroraShader />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "rgba(10,10,18,0.7)" }}
+        />
+
+        <div className="relative container-wide">
           <div className="grid grid-cols-12 gap-6 md:gap-10">
             {/* Calendly main */}
             <div className="col-span-12 lg:col-span-8">
