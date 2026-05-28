@@ -17,8 +17,15 @@ export default function ONasPage() {
       />
 
       {/* Manifesto */}
-      <section className="py-12 md:py-16">
-        <div className="container-tight">
+      <section className="relative py-12 md:py-16 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 15% 0%, rgba(59,130,246,0.10) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 90% 100%, rgba(0,255,157,0.07) 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative container-tight">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8 md:col-start-3">
               <SectionReveal>
@@ -95,8 +102,15 @@ export default function ONasPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24">
-        <div className="container-wide">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 65% 55% at 85% 0%, rgba(168,85,247,0.10) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 10% 90%, rgba(244,114,182,0.07) 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative container-wide">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8">
               <SectionReveal><Badge number="02">Zasady</Badge></SectionReveal>
