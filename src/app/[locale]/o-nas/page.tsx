@@ -16,7 +16,7 @@ export default function ONasPage() {
       />
 
       {/* Manifesto */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container-tight">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8 md:col-start-3">

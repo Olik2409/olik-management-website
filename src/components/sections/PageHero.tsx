@@ -12,7 +12,7 @@ interface Props {
 
 export function PageHero({ number, eyebrow, title, titleAccent, description }: Props) {
   return (
-    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden">
+    <section className="relative pt-32 md:pt-36 pb-14 md:pb-20 overflow-hidden">
       <div
         className="absolute inset-0 opacity-50 pointer-events-none"
         style={{
@@ -30,7 +30,7 @@ export function PageHero({ number, eyebrow, title, titleAccent, description }: P
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-              className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-[112px] font-bold text-balance leading-[0.95]"
+              className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance leading-[0.95]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               <span className="text-white">{title}</span>

@@ -6,6 +6,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SplitText } from "@/components/ui/SplitText";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { LedOrbs } from "@/components/ui/LedOrbs";
 import Image from "next/image";
 
 export function Hero() {
@@ -30,24 +31,47 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
     >
-      {/* Real hero photo background */}
+      {/* Abstract LED particle texture – subtle color base */}
       <div className="absolute inset-0">
         <Image
-          src="/images/brand/Hero background mood shot.png"
+          src="/images/brand/Texture abstract.png"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-center opacity-40"
           priority
           sizes="100vw"
-          quality={85}
+          quality={80}
         />
       </div>
-      {/* Left-heavy gradient: dark on text side, reveals photo on right */}
+      {/* Rich mesh gradient */}
+      <div className="absolute inset-0 mesh-bg opacity-90" />
+      {/* Animated LED orbs */}
+      <LedOrbs variant="hero" />
+
+      {/* Giant brand watermark behind content */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <span
+          className="font-bold leading-none select-none whitespace-nowrap"
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "26vw",
+            letterSpacing: "-0.04em",
+            background: "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(59,130,246,0.04) 60%, transparent 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          OLIK
+        </span>
+      </div>
+
+      {/* Readability scrim */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(105deg, rgba(5,5,7,0.88) 0%, rgba(5,5,7,0.70) 40%, rgba(5,5,7,0.30) 75%, rgba(5,5,7,0.10) 100%)",
+            "radial-gradient(ellipse 90% 70% at 35% 45%, rgba(5,5,7,0.55) 0%, rgba(5,5,7,0.35) 50%, rgba(5,5,7,0.2) 100%)",
         }}
       />
       {/* Bottom fade into next section */}

@@ -47,12 +47,12 @@ export function Header() {
         <div className="container-wide flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center shrink-0 z-10 group" aria-label="Olik Management">
             <Image
-              src="/images/brand/OLIK - szerszy.jpg"
+              src="/images/brand/LOGO STRONA.png"
               alt="Olik Management"
-              width={280}
-              height={56}
-              className="h-9 sm:h-10 w-auto transition-all duration-500"
-              style={{ mixBlendMode: "screen", maxWidth: "200px" }}
+              width={287}
+              height={144}
+              className="h-10 sm:h-11 w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_18px_var(--color-led-blue-glow)]"
+              style={{ maxWidth: "150px" }}
               priority
             />
           </Link>

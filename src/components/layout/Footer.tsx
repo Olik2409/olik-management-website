@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
-import { Logo } from "@/components/brand/Logo";
+import Image from "next/image";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -17,7 +17,7 @@ export function Footer() {
         }}
       />
 
-      <div className="relative container-wide py-20 md:py-28">
+      <div className="relative container-wide py-16 md:py-20">
         <div className="mb-12 md:mb-16 grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
             <p className="eyebrow mb-6">{t("links_title")}</p>
@@ -42,7 +42,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 mb-12">
           <div>
             <p className="eyebrow mb-4">Nawigacja</p>
             <ul className="space-y-3">
@@ -127,7 +127,14 @@ export function Footer() {
         <div className="pt-8 border-t border-white/[0.06]">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
             <div className="flex items-center gap-4">
-              <Logo variant="full" className="h-9 w-auto opacity-80" />
+              <Image
+                src="/images/brand/LOGO STRONA.png"
+                alt="Olik Management"
+                width={287}
+                height={144}
+                className="h-9 w-auto opacity-90"
+                style={{ maxWidth: "130px" }}
+              />
               <p className="text-xs text-[var(--color-text-dim)]">{t("copyright")}</p>
             </div>
             <Link href="/" className="text-xs text-[var(--color-text-dim)] hover:text-white transition-colors">
@@ -136,13 +143,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 select-none pointer-events-none overflow-hidden">
+        <div className="mt-10 select-none pointer-events-none overflow-hidden">
           <p
-            className="text-[14vw] md:text-[10vw] font-bold leading-[0.8] text-center"
+            className="text-[13vw] md:text-[8.5vw] font-bold leading-[0.85] text-center"
             style={{
               fontFamily: "var(--font-display)",
               letterSpacing: "-0.04em",
-              background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%)",
+              background: "linear-gradient(180deg, rgba(59,130,246,0.18) 0%, rgba(168,85,247,0.10) 50%, transparent 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",

@@ -6,6 +6,7 @@ import { CalendlyInline } from "@/components/ui/CalendlyInline";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import Image from "next/image";
 
 export function CTAFinal() {
   const t = useTranslations("cta_final");
@@ -20,6 +21,17 @@ export function CTAFinal() {
             "radial-gradient(ellipse 60% 50% at 30% 30%, rgba(59,130,246,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(168,85,247,0.1) 0%, transparent 60%)",
         }}
       />
+      {/* Faint brand mark */}
+      <div className="absolute -bottom-10 right-0 w-[40vw] max-w-md aspect-square opacity-[0.07] pointer-events-none hidden md:block">
+        <Image
+          src="/images/brand/OLIK 2.jpg"
+          alt=""
+          fill
+          className="object-contain"
+          style={{ mixBlendMode: "screen" }}
+          sizes="40vw"
+        />
+      </div>
 
       <div className="relative container-wide">
         <div className="grid grid-cols-12 gap-6 mb-16 md:mb-20">

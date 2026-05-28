@@ -48,11 +48,17 @@ export async function generateMetadata({
       description: t("ogDescription"),
       type: "website",
       locale: locale === "pl" ? "pl_PL" : "en_US",
+      images: [{ url: "/images/brand/OLIK - szerszy.jpg", width: 1024, height: 320, alt: "Olik Management" }],
     },
     twitter: {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
+      images: ["/images/brand/OLIK - szerszy.jpg"],
+    },
+    icons: {
+      icon: "/images/brand/OLIK 1.jpg",
+      apple: "/images/brand/OLIK 1.jpg",
     },
     robots: { index: true, follow: true },
     alternates: {

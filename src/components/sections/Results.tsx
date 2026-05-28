@@ -176,7 +176,7 @@ export function Results() {
         </div>
 
         <SectionReveal delay={0.3}>
-          <div className="mt-16 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <Link
               href="/case-studies"
               className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"

@@ -14,7 +14,7 @@ export default function KontaktPage() {
         description="Wybierz dogodny termin w kalendarzu. Porozmawiamy o Twoim biznesie, celach i o tym, czy nasz system jest tym, czego potrzebujesz."
       />
 
-      <section className="py-12 md:py-20 pb-24 md:pb-32">
+      <section className="py-10 md:py-16 pb-16 md:pb-24">
         <div className="container-wide">
           <div className="grid grid-cols-12 gap-6 md:gap-10">
             {/* Calendly main */}

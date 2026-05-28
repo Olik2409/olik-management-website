@@ -221,7 +221,7 @@ export function GrowthTools() {
         </div>
 
         <SectionReveal delay={0.3}>
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/uslugi"
               className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"

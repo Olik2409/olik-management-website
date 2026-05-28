@@ -73,23 +73,23 @@ export function Manifesto() {
           />
         </motion.div>
 
-        {/* Workspace photo */}
+        {/* Cinematic workspace mood photo */}
         <SectionReveal>
-          <div className="mt-16 md:mt-20 relative rounded-3xl overflow-hidden aspect-[21/9] md:aspect-[16/6]">
+          <div className="mt-14 md:mt-16 relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[16/6]">
             <Image
-              src="/images/brand/Workspace shot.png"
-              alt="Olik Management workspace"
+              src="/images/brand/Hero background mood shot.png"
+              alt="Olik Management – system w akcji"
               fill
               className="object-cover object-center"
               sizes="(min-width: 768px) 80vw, 100vw"
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,5,7,0.7) 0%, rgba(5,5,7,0.2) 50%, rgba(5,5,7,0.1) 100%)' }} />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,7,0.8) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,5,7,0.65) 0%, rgba(5,5,7,0.15) 50%, rgba(5,5,7,0.1) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 45%, rgba(5,5,7,0.85) 100%)' }} />
           </div>
         </SectionReveal>
 
         {/* Pillars row */}
-        <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">
+        <div className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">
           {([
             { key: "p1", color: "var(--color-led-blue-bright)" },
             { key: "p2", color: "var(--color-led-violet-bright)" },
