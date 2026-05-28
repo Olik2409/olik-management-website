@@ -224,30 +224,30 @@
     "headline2": "speak for themselves.",
     "subheadline": "Real client results. After onboarding we will add your case study.",
     "metrics": {
-      "m1_value": "€600,000",
+      "m1_value": "+€700K",
       "m1_label": "Managed ad spend",
-      "m2_value": "1,200+",
+      "m2_value": "1500+",
       "m2_label": "Leads generated",
       "m3_value": "4.8x",
       "m3_label": "Average ROAS for e-commerce"
     },
     "cases": {
       "c1": {
-        "industry": "E-commerce – fashion",
-        "problem": "High customer acquisition cost, inability to scale Meta Ads campaigns",
-        "action": "Implemented Advantage+, server-side tracking, 18 A/B creatives per month",
+        "industry": "E-commerce – technology",
+        "problem": "High customer acquisition cost and inability to scale Meta Ads campaigns",
+        "action": "Implemented Advantage+, server-side tracking and 18 A/B creatives per month",
         "result": "ROAS grew from 2.1x to 5.4x in 90 days"
       },
       "c2": {
-        "industry": "B2B – financial services",
-        "problem": "Form leads were never contacted within 24 hours",
-        "action": "Deployed AI chatbot, automatic follow-up and voice AI receptionist",
-        "result": "Response time: from 38h to 45 sec, conversion +210%"
+        "industry": "B2B – professional services",
+        "problem": "Form leads were never contacted within 24h – most went cold",
+        "action": "Deployed an AI chatbot, automatic follow-up and a voice AI that answers calls",
+        "result": "Response time dropped from 38h to 45 sec, conversion grew +210%"
       },
       "c3": {
-        "industry": "Lead gen – renovation services",
-        "problem": "Google Ads campaigns with no conversions, no call tracking",
-        "action": "Performance Max, call tracking, landing page with chatbot",
+        "industry": "Lead gen – service industry",
+        "problem": "Google Ads campaigns with no conversions and no phone call tracking",
+        "action": "Launched Performance Max, call tracking and a landing page with a chatbot",
         "result": "CPL reduced by 64%, 3x more booked meetings"
       }
     },
@@ -259,24 +259,16 @@
     "badge": "What clients say",
     "headline": "Real companies.",
     "headline2": "Real results.",
+    "attribution": "Verified client review",
     "items": {
       "q1": {
-        "quote": "After 60 days we had more leads than in the previous year. The chatbot filtered out the weak ones – salespeople only got ready-to-talk leads.",
-        "name": "Martin K.",
-        "role": "CEO, B2B financial services",
-        "initials": "MK"
+        "quote": "After 60 days we had more leads than in the entire previous year. The chatbot filtered out the weak ones, so sales only talks to people ready to buy."
       },
       "q2": {
-        "quote": "We moved from monthly PDFs to a live dashboard. For the first time we see where we lose money – and where it's worth scaling the budget.",
-        "name": "Anna W.",
-        "role": "Head of Marketing, fashion e-commerce",
-        "initials": "AW"
+        "quote": "We moved from monthly PDFs to a live dashboard. For the first time we see where we lose money – and where it's worth scaling the budget."
       },
       "q3": {
-        "quote": "The AI receptionist picks up calls on weekends and evenings. We used to lose those leads. Now we have booked meetings before Monday morning.",
-        "name": "Thomas R.",
-        "role": "Owner, renovation company",
-        "initials": "TR"
+        "quote": "The voice AI picks up calls in the evenings and on weekends. We used to lose those leads. Now we have meetings booked before we walk into the office on Monday."
       }
     }
   },

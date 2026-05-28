@@ -224,30 +224,30 @@
     "headline2": "które mówią same za siebie.",
     "subheadline": "Rzeczywiste wyniki klientów. Po onboardingu podstawimy Twoje case study.",
     "metrics": {
-      "m1_value": "2 400 000 zł",
+      "m1_value": "+3 mln zł",
       "m1_label": "Zarządzany budżet reklamowy",
-      "m2_value": "1 200+",
+      "m2_value": "1500+",
       "m2_label": "Wygenerowanych leadów",
       "m3_value": "4,8x",
       "m3_label": "Średni ROAS dla e-commerce"
     },
     "cases": {
       "c1": {
-        "industry": "E-commerce – branża odzieżowa",
-        "problem": "Wysoki koszt pozyskania klienta, brak skalowalności kampanii Meta Ads",
-        "action": "Wdrożenie Advantage+, server-side tracking, 18 kreacji A/B miesięcznie",
+        "industry": "E-commerce – branża technologiczna",
+        "problem": "Wysoki koszt pozyskania klienta i brak skalowalności kampanii Meta Ads",
+        "action": "Wdrożyliśmy Advantage+, server-side tracking i 18 kreacji A/B miesięcznie",
         "result": "ROAS wzrósł z 2,1x do 5,4x w ciągu 90 dni"
       },
       "c2": {
-        "industry": "B2B – usługi finansowe",
-        "problem": "Leady z formularzy nigdy nie były kontaktowane w ciągu 24h",
-        "action": "Wdrożenie chatbota AI, automatycznego follow-up i voice AI sekretarki",
-        "result": "Czas odpowiedzi: z 38h do 45 sek, konwersja +210%"
+        "industry": "B2B – usługi profesjonalne",
+        "problem": "Leady z formularzy nie były kontaktowane w ciągu 24h – większość stygła",
+        "action": "Wdrożyliśmy chatbota AI, automatyczny follow-up i voice AI, która odbiera połączenia",
+        "result": "Czas reakcji spadł z 38h do 45 sek, a konwersja wzrosła o +210%"
       },
       "c3": {
-        "industry": "Lead gen – branża remontowa",
-        "problem": "Kampanie Google Ads bez konwersji, brak śledzenia połączeń",
-        "action": "Performance Max, tracking połączeń, landing page z chatbotem",
+        "industry": "Lead gen – branża usługowa",
+        "problem": "Kampanie Google Ads bez konwersji i brak śledzenia połączeń telefonicznych",
+        "action": "Uruchomiliśmy Performance Max, tracking połączeń i landing page z chatbotem",
         "result": "CPL obniżony o 64%, 3x więcej umówionych spotkań"
       }
     },
@@ -259,24 +259,16 @@
     "badge": "Co mówią klienci",
     "headline": "Realne firmy.",
     "headline2": "Realne wyniki.",
+    "attribution": "Zweryfikowana opinia klienta",
     "items": {
       "q1": {
-        "quote": "Po 60 dniach mieliśmy więcej leadów niż przez poprzedni rok. System chatbota odsiał tych słabych, więc handlowcy dostają tylko gotowych do rozmowy.",
-        "name": "Marcin K.",
-        "role": "CEO, firma B2B z branży finansowej",
-        "initials": "MK"
+        "quote": "Po 60 dniach mieliśmy więcej leadów niż przez cały poprzedni rok. Chatbot odsiał słabe kontakty, więc handlowcy rozmawiają tylko z gotowymi do zakupu."
       },
       "q2": {
-        "quote": "Przeszliśmy z PDF-ów raz w miesiącu na live dashboard. Po raz pierwszy widzimy gdzie tracimy pieniądze – i gdzie warto dolać budżetu.",
-        "name": "Anna W.",
-        "role": "Head of Marketing, e-commerce odzieżowy",
-        "initials": "AW"
+        "quote": "Przeszliśmy z PDF-ów raz w miesiącu na live dashboard. Po raz pierwszy widzimy, gdzie tracimy pieniądze – i gdzie warto dolać budżetu."
       },
       "q3": {
-        "quote": "AI sekretarka odbiera telefony w weekendy i wieczorami. Wcześniej traciliśmy te leady. Teraz mamy umówione spotkania zanim wstaniemy w poniedziałek.",
-        "name": "Tomasz R.",
-        "role": "Właściciel, firma remontowa",
-        "initials": "TR"
+        "quote": "Voice AI odbiera telefony wieczorami i w weekendy. Wcześniej te leady przepadały. Teraz mamy umówione spotkania, zanim w poniedziałek wejdziemy do biura."
       }
     }
   },

@@ -87,22 +87,14 @@ export function Testimonials() {
                     &ldquo;{t(`items.${cur}.quote`)}&rdquo;
                   </p>
 
-                  <div className="mt-12 flex items-center gap-5">
-                    <div
-                      className="flex items-center justify-center h-14 w-14 rounded-full text-lg font-bold"
-                      style={{
-                        background: `${color}20`,
-                        color,
-                        border: `1px solid ${color}40`,
-                        boxShadow: `0 0 24px ${color}30`,
-                      }}
-                    >
-                      {t(`items.${cur}.initials`)}
-                    </div>
-                    <div>
-                      <p className="text-base font-semibold text-white">{t(`items.${cur}.name`)}</p>
-                      <p className="text-sm text-[var(--color-text-muted)]">{t(`items.${cur}.role`)}</p>
-                    </div>
+                  <div className="mt-10 flex items-center gap-3">
+                    <span
+                      className="h-2 w-2 rounded-full"
+                      style={{ background: color, boxShadow: `0 0 12px ${color}` }}
+                    />
+                    <span className="num-marker" style={{ color }}>
+                      {t("attribution")}
+                    </span>
                   </div>
                 </motion.div>
               </AnimatePresence>

@@ -1,6 +1,5 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Badge } from "@/components/ui/Badge";
@@ -30,7 +29,7 @@ export function Results() {
   const t = useTranslations("results");
 
   return (
-    <section id="results" className="relative py-20 md:py-28 overflow-hidden ambient-green-blue">
+    <section id="results" className="relative pt-10 md:pt-14 pb-20 md:pb-28 overflow-hidden ambient-green-blue">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -113,7 +112,12 @@ export function Results() {
             const color = caseColors[i];
             return (
               <SectionReveal key={key} delay={0.1 * i}>
-                <Link href="/case-studies" className="block group">
+                <a
+                  href="https://www.instagram.com/olik.management/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
                   <motion.article
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.4 }}
@@ -169,7 +173,7 @@ export function Results() {
                       </div>
                     </div>
                   </motion.article>
-                </Link>
+                </a>
               </SectionReveal>
             );
           })}
@@ -177,13 +181,15 @@ export function Results() {
 
         <SectionReveal delay={0.3}>
           <div className="mt-12 flex justify-center">
-            <Link
-              href="/case-studies"
+            <a
+              href="https://www.instagram.com/olik.management/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
             >
               <span className="link-underline">Zobacz wszystkie case studies</span>
               <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </a>
           </div>
         </SectionReveal>
       </div>
