@@ -2,11 +2,12 @@
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, Zap, Activity, TrendingUp, Clock } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SplitText } from "@/components/ui/SplitText";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { AuroraShader } from "@/components/ui/animated-shader-background";
+import { DashboardCard } from "@/components/ui/DashboardCard";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -19,10 +20,46 @@ export function Hero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   const metrics = [
-    { value: t("metric1_value"), label: t("metric1_label"), color: "var(--color-led-blue-bright)" },
-    { value: t("metric2_value"), label: t("metric2_label"), color: "var(--color-led-green-bright)" },
-    { value: t("metric3_value"), label: t("metric3_label"), color: "var(--color-led-violet-bright)" },
-    { value: t("metric4_value"), label: t("metric4_label"), color: "var(--color-led-pink-bright)" },
+    {
+      value: t("metric1_value"),
+      label: t("metric1_label"),
+      color: "var(--color-led-blue-bright)",
+      icon: Zap,
+      delta: "−68%",
+      deltaLabel: "vs. średnia rynkowa",
+      up: true,
+      spark: "0,24 13,22 26,23 40,16 53,18 66,9 80,6",
+    },
+    {
+      value: t("metric2_value"),
+      label: t("metric2_label"),
+      color: "var(--color-led-green-bright)",
+      icon: Activity,
+      delta: "100%",
+      deltaLabel: "uptime · 0 przestojów",
+      up: true,
+      spark: "0,18 13,16 26,17 40,15 53,16 66,14 80,15",
+    },
+    {
+      value: t("metric3_value"),
+      label: t("metric3_label"),
+      color: "var(--color-led-violet-bright)",
+      icon: TrendingUp,
+      delta: "+391%",
+      deltaLabel: "ostatnie 90 dni",
+      up: true,
+      spark: "0,26 13,22 26,24 40,15 53,17 66,8 80,3",
+    },
+    {
+      value: t("metric4_value"),
+      label: t("metric4_label"),
+      color: "var(--color-led-pink-bright)",
+      icon: Clock,
+      delta: "śr. 47 min",
+      deltaLabel: "follow-up automatyczny",
+      up: true,
+      spark: "0,22 13,20 26,21 40,14 53,16 66,11 80,9",
+    },
   ];
 
   return (
@@ -108,9 +145,9 @@ export function Hero() {
         </motion.div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-12 gap-6 flex-1 items-center">
+        <div className="grid grid-cols-12 gap-6 lg:gap-10 flex-1 items-center lg:items-stretch">
           {/* Headline column */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
             <h1
               className="font-bold text-white leading-[1.0]"
               style={{
@@ -201,148 +238,25 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Dashboard card – desktop */}
+          {/* Dashboard card – desktop (vertical) */}
           <motion.div
             initial={{ opacity: 0, x: 32, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 1.6, ease: "easeOut" }}
             className="hidden lg:flex col-span-5 flex-col"
           >
-            <div
-              className="relative rounded-2xl border overflow-hidden flex flex-col h-full"
-              style={{
-                background: "rgba(8,8,20,0.85)",
-                borderColor: "rgba(59,130,246,0.3)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
-                boxShadow: "0 0 0 1px rgba(59,130,246,0.1), 0 24px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)",
-              }}
-            >
-              {/* Ambient glow */}
-              <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full pointer-events-none" style={{ background: "var(--color-led-blue)", filter: "blur(80px)", opacity: 0.14 }} />
-              <div className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full pointer-events-none" style={{ background: "var(--color-led-violet)", filter: "blur(80px)", opacity: 0.11 }} />
-
-              {/* Header bar */}
-              <div className="relative flex items-center justify-between px-5 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                <div className="flex items-center gap-2.5">
-                  <span className="h-2 w-2 rounded-full animate-pulse" style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 12px var(--color-led-green-glow)" }} />
-                  <span className="num-marker text-white/70 text-[11px] tracking-widest">OLIK DASHBOARD LIVE</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--color-led-blue-bright)", opacity: 0.6 }} />
-                </div>
-              </div>
-
-              {/* Metrics 2×2 */}
-              <div className="relative grid grid-cols-2 gap-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }}>
-                {metrics.map((m, i) => {
-                  const sparklines = [
-                    "0,22 12,18 24,20 36,11 48,15 60,8 72,12 80,4",
-                    "0,24 12,20 24,16 36,18 48,10 60,14 72,6 80,8",
-                    "0,20 12,22 24,14 36,16 48,8 60,12 72,5 80,9",
-                    "0,26 12,22 24,24 36,14 48,18 60,10 72,14 80,6",
-                  ];
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.92 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 1.9 + i * 0.1 }}
-                      className="bg-[rgba(8,8,20,0.9)] p-5 flex flex-col justify-between gap-3"
-                    >
-                      <p className="text-xs text-white/50 leading-snug font-medium">{m.label}</p>
-                      <div>
-                        <svg className="w-full mb-2" height="28" viewBox="0 0 80 28" preserveAspectRatio="none">
-                          <polyline
-                            points={sparklines[i]}
-                            fill="none"
-                            stroke={m.color}
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            opacity="0.5"
-                          />
-                        </svg>
-                        <p
-                          className="text-3xl font-bold leading-none"
-                          style={{ fontFamily: "var(--font-display)", color: m.color, textShadow: `0 0 24px ${m.color}70` }}
-                        >
-                          {m.value}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Activity feed */}
-              <div className="relative border-t px-5 py-4 space-y-2.5" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                <p className="eyebrow text-[10px] text-white/40 mb-3 tracking-widest">OSTATNIA AKTYWNOŚĆ</p>
-                {[
-                  { dot: "var(--color-led-green-bright)", text: "Nowy lead zakwalifikowany", time: "przed chwilą" },
-                  { dot: "var(--color-led-blue-bright)",  text: "Kampania FB – konwersja +12%", time: "2 min temu" },
-                  { dot: "var(--color-led-violet-bright)", text: "AI follow-up wysłany", time: "5 min temu" },
-                ].map((ev, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 2.4 + i * 0.1 }}
-                    className="flex items-center gap-2.5"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: ev.dot, boxShadow: `0 0 8px ${ev.dot}` }} />
-                    <span className="text-xs text-white/70 flex-1 leading-tight">{ev.text}</span>
-                    <span className="text-[10px] text-white/30 shrink-0">{ev.time}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            <DashboardCard metrics={metrics} />
           </motion.div>
         </div>
 
-        {/* Dashboard metrics – mobile */}
+        {/* Dashboard card – mobile */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
           className="lg:hidden mt-10"
         >
-          <div
-            className="rounded-2xl border overflow-hidden"
-            style={{
-              background: "rgba(8,8,20,0.85)",
-              borderColor: "rgba(59,130,246,0.25)",
-              backdropFilter: "blur(20px)",
-            }}
-          >
-            {/* Mobile header */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-              <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 10px var(--color-led-green-glow)" }} />
-              <span className="num-marker text-white/60 text-[10px] tracking-widest">OLIK DASHBOARD LIVE</span>
-            </div>
-            {/* Mobile 2×2 metrics */}
-            <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(255,255,255,0.04)" }}>
-              {metrics.map((m, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 2.1 + i * 0.07 }}
-                  className="bg-[rgba(8,8,20,0.95)] p-4 flex flex-col gap-1"
-                >
-                  <p className="text-[11px] text-white/50 leading-tight">{m.label}</p>
-                  <p
-                    className="text-2xl font-bold"
-                    style={{ fontFamily: "var(--font-display)", color: m.color, textShadow: `0 0 16px ${m.color}60` }}
-                  >
-                    {m.value}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          <DashboardCard metrics={metrics} compact />
         </motion.div>
       </motion.div>
 
