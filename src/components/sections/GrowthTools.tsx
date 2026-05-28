@@ -8,6 +8,8 @@ import { ArrowUpRight, Target, Brain, Zap, BarChart3 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
+const MotionLink = motion.create(Link);
+
 const tools = [
   {
     key: "t1",
@@ -81,12 +83,13 @@ export function GrowthTools() {
             const features = t.raw(`tools.${tool.key}.features`) as string[];
             return (
               <SectionReveal key={tool.key} delay={0.1 * i}>
-                <motion.div
+                <MotionLink
+                  href="/uslugi"
                   onHoverStart={() => setHovered(tool.key)}
                   onHoverEnd={() => setHovered(null)}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="group relative rounded-3xl overflow-hidden h-full p-px"
+                  className="group relative rounded-3xl overflow-hidden h-full p-px block"
                   style={{
                     background: isHovered
                       ? `linear-gradient(135deg, ${tool.color}40, transparent 60%)`
@@ -214,7 +217,7 @@ export function GrowthTools() {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </MotionLink>
               </SectionReveal>
             );
           })}

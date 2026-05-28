@@ -35,19 +35,15 @@ export function System() {
       id="system"
       className="relative py-20 md:py-28 overflow-hidden bg-[var(--color-bg-elevated)]"
     >
-      {/* Ambient orbs */}
+      {/* Ambient orbs – static, no infinite animation loop */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
+        <div
           className="absolute top-1/4 left-[10%] h-96 w-96 rounded-full"
-          style={{ background: "var(--color-led-blue)", filter: "blur(140px)", opacity: 0.15 }}
-          animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          style={{ background: "var(--color-led-blue)", filter: "blur(140px)", opacity: 0.12 }}
         />
-        <motion.div
+        <div
           className="absolute bottom-1/4 right-[10%] h-96 w-96 rounded-full"
-          style={{ background: "var(--color-led-violet)", filter: "blur(140px)", opacity: 0.15 }}
-          animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          style={{ background: "var(--color-led-violet)", filter: "blur(140px)", opacity: 0.12 }}
         />
       </div>
 
