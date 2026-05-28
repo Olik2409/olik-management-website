@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+import { Logo } from "@/components/brand/Logo";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -127,13 +127,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/[0.06]">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
             <div className="flex items-center gap-4">
-              <Image
-                src="/images/brand/logo.png"
-                alt=""
-                width={110}
-                height={55}
-                className="h-8 w-auto object-contain opacity-60"
-              />
+              <Logo variant="full" className="h-9 w-auto opacity-80" />
               <p className="text-xs text-[var(--color-text-dim)]">{t("copyright")}</p>
             </div>
             <Link href="/" className="text-xs text-[var(--color-text-dim)] hover:text-white transition-colors">
