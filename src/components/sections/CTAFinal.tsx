@@ -12,7 +12,7 @@ export function CTAFinal() {
   const t = useTranslations("cta_final");
 
   return (
-    <section id="contact" className="relative pt-20 md:pt-28 pb-12 md:pb-16 overflow-hidden ambient-multi">
+    <section id="contact" className="relative pt-16 md:pt-20 pb-10 md:pb-14 overflow-hidden ambient-multi">
       {/* Multi-color LED ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -21,27 +21,30 @@ export function CTAFinal() {
             "radial-gradient(ellipse 60% 50% at 30% 30%, rgba(59,130,246,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(168,85,247,0.1) 0%, transparent 60%)",
         }}
       />
-      {/* Faint brand mark */}
-      <div className="absolute -bottom-10 right-0 w-[40vw] max-w-md aspect-square opacity-[0.07] pointer-events-none hidden md:block">
+      {/* Faint brand mark – right edge, never covered by widget */}
+      <div className="absolute -bottom-10 right-0 w-[28vw] max-w-xs aspect-square opacity-[0.08] pointer-events-none hidden lg:block">
         <Image
           src="/images/brand/OLIK 2.jpg"
           alt=""
           fill
           className="object-contain"
           style={{ mixBlendMode: "screen" }}
-          sizes="40vw"
+          sizes="28vw"
         />
       </div>
 
       <div className="relative container-wide">
-        <div className="grid grid-cols-12 gap-6 items-stretch">
-          <div className="col-span-12 md:col-span-7">
+        {/* 12-col grid: text in 1–6, widget in 7–10, col 11–12 free for brand mark */}
+        <div className="grid grid-cols-12 gap-6 items-center">
+
+          {/* Left – text */}
+          <div className="col-span-12 md:col-span-6">
             <SectionReveal>
               <Badge number="09">{t("badge")}</Badge>
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-balance leading-[0.95]"
+                className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 <span className="text-white">{t("headline")}</span>{" "}
@@ -57,12 +60,12 @@ export function CTAFinal() {
               </h2>
             </SectionReveal>
             <SectionReveal delay={0.2}>
-              <p className="mt-8 text-lg text-[var(--color-text-muted)] leading-relaxed max-w-xl">
+              <p className="mt-5 text-base text-[var(--color-text-muted)] leading-relaxed max-w-md">
                 {t("subheadline")}
               </p>
             </SectionReveal>
             <SectionReveal delay={0.3}>
-              <div className="mt-10 flex flex-col sm:flex-row gap-6 items-start">
+              <div className="mt-7 flex flex-col sm:flex-row gap-5 items-start">
                 <MagneticButton>
                   <Link
                     href="/kontakt"
@@ -88,45 +91,37 @@ export function CTAFinal() {
             </SectionReveal>
           </div>
 
-          <div className="col-span-12 md:col-span-5 md:col-start-7">
+          {/* Right – Calendly widget, columns 7–10 (leaves 11–12 free) */}
+          <div className="col-span-12 md:col-span-4 md:col-start-7">
             <SectionReveal delay={0.2}>
               <div className="relative rounded-3xl border border-white/[0.08] bg-[var(--color-bg-elevated)] overflow-hidden">
                 <div
                   className="absolute inset-0 opacity-30 pointer-events-none"
                   style={{
-                    background:
-                      "linear-gradient(135deg, var(--color-led-blue-glow) 0%, transparent 60%)",
+                    background: "linear-gradient(135deg, var(--color-led-blue-glow) 0%, transparent 60%)",
                   }}
                 />
-                <div className="relative px-6 py-4 border-b border-white/[0.06] flex items-center justify-between">
-                  <span
-                    className="eyebrow flex items-center gap-2"
-                    style={{ color: "var(--color-led-blue-bright)" }}
-                  >
+                <div className="relative px-5 py-3.5 border-b border-white/[0.06] flex items-center justify-between">
+                  <span className="eyebrow flex items-center gap-2" style={{ color: "var(--color-led-blue-bright)" }}>
                     <span
                       className="h-1.5 w-1.5 rounded-full"
-                      style={{
-                        background: "var(--color-led-blue-bright)",
-                        boxShadow: "0 0 12px var(--color-led-blue-glow)",
-                      }}
+                      style={{ background: "var(--color-led-blue-bright)", boxShadow: "0 0 12px var(--color-led-blue-glow)" }}
                     />
                     Calendly · 30 min
                   </span>
                   <span className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)]">
                     <span
                       className="h-1.5 w-1.5 rounded-full animate-pulse"
-                      style={{
-                        background: "var(--color-led-green-bright)",
-                        boxShadow: "0 0 12px var(--color-led-green-glow)",
-                      }}
+                      style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 12px var(--color-led-green-glow)" }}
                     />
                     Online
                   </span>
                 </div>
-                <CalendlyInline url="https://calendly.com/olik-management/30min" minHeight={620} />
+                <CalendlyInline url="https://calendly.com/olik-management/30min" minHeight={540} />
               </div>
             </SectionReveal>
           </div>
+
         </div>
       </div>
     </section>
