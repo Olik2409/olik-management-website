@@ -71,14 +71,14 @@
     "tools": {
       "t1": {
         "title": "Performance Ads",
-        "desc": "Meta Ads and Google Ads optimised for conversion. Server-side tracking, weekly creatives, Advantage+ from day one.",
+        "desc": "Meta Ads and Google Ads optimised for lead gen and e-commerce. Server-side tracking, weekly creatives, Advantage+ and Performance Max from day one.",
         "features": [
           "Meta Ads (Advantage+) + Google Ads (Performance Max)",
           "Server-side tracking (CAPI) – recovers 20–30% of data",
           "15–20 ad creatives per month",
           "Weekly A/B testing and optimisation"
         ],
-        "outcome": "Steady lead flow with a measured CPL"
+        "outcome": "Steady lead flow and growing e-commerce ROAS"
       },
       "t2": {
         "title": "Brand & Tracking",
