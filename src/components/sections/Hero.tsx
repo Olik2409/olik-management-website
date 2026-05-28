@@ -84,13 +84,27 @@ export function Hero() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex items-center gap-3 mb-10 md:mb-16"
+          className="mb-10 md:mb-14"
         >
-          <span
-            className="flex h-2 w-2 rounded-full"
-            style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 16px var(--color-led-green-glow)" }}
-          />
-          <span className="num-marker">[ {t("badge")} ]</span>
+          <div
+            className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 border"
+            style={{
+              background: "rgba(10,10,24,0.7)",
+              borderColor: "rgba(0,255,157,0.25)",
+              backdropFilter: "blur(12px)",
+            }}
+          >
+            <span
+              className="flex h-2 w-2 rounded-full animate-pulse"
+              style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 16px var(--color-led-green-glow)" }}
+            />
+            <span
+              className="text-sm sm:text-base font-semibold tracking-wide"
+              style={{ color: "var(--color-led-green-bright)", fontFamily: "var(--font-mono)" }}
+            >
+              {t("badge")}
+            </span>
+          </div>
         </motion.div>
 
         {/* Two-column layout */}
@@ -187,96 +201,148 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Stats card – desktop only */}
+          {/* Dashboard card – desktop */}
           <motion.div
             initial={{ opacity: 0, x: 32, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 1.6, ease: "easeOut" }}
-            className="hidden lg:block col-span-5"
+            className="hidden lg:flex col-span-5 flex-col"
           >
             <div
-              className="relative rounded-3xl border border-white/[0.08] overflow-hidden"
+              className="relative rounded-2xl border overflow-hidden flex flex-col h-full"
               style={{
-                background: "rgba(10,10,18,0.7)",
-                backdropFilter: "blur(24px)",
-                WebkitBackdropFilter: "blur(24px)",
+                background: "rgba(8,8,20,0.85)",
+                borderColor: "rgba(59,130,246,0.3)",
+                backdropFilter: "blur(28px)",
+                WebkitBackdropFilter: "blur(28px)",
+                boxShadow: "0 0 0 1px rgba(59,130,246,0.1), 0 24px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)",
               }}
             >
-              {/* Inner glow */}
-              <div
-                className="absolute -top-16 -right-16 h-48 w-48 rounded-full pointer-events-none"
-                style={{ background: "var(--color-led-blue)", filter: "blur(80px)", opacity: 0.15 }}
-              />
-              <div
-                className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full pointer-events-none"
-                style={{ background: "var(--color-led-violet)", filter: "blur(80px)", opacity: 0.12 }}
-              />
+              {/* Ambient glow */}
+              <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full pointer-events-none" style={{ background: "var(--color-led-blue)", filter: "blur(80px)", opacity: 0.14 }} />
+              <div className="absolute -bottom-20 -left-10 h-48 w-48 rounded-full pointer-events-none" style={{ background: "var(--color-led-violet)", filter: "blur(80px)", opacity: 0.11 }} />
 
-              <div className="relative p-6 md:p-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <span
-                    className="h-1.5 w-1.5 rounded-full animate-pulse"
-                    style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 10px var(--color-led-green-glow)" }}
-                  />
-                  <span className="num-marker text-white/60">SYSTEM AKTYWNY</span>
+              {/* Header bar */}
+              <div className="relative flex items-center justify-between px-5 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                <div className="flex items-center gap-2.5">
+                  <span className="h-2 w-2 rounded-full animate-pulse" style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 12px var(--color-led-green-glow)" }} />
+                  <span className="num-marker text-white/70 text-[11px] tracking-widest">OLIK DASHBOARD LIVE</span>
                 </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--color-led-blue-bright)", opacity: 0.6 }} />
+                </div>
+              </div>
 
-                <div className="space-y-5">
-                  {metrics.map((m, i) => (
+              {/* Metrics 2×2 */}
+              <div className="relative grid grid-cols-2 gap-px flex-1" style={{ background: "rgba(255,255,255,0.04)" }}>
+                {metrics.map((m, i) => {
+                  const sparklines = [
+                    "0,22 12,18 24,20 36,11 48,15 60,8 72,12 80,4",
+                    "0,24 12,20 24,16 36,18 48,10 60,14 72,6 80,8",
+                    "0,20 12,22 24,14 36,16 48,8 60,12 72,5 80,9",
+                    "0,26 12,22 24,24 36,14 48,18 60,10 72,14 80,6",
+                  ];
+                  return (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, x: 16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 2 + i * 0.12 }}
-                      className="flex items-center justify-between gap-4 pb-5 border-b border-white/[0.06] last:border-0 last:pb-0"
+                      initial={{ opacity: 0, scale: 0.92 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 1.9 + i * 0.1 }}
+                      className="bg-[rgba(8,8,20,0.9)] p-5 flex flex-col justify-between gap-3"
                     >
-                      <p className="text-sm text-[var(--color-text-muted)] leading-tight">{m.label}</p>
-                      <p
-                        className="text-2xl font-bold shrink-0"
-                        style={{
-                          fontFamily: "var(--font-display)",
-                          color: m.color,
-                          textShadow: `0 0 20px ${m.color}60`,
-                        }}
-                      >
-                        {m.value}
-                      </p>
+                      <p className="text-xs text-white/50 leading-snug font-medium">{m.label}</p>
+                      <div>
+                        <svg className="w-full mb-2" height="28" viewBox="0 0 80 28" preserveAspectRatio="none">
+                          <polyline
+                            points={sparklines[i]}
+                            fill="none"
+                            stroke={m.color}
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            opacity="0.5"
+                          />
+                        </svg>
+                        <p
+                          className="text-3xl font-bold leading-none"
+                          style={{ fontFamily: "var(--font-display)", color: m.color, textShadow: `0 0 24px ${m.color}70` }}
+                        >
+                          {m.value}
+                        </p>
+                      </div>
                     </motion.div>
-                  ))}
-                </div>
+                  );
+                })}
+              </div>
+
+              {/* Activity feed */}
+              <div className="relative border-t px-5 py-4 space-y-2.5" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+                <p className="eyebrow text-[10px] text-white/40 mb-3 tracking-widest">OSTATNIA AKTYWNOŚĆ</p>
+                {[
+                  { dot: "var(--color-led-green-bright)", text: "Nowy lead zakwalifikowany", time: "przed chwilą" },
+                  { dot: "var(--color-led-blue-bright)",  text: "Kampania FB – konwersja +12%", time: "2 min temu" },
+                  { dot: "var(--color-led-violet-bright)", text: "AI follow-up wysłany", time: "5 min temu" },
+                ].map((ev, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 2.4 + i * 0.1 }}
+                    className="flex items-center gap-2.5"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: ev.dot, boxShadow: `0 0 8px ${ev.dot}` }} />
+                    <span className="text-xs text-white/70 flex-1 leading-tight">{ev.text}</span>
+                    <span className="text-[10px] text-white/30 shrink-0">{ev.time}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom metrics – mobile only */}
+        {/* Dashboard metrics – mobile */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
-          className="lg:hidden mt-12 grid grid-cols-2 gap-4 border-t border-white/10 pt-8"
+          className="lg:hidden mt-10"
         >
-          {metrics.map((m, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.1 + i * 0.07 }}
-              className="flex flex-col gap-1"
-            >
-              <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full" style={{ background: m.color }} />
-                <span className="num-marker">{String(i + 1).padStart(2, "0")}</span>
-              </div>
-              <p
-                className="text-xl font-bold text-white"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {m.value}
-              </p>
-              <p className="text-xs text-[var(--color-text-muted)]">{m.label}</p>
-            </motion.div>
-          ))}
+          <div
+            className="rounded-2xl border overflow-hidden"
+            style={{
+              background: "rgba(8,8,20,0.85)",
+              borderColor: "rgba(59,130,246,0.25)",
+              backdropFilter: "blur(20px)",
+            }}
+          >
+            {/* Mobile header */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+              <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: "var(--color-led-green-bright)", boxShadow: "0 0 10px var(--color-led-green-glow)" }} />
+              <span className="num-marker text-white/60 text-[10px] tracking-widest">OLIK DASHBOARD LIVE</span>
+            </div>
+            {/* Mobile 2×2 metrics */}
+            <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(255,255,255,0.04)" }}>
+              {metrics.map((m, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 2.1 + i * 0.07 }}
+                  className="bg-[rgba(8,8,20,0.95)] p-4 flex flex-col gap-1"
+                >
+                  <p className="text-[11px] text-white/50 leading-tight">{m.label}</p>
+                  <p
+                    className="text-2xl font-bold"
+                    style={{ fontFamily: "var(--font-display)", color: m.color, textShadow: `0 0 16px ${m.color}60` }}
+                  >
+                    {m.value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </motion.div>
 

@@ -46,15 +46,12 @@ export function Header() {
       >
         <div className="container-wide flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center shrink-0 z-10 group" aria-label="Olik Management">
-            <Image
-              src="/images/brand/LOGO STRONA.png"
-              alt="Olik Management"
-              width={287}
-              height={144}
-              className="h-10 sm:h-11 w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_18px_var(--color-led-blue-glow)]"
-              style={{ maxWidth: "150px" }}
-              priority
-            />
+            <span
+              className="text-xl sm:text-2xl font-bold tracking-tight text-white transition-all duration-500 group-hover:drop-shadow-[0_0_20px_var(--color-led-blue-glow)] select-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              OLIK<span style={{ color: "var(--color-led-blue-bright)" }}> Management</span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
