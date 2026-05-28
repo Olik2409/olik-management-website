@@ -1,21 +1,29 @@
+import { useTranslations } from "next-intl";
 import { Hero } from "@/components/sections/Hero";
-import { Problem } from "@/components/sections/Problem";
+import { Manifesto } from "@/components/sections/Manifesto";
+import { GrowthTools } from "@/components/sections/GrowthTools";
 import { System } from "@/components/sections/System";
-import { Services } from "@/components/sections/Services";
+import { Numbers } from "@/components/sections/Numbers";
 import { Comparison } from "@/components/sections/Comparison";
-import { Results } from "@/components/sections/Results";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { Process } from "@/components/sections/Process";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTAFinal } from "@/components/sections/CTAFinal";
+import { MarqueeTicker } from "@/components/ui/MarqueeTicker";
 
 export default function HomePage() {
+  const t = useTranslations();
+  const marqueeItems = t.raw("marquee_top") as string[];
+
   return (
     <>
       <Hero />
-      <Problem />
+      <MarqueeTicker items={marqueeItems} />
+      <Manifesto />
+      <GrowthTools />
       <System />
-      <Services />
-      <Results />
+      <Numbers />
+      <Testimonials />
       <Comparison />
       <Process />
       <FAQ />

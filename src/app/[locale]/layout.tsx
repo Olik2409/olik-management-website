@@ -9,6 +9,7 @@ import { PageTransition } from "@/components/layout/PageTransition";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCtaBar } from "@/components/ui/MobileCtaBar";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 import "../globals.css";
 
 const syne = Syne({
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${syne.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <CursorGlow />
           <SmoothScroll>
             <Header />
             <PageTransition>

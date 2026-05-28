@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Olik Management – Performance Marketing & System AI dla B2B",
+    "title": "Olik Management – Performance Marketing & System AI",
     "description": "Nie tylko reklamy – budujemy kompletny system, który generuje, kwalifikuje i obsługuje leady 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automatyzacje.",
     "ogTitle": "Olik Management – System, który sprzedaje 24/7",
     "ogDescription": "Performance marketing + AI = leady kwalifikowane w 30 sekund, follow-up w 60 sekund, AI sekretarka odbiera telefony. Umów bezpłatny discovery call."
@@ -8,51 +8,121 @@
   "nav": {
     "services": "Usługi",
     "process": "Proces",
+    "about": "O nas",
     "contact": "Kontakt",
     "cta": "Umów call"
   },
   "hero": {
-    "badge": "Performance Marketing & AI",
-    "headline1": "Performance marketing",
+    "badge": "Performance Marketing & AI System",
+    "headline1": "Performance ads",
     "headline2": "to za mało.",
     "headline3": "Budujemy system,",
     "headline4": "który sprzedaje 24/7.",
     "subheadline": "Twoja reklama generuje kliknięcie. Nasz system kwalifikuje leada w 30 sekund, wysyła follow-up automatycznie i umawia spotkania, kiedy Ty śpisz.",
-    "cta_primary": "Umów bezpłatny discovery call",
+    "cta_primary": "Umów discovery call",
     "cta_secondary": "Zobacz jak to działa",
-    "trust_label": "Zaufali nam:",
-    "scroll_hint": "Przewiń w dół"
+    "scroll_hint": "Przewiń",
+    "metric1_value": "30 sek",
+    "metric1_label": "kwalifikacja leada",
+    "metric2_value": "24/7",
+    "metric2_label": "system aktywny",
+    "metric3_value": "+391%",
+    "metric3_label": "wyższa konwersja",
+    "metric4_value": "<2h",
+    "metric4_label": "czas naszej odpowiedzi"
   },
-  "problem": {
-    "badge": "Problem",
-    "headline": "Twoje leady przeciekają.",
-    "subheadline": "Lead wpada o 22:00. Nikt nie odpowiada. Rano handlowiec dzwoni za późno – lead już kupił u konkurencji.",
-    "scenario": {
-      "step1": "Lead klika reklamę o 22:00",
-      "step2": "Formularz wypełniony – nikt nie odpowiada",
-      "step3": "Lead stygnie przez noc",
-      "step4": "Handlowiec dzwoni po 2 dniach",
-      "step5": "Lead już kupił u konkurencji"
-    },
-    "stats": {
-      "stat1_value": "+391%",
-      "stat1_label": "wyższa konwersja przy kontakcie w ciągu 1 minuty",
-      "stat2_value": "78%",
-      "stat2_label": "kupujących wybiera pierwszą firmę, która odpowie",
-      "stat3_value": "42h",
-      "stat3_label": "średni czas odpowiedzi firm na leady",
-      "stat4_value": "51%",
-      "stat4_label": "leadów nigdy nie jest kontaktowanych"
+  "marquee_top": [
+    "Meta Ads",
+    "Google Ads",
+    "AI Chatbot",
+    "Voice AI",
+    "Server-side Tracking",
+    "Live Dashboard",
+    "CRM Integration",
+    "Lead Automation"
+  ],
+  "manifesto": {
+    "badge": "Manifest",
+    "line1": "Większość agencji ustawia reklamy",
+    "line2": "i wysyła PDF raz w miesiącu.",
+    "line3": "My budujemy maszynę sprzedaży.",
+    "pillars": {
+      "p1": {
+        "title": "Liczby, nie obietnice",
+        "desc": "Każda decyzja opiera się o dane. Każdy klient widzi swój live dashboard. Każdy raport ma konkretną liczbę – nie ogólnik."
+      },
+      "p2": {
+        "title": "Szybkość, zawsze",
+        "desc": "Lead odpowiada w 30 sekund, my odpowiadamy w 2 godziny. Średni czas wdrożenia kampanii: 7 dni. Nowe kreacje co tydzień."
+      },
+      "p3": {
+        "title": "System, nie akcje",
+        "desc": "Nie podpisujemy się pod pojedynczym sukcesem. Budujemy infrastrukturę, która działa, gdy nikt jej nie pilnuje – w nocy, w weekendy, na wakacjach."
+      }
+    }
+  },
+  "growthTools": {
+    "badge": "Twoje narzędzia wzrostu",
+    "headline1": "Cztery filary",
+    "headline2": "kompletnego systemu.",
+    "subheadline": "Każdy element wzmacnia pozostałe. Razem tworzą maszynę, która generuje, kwalifikuje i zamyka leady – bez Twojej ingerencji.",
+    "outcome_label": "Efekt",
+    "cta": "Zobacz pełną ofertę usług",
+    "tools": {
+      "t1": {
+        "title": "Performance Ads",
+        "desc": "Meta Ads i Google Ads zoptymalizowane pod konwersję. Server-side tracking, kreacje co tydzień, advantage+ od pierwszego dnia.",
+        "features": [
+          "Meta Ads (Advantage+) + Google Ads (Performance Max)",
+          "Server-side tracking (CAPI) – odzyskujemy 20–30% danych",
+          "15–20 kreacji reklamowych miesięcznie",
+          "A/B testy i optymalizacja co tydzień"
+        ],
+        "outcome": "Regularny napływ leadów ze zmierzonym CPL"
+      },
+      "t2": {
+        "title": "Brand & Tracking",
+        "desc": "Twój brand musi konwertować. Landing page, pozycjonowanie, tracking i analytics – wszystko zaprojektowane pod sprzedaż.",
+        "features": [
+          "Landing page zoptymalizowany pod konwersję",
+          "Google Tag Manager + zaawansowana atrybucja",
+          "Brandboard, identyfikacja wizualna i pozycjonowanie",
+          "Heatmapy i analiza UX (Hotjar / Clarity)"
+        ],
+        "outcome": "Lepsza konwersja i pełen wgląd w dane"
+      },
+      "t3": {
+        "title": "AI Automation",
+        "desc": "Chatbot kwalifikuje, voice AI odbiera telefony, system sam wysyła follow-up. Twoi handlowcy dostają tylko gotowe leady.",
+        "features": [
+          "Chatbot AI kwalifikujący leady w 30 sekund",
+          "Voice AI – sekretarka odbierająca 24/7",
+          "Automatyczny follow-up (email + SMS)",
+          "Integracja z CRM (HubSpot, Pipedrive, własne)"
+        ],
+        "outcome": "Lead kwalifikowany w 30 sek, follow-up w 60 sek"
+      },
+      "t4": {
+        "title": "Dashboard & Visibility",
+        "desc": "Widzisz cały lejek na żywo. Od kliknięcia do zamkniętej sprzedaży. Plus widoczność w AI: ChatGPT, Perplexity, Gemini.",
+        "features": [
+          "Live dashboard – cały lejek w jednym miejscu",
+          "AEO – widoczność w AI (ChatGPT, Perplexity)",
+          "Cotygodniowy raport ROI i CPA",
+          "Strategia skalowania budżetu"
+        ],
+        "outcome": "Kompletna kontrola nad maszyną wzrostu"
+      }
     }
   },
   "system": {
-    "badge": "Rozwiązanie",
-    "headline": "System, który pracuje",
-    "headline2": "kiedy Ty śpisz.",
-    "subheadline": "7 zintegrowanych kroków zamieniających kliknięcie w umówione spotkanie – w pełni automatycznie.",
+    "badge": "System",
+    "headline": "Od kliknięcia",
+    "headline2": "do umówionego spotkania.",
+    "subheadline": "7 zintegrowanych kroków zamieniających kliknięcie w umówione spotkanie – w pełni automatycznie, bez Twojego udziału.",
     "steps": {
       "step1": { "name": "Reklama", "desc": "Meta Ads lub Google Ads generuje precyzyjnie targetowany ruch", "time": "0 sek" },
-      "step2": { "name": "Strona konwertująca", "desc": "Landing page zoptymalizowany pod konwersję zbiera lead", "time": "~3 min" },
+      "step2": { "name": "Landing Page", "desc": "Zoptymalizowana pod konwersję strona zbiera lead i jego intencję", "time": "~3 min" },
       "step3": { "name": "Chatbot AI", "desc": "Kwalifikuje leada, zadaje pytania kwalifikacyjne i zbiera dane", "time": "30 sek" },
       "step4": { "name": "Follow-up", "desc": "Automatyczny email i SMS wysyłany natychmiast po kwalifikacji", "time": "60 sek" },
       "step5": { "name": "AI Sekretarka", "desc": "Odbiera telefony 24/7, odpowiada na pytania, umawia spotkania", "time": "24/7" },
@@ -61,34 +131,50 @@
     },
     "cta": "Chcę taki system"
   },
+  "numbers": {
+    "badge": "Realny problem",
+    "headline": "Twoje leady",
+    "headline2": "przeciekają.",
+    "subheadline": "78% kupujących wybiera pierwszą firmę, która odpowie. Statystyki pokazują skalę problemu – i potencjał jego naprawy.",
+    "stats": {
+      "stat1_value": "+391%",
+      "stat1_label": "wyższa konwersja przy kontakcie w ciągu 1 minuty od leada",
+      "stat2_value": "78%",
+      "stat2_label": "kupujących wybiera pierwszą firmę, która odpowie",
+      "stat3_value": "42h",
+      "stat3_label": "średni czas odpowiedzi firm na nowy lead",
+      "stat4_value": "51%",
+      "stat4_label": "leadów nigdy nie zostaje skontaktowanych"
+    }
+  },
   "services": {
-    "badge": "Usługi",
-    "headline": "Zacznij od podstaw.",
-    "headline2": "Skaluj kiedy gotowy.",
-    "subheadline": "Każdy klient zaczyna od Tier 1 i rozszerza system wraz z rozwojem firmy.",
+    "badge": "Pakiety współpracy",
+    "headline": "Cztery poziomy",
+    "headline2": "współpracy.",
+    "subheadline": "Każdy klient zaczyna od Performance Ads i rozszerza system wraz z rozwojem firmy.",
     "tiers": {
       "t1": {
         "name": "Tier 1 – Performance Ads",
         "for": "Dla firm, które chcą zacząć generować leady z reklam",
-        "features": ["Kampanie Meta Ads (Advantage+)", "Kampanie Google Ads (Performance Max)", "Server-side tracking (CAPI)", "Miesięczna optymalizacja i raportowanie", "15–20 kreacji reklamowych miesięcznie"],
-        "outcome": "Regularny napływ leadów ze zmierzonym kosztem pozyskania"
+        "features": ["Meta Ads (Advantage+)", "Google Ads (Performance Max)", "Server-side tracking (CAPI)", "Miesięczna optymalizacja", "15–20 kreacji miesięcznie"],
+        "outcome": "Regularny napływ leadów ze zmierzonym CPL"
       },
       "t2": {
-        "name": "Tier 2 – Kreacje & Tracking",
-        "for": "Dla firm, które chcą więcej danych i lepszych kreacji",
-        "features": ["Wszystko z Tier 1", "Zaawansowany server-side tracking", "Google Tag Manager konfiguracja", "A/B testy kreacji", "Szczegółowe raporty atrybucji"],
-        "outcome": "Odzyskanie 20–30% danych traconych przez blokery i iOS"
+        "name": "Tier 2 – Brand & Tracking",
+        "for": "Dla firm, które chcą więcej danych i lepszej konwersji",
+        "features": ["Wszystko z Tier 1", "Server-side tracking", "Landing page CRO", "A/B testy kreacji", "Atrybucja i raporty"],
+        "outcome": "Odzyskanie 20–30% danych traconych przez blokery"
       },
       "t3": {
-        "name": "Tier 3 – System AI",
+        "name": "Tier 3 – AI System",
         "for": "Dla firm, które chcą obsługiwać leady automatycznie",
-        "features": ["Wszystko z Tier 1 i 2", "Chatbot AI kwalifikujący leady", "Voice AI – sekretarka 24/7", "Automatyczny follow-up (email + SMS)", "Integracja z CRM"],
-        "outcome": "Lead kwalifikowany w 30 sekund, follow-up w 60 sekund"
+        "features": ["Wszystko z Tier 1 i 2", "Chatbot AI", "Voice AI – sekretarka 24/7", "Automatyczny follow-up", "Integracja z CRM"],
+        "outcome": "Lead kwalifikowany w 30 sek, follow-up w 60 sek"
       },
       "t4": {
         "name": "Tier 4 – Growth Engine",
         "for": "Dla firm, które chcą kompletnego systemu wzrostu",
-        "features": ["Wszystko z Tier 1, 2 i 3", "AEO – widoczność w AI (ChatGPT, Perplexity)", "Live dashboard całego lejka", "Strategia skalowania budżetu", "Dedykowany opiekun konta"],
+        "features": ["Wszystko z Tier 1, 2 i 3", "AEO – widoczność w AI", "Live dashboard", "Strategia skalowania", "Dedykowany opiekun"],
         "outcome": "Kompletna maszyna wzrostu działająca 24/7"
       }
     },
@@ -100,12 +186,13 @@
     "badge": "Dlaczego Olik",
     "headline": "Typowa agencja vs",
     "headline2": "Olik Management.",
+    "criterion": "Kryterium",
     "rows": {
       "r1": { "label": "Podejście", "typical": "Ustawia reklamy i czeka", "olik": "Buduje kompletny system sprzedaży" },
-      "r2": { "label": "Czas odpowiedzi na lead", "typical": "Lead czeka 48 godzin", "olik": "Kwalifikacja w 30 sekund" },
+      "r2": { "label": "Czas odpowiedzi", "typical": "Lead czeka 48 godzin", "olik": "Kwalifikacja w 30 sekund" },
       "r3": { "label": "Raportowanie", "typical": "PDF raz w miesiącu", "olik": "Live dashboard w czasie rzeczywistym" },
-      "r4": { "label": "Śledzenie danych", "typical": "Brak CAPI – traci 20–30% danych", "olik": "Server-side tracking od pierwszego dnia" },
-      "r5": { "label": "Kreacje reklamowe", "typical": "3–5 podobnych kreacji", "olik": "15–20 różnorodnych kreacji miesięcznie" },
+      "r4": { "label": "Tracking", "typical": "Brak CAPI – traci 20–30% danych", "olik": "Server-side od pierwszego dnia" },
+      "r5": { "label": "Kreacje reklamowe", "typical": "3–5 podobnych kreacji", "olik": "15–20 różnorodnych miesięcznie" },
       "r6": { "label": "Obsługa telefonów", "typical": "Recepcja nie odbiera po godzinach", "olik": "AI sekretarka odbiera 24/7" }
     },
     "col_typical": "Typowa agencja",
@@ -115,7 +202,7 @@
     "badge": "Wyniki",
     "headline": "Rezultaty,",
     "headline2": "które mówią same za siebie.",
-    "subheadline": "Rzeczywiste wyniki klientów. Podstawimy Twoje case study po onboardingu.",
+    "subheadline": "Rzeczywiste wyniki klientów. Po onboardingu podstawimy Twoje case study.",
     "metrics": {
       "m1_value": "2 400 000 zł",
       "m1_label": "Zarządzany budżet reklamowy",
@@ -133,20 +220,45 @@
       },
       "c2": {
         "industry": "B2B – usługi finansowe",
-        "problem": "Leady z formularzy nigdy nie były kontaktowane w ciągu 24 godzin",
+        "problem": "Leady z formularzy nigdy nie były kontaktowane w ciągu 24h",
         "action": "Wdrożenie chatbota AI, automatycznego follow-up i voice AI sekretarki",
-        "result": "Czas odpowiedzi: z 38 godzin do 45 sekund, konwersja leadów +210%"
+        "result": "Czas odpowiedzi: z 38h do 45 sek, konwersja +210%"
       },
       "c3": {
         "industry": "Lead gen – branża remontowa",
-        "problem": "Kampanie Google Ads bez konwersji, brak śledzenia połączeń telefonicznych",
+        "problem": "Kampanie Google Ads bez konwersji, brak śledzenia połączeń",
         "action": "Performance Max, tracking połączeń, landing page z chatbotem",
-        "result": "Koszt pozyskania leada obniżony o 64%, 3x więcej umówionych spotkań"
+        "result": "CPL obniżony o 64%, 3x więcej umówionych spotkań"
       }
     },
     "case_problem": "Problem:",
     "case_action": "Co zrobiliśmy:",
     "case_result": "Wynik:"
+  },
+  "testimonials": {
+    "badge": "Co mówią klienci",
+    "headline": "Realne firmy.",
+    "headline2": "Realne wyniki.",
+    "items": {
+      "q1": {
+        "quote": "Po 60 dniach mieliśmy więcej leadów niż przez poprzedni rok. System chatbota odsiał tych słabych, więc handlowcy dostają tylko gotowych do rozmowy.",
+        "name": "Marcin K.",
+        "role": "CEO, firma B2B z branży finansowej",
+        "initials": "MK"
+      },
+      "q2": {
+        "quote": "Przeszliśmy z PDF-ów raz w miesiącu na live dashboard. Po raz pierwszy widzimy gdzie tracimy pieniądze – i gdzie warto dolać budżetu.",
+        "name": "Anna W.",
+        "role": "Head of Marketing, e-commerce odzieżowy",
+        "initials": "AW"
+      },
+      "q3": {
+        "quote": "AI sekretarka odbiera telefony w weekendy i wieczorami. Wcześniej traciliśmy te leady. Teraz mamy umówione spotkania zanim wstaniemy w poniedziałek.",
+        "name": "Tomasz R.",
+        "role": "Właściciel, firma remontowa",
+        "initials": "TR"
+      }
+    }
   },
   "process": {
     "badge": "Jak pracujemy",
@@ -155,7 +267,7 @@
     "steps": {
       "s1": { "num": "01", "name": "Discovery Call", "desc": "30-minutowa rozmowa bez zobowiązań. Analizujemy Twój biznes, obecne działania marketingowe i cel, który chcesz osiągnąć." },
       "s2": { "num": "02", "name": "Audyt i strategia", "desc": "Bezpłatny audyt kont reklamowych i pełna strategia systemu. Otrzymujesz konkretny plan z liczbami – zanim podpiszesz umowę." },
-      "s3": { "num": "03", "name": "Wdrożenie systemu", "desc": "Konfiguracja wszystkich elementów systemu: kampanie, tracking, chatbot, automatyzacje. Pełne wdrożenie w 14–21 dni." },
+      "s3": { "num": "03", "name": "Wdrożenie systemu", "desc": "Konfiguracja wszystkich elementów: kampanie, tracking, chatbot, automatyzacje. Pełne wdrożenie w 14–21 dni." },
       "s4": { "num": "04", "name": "Optymalizacja i skalowanie", "desc": "Cotygodniowa optymalizacja na podstawie danych. Skalujemy to, co działa, eliminujemy to, co nie przynosi efektów." }
     }
   },
@@ -173,11 +285,11 @@
       },
       "q3": {
         "q": "Czy podpisuję długą umowę?",
-        "a": "Pracujemy na umowach miesięcznych z miesięcznym okresem wypowiedzenia. Zależy nam na tym, żebyś zostawał, bo widzisz wyniki – nie dlatego, że musisz."
+        "a": "Pracujemy na umowach miesięcznych z miesięcznym okresem wypowiedzenia. Zależy nam, żebyś zostawał, bo widzisz wyniki – nie dlatego, że musisz."
       },
       "q4": {
         "q": "Czym różnicie się od innych agencji?",
-        "a": "Większość agencji ustawia reklamy i wysyła PDF raz w miesiącu. My budujemy kompletny system: reklama → landing → chatbot AI → automatyczny follow-up → AI sekretarka → CRM → dashboard. System pracuje 24/7, nie tylko w godzinach pracy agencji."
+        "a": "Większość agencji ustawia reklamy i wysyła PDF raz w miesiącu. My budujemy kompletny system: reklama → landing → chatbot AI → automatyczny follow-up → AI sekretarka → CRM → dashboard. System pracuje 24/7."
       },
       "q5": {
         "q": "Z jakimi branżami pracujecie?",
@@ -216,7 +328,7 @@
     },
     "contact_title": "Kontakt",
     "email": "kontakt@olikmanagement.com",
-    "phone": "+48 000 000 000",
+    "phone": "+48 788 589 821",
     "social_title": "Social media",
     "copyright": "© 2025 Olik Management. Wszelkie prawa zastrzeżone.",
     "privacy": "Polityka prywatności"

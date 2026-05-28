@@ -22,13 +22,15 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const navLinks = [
     { href: "/uslugi", label: t("services") },
     { href: "/case-studies", label: "Case Studies" },
-    { href: "/o-nas", label: "O nas" },
+    { href: "/o-nas", label: t("about") },
     { href: "/kontakt", label: t("contact") },
   ];
 
@@ -38,18 +40,18 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "border-b border-white/[0.06] bg-[var(--color-bg)]/80 backdrop-blur-xl"
+            ? "border-b border-white/[0.06] bg-[var(--color-bg)]/85 backdrop-blur-xl"
             : "bg-transparent"
         )}
       >
         <div className="container-wide flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center shrink-0 z-10">
+          <Link href="/" className="flex items-center shrink-0 z-10 group">
             <Image
               src="/images/brand/logo.png"
               alt="Olik Management"
               width={140}
               height={70}
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_16px_var(--color-led-blue-glow)]"
               priority
             />
           </Link>
@@ -59,9 +61,9 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 link-underline"
+                className="relative text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 group"
               >
-                {link.label}
+                <span className="link-underline">{link.label}</span>
               </Link>
             ))}
           </nav>
@@ -77,10 +79,20 @@ export function Header() {
             <span className="h-4 w-px bg-white/15" />
             <Link
               href="/kontakt"
-              className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--color-accent-bright)] transition-colors"
+              className="group inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all"
+              style={{
+                background: "var(--color-led-blue)",
+                boxShadow: "0 0 0 0 var(--color-led-blue-glow)",
+              }}
             >
               {t("cta")}
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/80 group-hover:bg-white transition-colors" />
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: "var(--color-led-green-bright)",
+                  boxShadow: "0 0 8px var(--color-led-green-glow)",
+                }}
+              />
             </Link>
           </div>
 
@@ -101,9 +113,21 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 lg:hidden bg-[var(--color-bg)]"
+            className="fixed inset-0 z-40 lg:hidden bg-[var(--color-bg)] overflow-hidden"
           >
-            <div className="flex h-full flex-col container-wide pt-28 pb-12">
+            {/* LED orbs in menu bg */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="absolute top-1/4 left-1/4 h-80 w-80 rounded-full"
+                style={{ background: "var(--color-led-blue)", filter: "blur(120px)", opacity: 0.18 }}
+              />
+              <div
+                className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full"
+                style={{ background: "var(--color-led-violet)", filter: "blur(120px)", opacity: 0.15 }}
+              />
+            </div>
+
+            <div className="relative flex h-full flex-col container-wide pt-28 pb-12">
               <nav className="flex-1 flex flex-col gap-2">
                 {navLinks.map((link, i) => (
                   <motion.div
@@ -140,7 +164,11 @@ export function Header() {
                 <Link
                   href="/kontakt"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white"
+                  className="rounded-full px-6 py-3 text-sm font-semibold text-white"
+                  style={{
+                    background: "var(--color-led-blue)",
+                    boxShadow: "0 8px 32px var(--color-led-blue-glow)",
+                  }}
                 >
                   {t("cta")}
                 </Link>

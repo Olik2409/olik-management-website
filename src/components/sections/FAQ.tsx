@@ -6,18 +6,27 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
 import { Plus } from "lucide-react";
 
-const qKeys = ["q1","q2","q3","q4","q5","q6"] as const;
+const qKeys = ["q1", "q2", "q3", "q4", "q5", "q6"] as const;
 
 export function FAQ() {
   const t = useTranslations("faq");
   const [open, setOpen] = useState<string | null>("q1");
 
   return (
-    <section id="faq" className="relative py-32 md:py-48 bg-[var(--color-bg-elevated)]">
-      <div className="container-wide">
+    <section id="faq" className="relative py-32 md:py-48 bg-[var(--color-bg-elevated)] overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-50"
+        style={{
+          background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(59,130,246,0.06) 0%, transparent 60%)",
+        }}
+      />
+
+      <div className="relative container-wide">
         <div className="grid grid-cols-12 gap-6 mb-16 md:mb-20">
           <div className="col-span-12 md:col-span-8">
-            <SectionReveal><Badge number="08">{t("badge")}</Badge></SectionReveal>
+            <SectionReveal>
+              <Badge number="08">{t("badge")}</Badge>
+            </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
                 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
@@ -41,10 +50,20 @@ export function FAQ() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-start gap-6 md:gap-8 flex-1">
-                      <span className="num-marker pt-2 hidden md:block">{String(i + 1).padStart(2, "0")}</span>
                       <span
-                        className="text-xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-[var(--color-accent-bright)] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-display)" }}
+                        className="num-marker pt-2 hidden md:block transition-colors duration-300"
+                        style={{
+                          color: isOpen ? "var(--color-led-blue-bright)" : undefined,
+                        }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        className="text-xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-[var(--color-led-blue-bright)] transition-colors duration-300"
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          textShadow: isOpen ? "0 0 24px var(--color-led-blue-glow)" : "none",
+                        }}
                       >
                         {t(`items.${key}.q`)}
                       </span>
@@ -52,10 +71,11 @@ export function FAQ() {
                     <motion.span
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="shrink-0 flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.12] mt-1"
+                      className="shrink-0 flex h-10 w-10 items-center justify-center rounded-full border mt-1"
                       style={{
-                        background: isOpen ? "var(--color-accent)" : "transparent",
-                        borderColor: isOpen ? "var(--color-accent)" : undefined,
+                        background: isOpen ? "var(--color-led-blue)" : "transparent",
+                        borderColor: isOpen ? "var(--color-led-blue)" : "rgba(255,255,255,0.12)",
+                        boxShadow: isOpen ? "0 0 24px var(--color-led-blue-glow)" : "none",
                       }}
                     >
                       <Plus size={16} className="text-white" />
