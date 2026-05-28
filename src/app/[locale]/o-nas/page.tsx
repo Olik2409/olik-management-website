@@ -2,7 +2,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
 import { CTAFinal } from "@/components/sections/CTAFinal";
-import Image from "next/image";
+import { AuroraShader } from "@/components/ui/animated-shader-background";
 
 export default function ONasPage() {
   return (
@@ -47,23 +47,9 @@ export default function ONasPage() {
             <div className="col-span-12 md:col-span-5">
               <SectionReveal>
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08]">
-                  <Image
-                    src="/images/brand/Owner.png"
-                    alt="Oliwier Kochanowicz – Olik Management"
-                    fill
-                    className="object-cover object-top"
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="eyebrow text-white/70 mb-2">Founder</p>
-                    <p
-                      className="text-2xl font-bold text-white"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      Oliwier Kochanowicz
-                    </p>
-                  </div>
+                  <AuroraShader />
+                  {/* subtle vignette to blend edges */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                 </div>
               </SectionReveal>
             </div>
