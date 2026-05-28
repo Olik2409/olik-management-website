@@ -11,7 +11,7 @@ export function Comparison() {
   const t = useTranslations("comparison");
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden ambient-blue-violet">
+    <section className="relative pt-10 md:pt-14 pb-20 md:pb-28 overflow-hidden ambient-blue-violet">
       <div className="container-wide">
         <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
           <div className="col-span-12 md:col-span-8">

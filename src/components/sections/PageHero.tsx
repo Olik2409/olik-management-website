@@ -14,10 +14,10 @@ export function PageHero({ number, eyebrow, title, titleAccent, description }: P
   return (
     <section className="relative pt-32 md:pt-36 pb-14 md:pb-20 overflow-hidden">
       <div
-        className="absolute inset-0 opacity-50 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 85% 60%, rgba(168,85,247,0.10) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 15% 80%, rgba(0,255,157,0.07) 0%, transparent 60%)",
         }}
       />
       <div className="relative container-wide">

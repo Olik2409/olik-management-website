@@ -16,10 +16,10 @@ export function Footer() {
         }}
       />
 
-      <div className="relative container-wide pt-20 md:pt-28 pb-10 md:pb-14">
+      <div className="relative container-wide pt-12 md:pt-16 pb-10 md:pb-14">
 
         {/* Top CTA row */}
-        <div className="mb-16 md:mb-20 grid grid-cols-12 gap-6 items-end">
+        <div className="mb-16 md:mb-20 grid grid-cols-12 gap-6 items-start">
           <div className="col-span-12 md:col-span-7">
             <p className="eyebrow mb-5 text-[var(--color-text-muted)]">{t("links_title")}</p>
             <h2
@@ -37,7 +37,7 @@ export function Footer() {
               <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
-          <div className="col-span-12 md:col-span-5 md:pt-4">
+          <div className="col-span-12 md:col-span-5 md:pt-12">
             <p className="text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed">{t("desc")}</p>
           </div>
         </div>

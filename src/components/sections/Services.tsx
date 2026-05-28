@@ -19,8 +19,15 @@ export function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="relative py-20 md:py-28">
-      <div className="container-wide">
+    <section id="services" className="relative py-20 md:py-28 overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 20% 0%, rgba(59,130,246,0.10) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 100%, rgba(168,85,247,0.09) 0%, transparent 60%)",
+        }}
+      />
+      <div className="relative container-wide">
         <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
           <div className="col-span-12 md:col-span-7">
             <SectionReveal>

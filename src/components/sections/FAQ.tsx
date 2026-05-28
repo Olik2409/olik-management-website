@@ -13,7 +13,7 @@ export function FAQ() {
   const [open, setOpen] = useState<string | null>("q1");
 
   return (
-    <section id="faq" className="relative py-20 md:py-28 bg-[var(--color-bg-elevated)] overflow-hidden">
+    <section id="faq" className="relative py-12 md:py-16 bg-[var(--color-bg-elevated)] overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none opacity-50"
         style={{
