@@ -148,33 +148,53 @@
     }
   },
   "services": {
-    "badge": "Partnership packages",
-    "headline": "Four tiers",
-    "headline2": "of partnership.",
-    "subheadline": "Every client starts at Performance Ads and expands the system as the business grows.",
+    "badge": "How we work together",
+    "headline": "How we can",
+    "headline2": "work together.",
+    "subheadline": "From first campaigns to a complete sales system running 24/7. Every engagement is tailored to the stage of your business.",
     "tiers": {
       "t1": {
-        "name": "Tier 1 – Performance Ads",
-        "for": "For companies that want to start generating leads from ads",
-        "features": ["Meta Ads (Advantage+)", "Google Ads (Performance Max)", "Server-side tracking (CAPI)", "Monthly optimisation", "15–20 creatives per month"],
+        "name": "Performance Advertising",
+        "for": "For companies that want a steady flow of leads from paid ads",
+        "features": [
+          "Meta Ads (Advantage+) and Google Ads (Performance Max)",
+          "Server-side tracking (CAPI) – recovers 20–30% of lost data",
+          "15–20 varied ad creatives per month",
+          "Weekly A/B testing and cost optimisation"
+        ],
         "outcome": "Steady lead flow with a measured CPL"
       },
       "t2": {
-        "name": "Tier 2 – Brand & Tracking",
-        "for": "For companies that want more data and better conversion",
-        "features": ["Everything in Tier 1", "Server-side tracking", "Landing page CRO", "Creative A/B testing", "Attribution and reports"],
-        "outcome": "Recover 20–30% of data lost to blockers"
+        "name": "Brand & Tracking",
+        "for": "For companies that want full data control and better landing page conversion",
+        "features": [
+          "Meta Ads and Google Ads with full optimisation",
+          "Server-side tracking, GTM and advanced attribution",
+          "Conversion-optimised landing page (CRO)",
+          "Heatmaps and UX analysis (Hotjar / Microsoft Clarity)"
+        ],
+        "outcome": "Better conversion and full visibility into marketing data"
       },
       "t3": {
-        "name": "Tier 3 – AI System",
-        "for": "For companies that want to handle leads automatically",
-        "features": ["Everything in Tier 1 & 2", "AI chatbot", "Voice AI – 24/7 receptionist", "Automatic follow-up", "CRM integration"],
+        "name": "AI Lead Automation",
+        "for": "For companies that want to automatically qualify and handle leads",
+        "features": [
+          "Full Performance + Brand & Tracking package",
+          "AI chatbot qualifying leads in 30 seconds",
+          "Voice AI – virtual receptionist answering 24/7",
+          "Automatic follow-up email + SMS and CRM integration"
+        ],
         "outcome": "Lead qualified in 30 sec, follow-up in 60 sec"
       },
       "t4": {
-        "name": "Tier 4 – Growth Engine",
-        "for": "For companies that want a complete growth system",
-        "features": ["Everything in Tier 1, 2 & 3", "AEO – visibility in AI", "Live dashboard", "Scaling strategy", "Dedicated manager"],
+        "name": "Growth Engine",
+        "for": "For companies that want a complete growth system with full visibility",
+        "features": [
+          "Complete system: ads, AI, automations, CRM",
+          "AEO – visibility in AI search engines (ChatGPT, Perplexity)",
+          "Live dashboard with the full sales funnel in real time",
+          "Budget scaling strategy and dedicated account manager"
+        ],
         "outcome": "A complete growth machine running 24/7"
       }
     },
@@ -277,7 +297,7 @@
     "items": {
       "q1": {
         "q": "How much does it cost?",
-        "a": "Collaboration starts at Tier 1 – pricing depends on scope and ad budget. Everything is discussed on the discovery call and we present a concrete offer after the audit. No hidden costs."
+        "a": "Pricing depends on the scope of work and your ad budget. Everything is discussed on the discovery call and we present a concrete offer after the free audit. No hidden costs."
       },
       "q2": {
         "q": "How quickly will I see results?",

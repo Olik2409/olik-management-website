@@ -90,7 +90,7 @@ export function Services() {
                       }}
                     />
                     <span className="num-marker" style={{ color }}>
-                      Tier {String(i + 1).padStart(2, "0")}
+                      {String(i + 1).padStart(2, "0")} / 04
                     </span>
                   </div>
 
@@ -98,7 +98,7 @@ export function Services() {
                     className="relative text-3xl md:text-4xl font-bold text-white mb-3"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    {t(`tiers.${tier}.name`).split("–")[1]?.trim() || t(`tiers.${tier}.name`)}
+                    {t(`tiers.${tier}.name`)}
                   </h3>
                   <p className="relative text-sm text-[var(--color-text-muted)] mb-8 leading-relaxed">
                     {t(`tiers.${tier}.for`)}

@@ -49,9 +49,10 @@ export function Header() {
             <Image
               src="/images/brand/logo.png"
               alt="Olik Management"
-              width={140}
-              height={70}
-              className="h-10 w-auto object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_16px_var(--color-led-blue-glow)]"
+              width={220}
+              height={110}
+              className="h-11 w-auto object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_20px_var(--color-led-blue-glow)]"
+              style={{ maxWidth: "180px" }}
               priority
             />
           </Link>

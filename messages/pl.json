@@ -148,33 +148,53 @@
     }
   },
   "services": {
-    "badge": "Pakiety współpracy",
-    "headline": "Cztery poziomy",
-    "headline2": "współpracy.",
-    "subheadline": "Każdy klient zaczyna od Performance Ads i rozszerza system wraz z rozwojem firmy.",
+    "badge": "Zakres współpracy",
+    "headline": "Jak możemy",
+    "headline2": "razem pracować.",
+    "subheadline": "Od pierwszych kampanii po kompletny system sprzedaży działający 24/7. Każdy zakres dostosowujemy do etapu rozwoju Twojej firmy.",
     "tiers": {
       "t1": {
-        "name": "Tier 1 – Performance Ads",
-        "for": "Dla firm, które chcą zacząć generować leady z reklam",
-        "features": ["Meta Ads (Advantage+)", "Google Ads (Performance Max)", "Server-side tracking (CAPI)", "Miesięczna optymalizacja", "15–20 kreacji miesięcznie"],
+        "name": "Performance Advertising",
+        "for": "Dla firm, które chcą generować stały napływ leadów z reklam płatnych",
+        "features": [
+          "Meta Ads (Advantage+) i Google Ads (Performance Max)",
+          "Server-side tracking (CAPI) – odzyskujemy 20–30% danych",
+          "15–20 różnorodnych kreacji reklamowych miesięcznie",
+          "Cotygodniowe testy A/B i optymalizacja kosztów"
+        ],
         "outcome": "Regularny napływ leadów ze zmierzonym CPL"
       },
       "t2": {
-        "name": "Tier 2 – Brand & Tracking",
-        "for": "Dla firm, które chcą więcej danych i lepszej konwersji",
-        "features": ["Wszystko z Tier 1", "Server-side tracking", "Landing page CRO", "A/B testy kreacji", "Atrybucja i raporty"],
-        "outcome": "Odzyskanie 20–30% danych traconych przez blokery"
+        "name": "Brand & Tracking",
+        "for": "Dla firm, które chcą pełnej kontroli nad danymi i lepszej konwersji strony",
+        "features": [
+          "Kampanie Meta Ads i Google Ads z pełną optymalizacją",
+          "Server-side tracking, GTM i zaawansowana atrybucja",
+          "Landing page zoptymalizowany pod konwersję (CRO)",
+          "Heatmapy i analiza UX (Hotjar / Microsoft Clarity)"
+        ],
+        "outcome": "Lepsza konwersja i pełen wgląd w dane marketingowe"
       },
       "t3": {
-        "name": "Tier 3 – AI System",
-        "for": "Dla firm, które chcą obsługiwać leady automatycznie",
-        "features": ["Wszystko z Tier 1 i 2", "Chatbot AI", "Voice AI – sekretarka 24/7", "Automatyczny follow-up", "Integracja z CRM"],
+        "name": "AI Lead Automation",
+        "for": "Dla firm, które chcą automatycznie kwalifikować i obsługiwać leady",
+        "features": [
+          "Pełen pakiet Performance + Brand & Tracking",
+          "Chatbot AI kwalifikujący leady w 30 sekund",
+          "Voice AI – wirtualna sekretarka odbierająca 24/7",
+          "Automatyczny follow-up email + SMS i integracja CRM"
+        ],
         "outcome": "Lead kwalifikowany w 30 sek, follow-up w 60 sek"
       },
       "t4": {
-        "name": "Tier 4 – Growth Engine",
-        "for": "Dla firm, które chcą kompletnego systemu wzrostu",
-        "features": ["Wszystko z Tier 1, 2 i 3", "AEO – widoczność w AI", "Live dashboard", "Strategia skalowania", "Dedykowany opiekun"],
+        "name": "Growth Engine",
+        "for": "Dla firm, które chcą kompletnego systemu wzrostu z pełną widocznością",
+        "features": [
+          "Kompletny system: reklamy, AI, automatyzacje, CRM",
+          "AEO – widoczność w wyszukiwarkach AI (ChatGPT, Perplexity)",
+          "Live dashboard z całym lejkiem sprzedażowym na żywo",
+          "Strategia skalowania budżetu i dedykowany opiekun"
+        ],
         "outcome": "Kompletna maszyna wzrostu działająca 24/7"
       }
     },
@@ -277,7 +297,7 @@
     "items": {
       "q1": {
         "q": "Ile to kosztuje?",
-        "a": "Współpraca zaczyna się od Tier 1 – ceny zależą od zakresu i budżetu reklamowego. Wszystko omawiamy na discovery call i przedstawiamy konkretną ofertę po audycie. Bez ukrytych kosztów."
+        "a": "Ceny zależą od zakresu współpracy i budżetu reklamowego. Wszystko omawiamy na discovery call i przedstawiamy konkretną ofertę po bezpłatnym audycie. Bez ukrytych kosztów."
       },
       "q2": {
         "q": "Jak szybko zobaczę pierwsze efekty?",
