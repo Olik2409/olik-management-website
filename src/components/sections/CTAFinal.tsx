@@ -88,7 +88,7 @@ export function CTAFinal() {
             </SectionReveal>
           </div>
 
-          <div className="col-span-12 md:col-span-4 md:col-start-8">
+          <div className="col-span-12 md:col-span-5 md:col-start-7">
             <SectionReveal delay={0.2}>
               <div className="relative rounded-3xl border border-white/[0.08] bg-[var(--color-bg-elevated)] overflow-hidden">
                 <div
