@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
-import { Check, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tierKeys = ["t1","t2","t3","t4"] as const;
@@ -13,85 +13,98 @@ export function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <div className="text-center mb-16">
-          <SectionReveal><Badge>{t("badge")}</Badge></SectionReveal>
-          <SectionReveal delay={0.1}>
-            <h2
-              className="mt-4 text-4xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              {t("headline")}{" "}
-              <span style={{ color: "var(--color-accent)" }}>{t("headline2")}</span>
-            </h2>
-          </SectionReveal>
-          <SectionReveal delay={0.2}>
-            <p className="mt-4 text-lg text-[var(--color-text-secondary)] max-w-xl mx-auto">
-              {t("subheadline")}
-            </p>
-          </SectionReveal>
+    <section id="services" className="relative py-32 md:py-48">
+      <div className="container-wide">
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+          <div className="col-span-12 md:col-span-7">
+            <SectionReveal><Badge number="04">{t("badge")}</Badge></SectionReveal>
+            <SectionReveal delay={0.1}>
+              <h2
+                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                <span className="text-white">{t("headline")}</span>{" "}
+                <span className="text-[var(--color-text-muted)] italic">{t("headline2")}</span>
+              </h2>
+            </SectionReveal>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:pt-12">
+            <SectionReveal delay={0.2}>
+              <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
+                {t("subheadline")}
+              </p>
+            </SectionReveal>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {tierKeys.map((tier, i) => {
             const isPopular = tier === popularTier;
             const features = t.raw(`tiers.${tier}.features`) as string[];
             return (
-              <SectionReveal key={tier} delay={0.1 * i}>
+              <SectionReveal key={tier} delay={0.08 * i}>
                 <div
                   className={cn(
-                    "relative flex flex-col rounded-2xl border p-6 h-full transition-all duration-300 hover:-translate-y-1",
+                    "group relative flex flex-col p-8 md:p-10 h-full rounded-3xl border transition-all duration-500 hover:-translate-y-1",
                     isPopular
-                      ? "border-[var(--color-accent)]/50 bg-[var(--color-surface-elevated)]"
-                      : "border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-subtle)]"
+                      ? "border-[var(--color-accent)] bg-gradient-to-b from-[var(--color-surface)] to-[var(--color-bg-elevated)]"
+                      : "border-white/[0.08] bg-[var(--color-bg-elevated)] hover:border-white/[0.16]"
                   )}
-                  style={isPopular ? { boxShadow: "var(--shadow-glow)" } : {}}
                 >
                   {isPopular && (
-                    <div className="absolute -top-3 left-6">
-                      <span className="rounded-full bg-[var(--color-accent)] px-3 py-1 text-xs font-bold text-black">
+                    <div className="absolute top-6 right-6">
+                      <span
+                        className="rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase"
+                        style={{ background: "var(--color-accent)", color: "white" }}
+                      >
                         {t("badge_popular")}
                       </span>
                     </div>
                   )}
 
+                  <div className="flex items-center gap-3 mb-5">
+                    <span
+                      className="num-marker"
+                      style={{ color: isPopular ? "var(--color-accent-bright)" : undefined }}
+                    >
+                      Tier {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
                   <h3
-                    className="text-base font-bold text-[var(--color-text-primary)] mb-2"
+                    className="text-3xl md:text-4xl font-bold text-white mb-3"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    {t(`tiers.${tier}.name`)}
+                    {t(`tiers.${tier}.name`).split("–")[1]?.trim() || t(`tiers.${tier}.name`)}
                   </h3>
-                  <p className="text-xs text-[var(--color-text-muted)] mb-6 leading-relaxed">
+                  <p className="text-sm text-[var(--color-text-muted)] mb-8 leading-relaxed">
                     {t(`tiers.${tier}.for`)}
                   </p>
 
-                  <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-3">
-                      {t("feature_label")}
-                    </p>
-                    <ul className="space-y-2 mb-6">
-                      {features.map((f, fi) => (
-                        <li key={fi} className="flex items-start gap-2 text-sm text-[var(--color-text-secondary)]">
-                          <Check
-                            size={14}
-                            className="mt-0.5 shrink-0"
-                            style={{ color: "var(--color-accent)" }}
-                          />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {features.map((f, fi) => (
+                      <li key={fi} className="flex items-start gap-3 text-sm text-white/90">
+                        <Check
+                          size={14}
+                          className="mt-1 shrink-0"
+                          style={{ color: isPopular ? "var(--color-accent-bright)" : "var(--color-text-muted)" }}
+                        />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <div
-                    className="rounded-xl p-4 mt-auto"
-                    style={{ background: "var(--color-accent-muted)" }}
+                    className="rounded-2xl p-5 border"
+                    style={{
+                      background: isPopular ? "var(--color-accent-soft)" : "var(--color-surface)",
+                      borderColor: isPopular ? "rgba(59, 130, 246, 0.3)" : "var(--color-border-subtle)",
+                    }}
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--color-accent)" }}>
+                    <p className="eyebrow mb-2" style={{ color: isPopular ? "var(--color-accent-bright)" : undefined }}>
                       {t("outcome_label")}
                     </p>
-                    <p className="text-sm text-[var(--color-text-secondary)]">
+                    <p className="text-sm font-medium text-white">
                       {t(`tiers.${tier}.outcome`)}
                     </p>
                   </div>
@@ -101,14 +114,14 @@ export function Services() {
           })}
         </div>
 
-        <SectionReveal delay={0.4}>
-          <div className="mt-10 flex justify-center">
+        <SectionReveal delay={0.3}>
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-accent)] hover:gap-3 transition-all duration-200"
+              href="/uslugi"
+              className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
             >
-              Porozmawiajmy o odpowiednim Tier dla Twojej firmy
-              <ArrowRight size={16} />
+              <span className="link-underline">Zobacz pełną ofertę</span>
+              <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
         </SectionReveal>

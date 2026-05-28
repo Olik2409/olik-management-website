@@ -9,52 +9,45 @@ export function Process() {
   const t = useTranslations("process");
 
   return (
-    <section id="process" className="py-24 md:py-32 bg-[var(--color-bg-secondary)]">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <div className="text-center mb-16">
-          <SectionReveal><Badge>{t("badge")}</Badge></SectionReveal>
-          <SectionReveal delay={0.1}>
-            <h2
-              className="mt-4 text-4xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              {t("headline")}{" "}
-              <span style={{ color: "var(--color-accent)" }}>{t("headline2")}</span>
-            </h2>
-          </SectionReveal>
+    <section id="process" className="relative py-32 md:py-48">
+      <div className="container-wide">
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+          <div className="col-span-12 md:col-span-8">
+            <SectionReveal><Badge number="07">{t("badge")}</Badge></SectionReveal>
+            <SectionReveal delay={0.1}>
+              <h2
+                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                <span className="text-white">{t("headline")}</span>{" "}
+                <span className="text-[var(--color-text-muted)] italic">{t("headline2")}</span>
+              </h2>
+            </SectionReveal>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">
           {stepKeys.map((key, i) => (
-            <SectionReveal key={key} delay={0.12 * i}>
-              <div className="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 h-full">
-                {/* Step number */}
-                <div
-                  className="text-6xl font-bold mb-4 leading-none"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    color: "var(--color-accent)",
-                    opacity: 0.25,
-                  }}
-                >
-                  {t(`steps.${key}.num`)}
+            <SectionReveal key={key} delay={0.1 * i}>
+              <div className="relative bg-[var(--color-bg)] p-8 md:p-12 h-full flex flex-col group hover:bg-[var(--color-bg-elevated)] transition-colors duration-500">
+                <div className="flex items-start justify-between mb-8">
+                  <span
+                    className="text-7xl md:text-8xl lg:text-9xl font-bold leading-none text-white/[0.06] group-hover:text-[var(--color-accent)]/30 transition-colors duration-700"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {t(`steps.${key}.num`)}
+                  </span>
+                  <span className="num-marker mt-2">krok {i + 1} / 4</span>
                 </div>
                 <h3
-                  className="text-lg font-bold text-[var(--color-text-primary)] mb-3"
+                  className="text-3xl md:text-4xl font-bold text-white mb-4"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {t(`steps.${key}.name`)}
                 </h3>
-                <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                <p className="text-base text-[var(--color-text-muted)] leading-relaxed">
                   {t(`steps.${key}.desc`)}
                 </p>
-
-                {/* Connector arrow (not on last) */}
-                {i < 3 && (
-                  <div className="hidden xl:flex absolute -right-3 top-1/2 -translate-y-1/2 h-6 w-6 items-center justify-center rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] z-10">
-                    <span style={{ color: "var(--color-accent)", fontSize: 10, fontWeight: 700 }}>→</span>
-                  </div>
-                )}
               </div>
             </SectionReveal>
           ))}

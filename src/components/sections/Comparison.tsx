@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
-import { X, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const rowKeys = ["r1","r2","r3","r4","r5","r6"] as const;
 
@@ -10,88 +10,67 @@ export function Comparison() {
   const t = useTranslations("comparison");
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-bg-secondary)]">
-      <div className="mx-auto max-w-7xl px-6 md:px-8">
-        <div className="text-center mb-16">
-          <SectionReveal><Badge>{t("badge")}</Badge></SectionReveal>
-          <SectionReveal delay={0.1}>
-            <h2
-              className="mt-4 text-4xl md:text-5xl font-bold"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              {t("headline")}{" "}
-              <span style={{ color: "var(--color-accent)" }}>{t("headline2")}</span>
-            </h2>
-          </SectionReveal>
+    <section className="relative py-32 md:py-48 overflow-hidden">
+      <div className="container-wide">
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+          <div className="col-span-12 md:col-span-8">
+            <SectionReveal><Badge number="05">{t("badge")}</Badge></SectionReveal>
+            <SectionReveal delay={0.1}>
+              <h2
+                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                <span className="text-[var(--color-text-muted)] italic">{t("headline")}</span>{" "}
+                <span className="text-white">{t("headline2")}</span>
+              </h2>
+            </SectionReveal>
+          </div>
         </div>
 
-        {/* Desktop table */}
-        <SectionReveal delay={0.2}>
-          <div className="hidden md:block rounded-2xl border border-[var(--color-border)] overflow-hidden">
-            <div className="grid grid-cols-3 bg-[var(--color-surface)]">
-              <div className="p-5 border-r border-[var(--color-border)]">
-                <span className="text-sm font-semibold text-[var(--color-text-muted)]">Kryterium</span>
-              </div>
-              <div className="p-5 border-r border-[var(--color-border)]">
-                <span className="text-sm font-semibold text-[var(--color-text-secondary)]">{t("col_typical")}</span>
-              </div>
-              <div className="p-5" style={{ background: "var(--color-accent-muted)" }}>
-                <span className="text-sm font-semibold" style={{ color: "var(--color-accent)" }}>{t("col_olik")}</span>
-              </div>
+        {/* Editorial comparison rows */}
+        <div className="space-y-2">
+          {/* Header row */}
+          <div className="grid grid-cols-12 gap-4 px-4 md:px-6 pb-4 border-b border-white/[0.08]">
+            <div className="hidden md:block col-span-4">
+              <span className="eyebrow">Kryterium</span>
             </div>
-            {rowKeys.map((key, i) => (
-              <div
-                key={key}
-                className="grid grid-cols-3 border-t border-[var(--color-border)]"
-                style={{ background: i % 2 === 0 ? "var(--color-bg)" : "var(--color-surface)" }}
-              >
-                <div className="p-5 border-r border-[var(--color-border)]">
-                  <span className="text-sm font-medium text-[var(--color-text-primary)]">
-                    {t(`rows.${key}.label`)}
-                  </span>
-                </div>
-                <div className="p-5 border-r border-[var(--color-border)] flex items-start gap-2">
-                  <X size={14} className="mt-0.5 shrink-0 text-red-400" />
-                  <span className="text-sm text-[var(--color-text-muted)]">
-                    {t(`rows.${key}.typical`)}
-                  </span>
-                </div>
-                <div className="p-5 flex items-start gap-2">
-                  <Check size={14} className="mt-0.5 shrink-0" style={{ color: "var(--color-accent)" }} />
-                  <span className="text-sm text-[var(--color-text-primary)] font-medium">
-                    {t(`rows.${key}.olik`)}
-                  </span>
-                </div>
-              </div>
-            ))}
+            <div className="col-span-6 md:col-span-4">
+              <span className="eyebrow text-[var(--color-text-dim)]">{t("col_typical")}</span>
+            </div>
+            <div className="col-span-6 md:col-span-4 md:text-right">
+              <span className="eyebrow" style={{ color: "var(--color-accent-bright)" }}>{t("col_olik")}</span>
+            </div>
           </div>
-        </SectionReveal>
 
-        {/* Mobile cards */}
-        <div className="md:hidden space-y-4">
           {rowKeys.map((key, i) => (
-            <SectionReveal key={key} delay={0.1 * i}>
-              <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden">
-                <div className="px-4 py-3 border-b border-[var(--color-border)]">
-                  <span className="text-sm font-semibold text-[var(--color-text-primary)]">
+            <SectionReveal key={key} delay={0.04 * i}>
+              <motion.div
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.3 }}
+                className="group grid grid-cols-12 gap-4 items-start md:items-center px-4 md:px-6 py-6 md:py-8 rounded-2xl hover:bg-[var(--color-bg-elevated)] transition-colors duration-500 border-b border-white/[0.04]"
+              >
+                <div className="col-span-12 md:col-span-4 mb-2 md:mb-0">
+                  <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-dim)] mb-1 md:hidden">
+                    Kryterium
+                  </p>
+                  <p
+                    className="text-lg md:text-2xl font-bold text-white"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
                     {t(`rows.${key}.label`)}
-                  </span>
+                  </p>
                 </div>
-                <div className="grid grid-cols-2 divide-x divide-[var(--color-border)]">
-                  <div className="p-4 flex items-start gap-2">
-                    <X size={13} className="mt-0.5 shrink-0 text-red-400" />
-                    <span className="text-xs text-[var(--color-text-muted)]">
-                      {t(`rows.${key}.typical`)}
-                    </span>
-                  </div>
-                  <div className="p-4 flex items-start gap-2" style={{ background: "var(--color-accent-muted)" }}>
-                    <Check size={13} className="mt-0.5 shrink-0" style={{ color: "var(--color-accent)" }} />
-                    <span className="text-xs font-medium text-[var(--color-text-primary)]">
-                      {t(`rows.${key}.olik`)}
-                    </span>
-                  </div>
+                <div className="col-span-6 md:col-span-4">
+                  <p className="text-sm md:text-base text-[var(--color-text-dim)] line-through decoration-[var(--color-text-faint)] leading-snug">
+                    {t(`rows.${key}.typical`)}
+                  </p>
                 </div>
-              </div>
+                <div className="col-span-6 md:col-span-4 md:text-right">
+                  <p className="text-sm md:text-base text-white font-medium leading-snug">
+                    {t(`rows.${key}.olik`)}
+                  </p>
+                </div>
+              </motion.div>
             </SectionReveal>
           ))}
         </div>

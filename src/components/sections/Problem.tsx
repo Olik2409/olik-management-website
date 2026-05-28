@@ -3,105 +3,94 @@ import { useTranslations } from "next-intl";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Badge } from "@/components/ui/Badge";
-import { AlertCircle, Clock, TrendingUp, Users } from "lucide-react";
-
-const icons = [TrendingUp, Users, Clock, AlertCircle];
 
 export function Problem() {
   const t = useTranslations("problem");
-
-  const stats = [
-    { key: "stat1", icon: icons[0] },
-    { key: "stat2", icon: icons[1] },
-    { key: "stat3", icon: icons[2] },
-    { key: "stat4", icon: icons[3] },
-  ] as const;
+  const stats = ["stat1","stat2","stat3","stat4"] as const;
+  const steps = ["step1","step2","step3","step4","step5"] as const;
 
   return (
-    <section id="problem" className="relative py-24 md:py-32 overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse 60% 50% at 20% 60%, rgba(232,160,69,0.08) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left */}
-          <div>
+    <section id="problem" className="relative py-32 md:py-48 overflow-hidden">
+      <div className="container-wide">
+        {/* Heading – editorial scale */}
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-32">
+          <div className="col-span-12 md:col-span-7 lg:col-span-8">
             <SectionReveal>
-              <Badge>{t("badge")}</Badge>
+              <Badge number="02">{t("badge")}</Badge>
             </SectionReveal>
             <SectionReveal delay={0.1}>
               <h2
-                className="mt-4 text-4xl md:text-5xl font-bold text-[var(--color-text-primary)] text-balance"
+                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                {t("headline")}
+                <span className="text-white">{t("headline").split(" ")[0]}</span>{" "}
+                <span className="text-[var(--color-text-muted)] italic">{t("headline").split(" ").slice(1).join(" ")}</span>
               </h2>
             </SectionReveal>
+          </div>
+          <div className="col-span-12 md:col-span-5 lg:col-span-4 md:pt-12">
             <SectionReveal delay={0.2}>
-              <p className="mt-4 text-lg text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
                 {t("subheadline")}
               </p>
             </SectionReveal>
-
-            {/* Scenario */}
-            <SectionReveal delay={0.3}>
-              <div className="mt-8 space-y-3">
-                {(["step1","step2","step3","step4","step5"] as const).map((s, i) => (
-                  <div key={s} className="flex items-start gap-3">
-                    <div
-                      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-                      style={{
-                        background: i === 4 ? "rgba(239,68,68,0.15)" : "var(--color-surface)",
-                        color: i === 4 ? "rgb(239,68,68)" : "var(--color-text-muted)",
-                        border: `1px solid ${i === 4 ? "rgba(239,68,68,0.3)" : "var(--color-border)"}`,
-                      }}
-                    >
-                      {i + 1}
-                    </div>
-                    <p
-                      className="text-sm"
-                      style={{
-                        color: i === 4 ? "rgb(239,68,68)" : "var(--color-text-secondary)",
-                        fontWeight: i === 4 ? 500 : 400,
-                      }}
-                    >
-                      {t(`scenario.${s}`)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </SectionReveal>
           </div>
+        </div>
 
-          {/* Right – stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {stats.map(({ key, icon: Icon }, i) => (
-              <SectionReveal key={key} delay={0.15 * i}>
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 hover:border-[var(--color-accent)]/30 transition-colors duration-300">
-                  <div
-                    className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl"
-                    style={{ background: "var(--color-accent-muted)" }}
+        {/* Scenario timeline */}
+        <SectionReveal>
+          <div className="relative mb-24 md:mb-32">
+            <p className="eyebrow mb-8">Realny scenariusz</p>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+              {steps.map((s, i) => (
+                <div
+                  key={s}
+                  className="bg-[var(--color-bg)] p-6 md:p-7 relative"
+                >
+                  <span
+                    className="num-marker block mb-4"
+                    style={{ color: i === 4 ? "#f87171" : undefined }}
                   >
-                    <Icon size={18} style={{ color: "var(--color-accent)" }} />
-                  </div>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <p
-                    className="text-4xl font-bold mb-2"
-                    style={{ fontFamily: "var(--font-display)", color: "var(--color-accent)" }}
+                    className="text-sm leading-relaxed"
+                    style={{
+                      color: i === 4 ? "#fca5a5" : "var(--color-text)",
+                      fontWeight: i === 4 ? 500 : 400,
+                    }}
+                  >
+                    {t(`scenario.${s}`)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SectionReveal>
+
+        {/* Stats grid – editorial big numbers */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+          {stats.map((key, i) => (
+            <SectionReveal key={key} delay={0.08 * i}>
+              <div className="bg-[var(--color-bg)] p-6 md:p-8 h-full flex flex-col justify-between min-h-[200px] group hover:bg-[var(--color-surface)] transition-colors duration-500">
+                <span className="num-marker">{String(i + 1).padStart(2, "0")} / 04</span>
+                <div>
+                  <p
+                    className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none mb-4"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      color: "var(--color-accent-bright)",
+                    }}
                   >
                     <AnimatedNumber value={t(`stats.${key}_value`)} />
                   </p>
-                  <p className="text-sm text-[var(--color-text-secondary)] leading-snug">
+                  <p className="text-xs md:text-sm text-[var(--color-text-muted)] leading-snug">
                     {t(`stats.${key}_label`)}
                   </p>
                 </div>
-              </SectionReveal>
-            ))}
-          </div>
+              </div>
+            </SectionReveal>
+          ))}
         </div>
       </div>
     </section>

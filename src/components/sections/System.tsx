@@ -5,124 +5,137 @@ import { motion, useInView } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/Badge";
 import { SectionReveal } from "@/components/ui/SectionReveal";
-import {
-  Megaphone, Globe, Bot, Mail, Phone, Database, BarChart3, CalendarDays
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const stepIcons = [Megaphone, Globe, Bot, Mail, Phone, Database, BarChart3];
-const stepColors = [
-  "#e8a045", "#f0b060", "#e8a045", "#f0b060", "#e8a045", "#f0b060", "#e8a045"
-];
+const stepKeys = ["step1","step2","step3","step4","step5","step6","step7"] as const;
 
 export function System() {
   const t = useTranslations("system");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
-
-  const steps = (["step1","step2","step3","step4","step5","step6","step7"] as const).map(
-    (key, i) => ({
-      key,
-      icon: stepIcons[i],
-      color: stepColors[i],
-      name: t(`steps.${key}.name`),
-      desc: t(`steps.${key}.desc`),
-      time: t(`steps.${key}.time`),
-    })
-  );
+  const isInView = useInView(ref, { once: true, margin: "-15% 0px" });
 
   return (
-    <section id="system" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="system" className="relative py-32 md:py-48 overflow-hidden bg-[var(--color-bg-elevated)]">
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-50 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(232,160,69,0.05) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(37,99,235,0.08) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8">
-        <div className="text-center mb-16">
-          <SectionReveal><Badge>{t("badge")}</Badge></SectionReveal>
-          <SectionReveal delay={0.1}>
-            <h2
-              className="mt-4 text-4xl md:text-5xl lg:text-6xl font-bold text-balance"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-text-primary)" }}
-            >
-              {t("headline")}{" "}
-              <span style={{ color: "var(--color-accent)" }}>{t("headline2")}</span>
-            </h2>
-          </SectionReveal>
-          <SectionReveal delay={0.2}>
-            <p className="mt-4 text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-              {t("subheadline")}
-            </p>
-          </SectionReveal>
-        </div>
-
-        {/* Steps */}
-        <div ref={ref} className="relative">
-          {/* Connector line - desktop */}
-          <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-px bg-[var(--color-border)] z-0" />
-          <motion.div
-            className="hidden lg:block absolute top-[52px] left-0 h-px z-0"
-            style={{ background: "var(--color-accent)" }}
-            initial={{ width: "0%" }}
-            animate={isInView ? { width: "100%" } : {}}
-            transition={{ duration: 2, delay: 0.3, ease: "easeInOut" }}
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 lg:gap-2">
-            {steps.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={step.key}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.1 + i * 0.12, ease: "easeOut" }}
-                  className="relative z-10 flex flex-col items-center text-center lg:items-center"
-                >
-                  {/* Icon circle */}
-                  <div
-                    className="relative mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-full border-2 bg-[var(--color-bg)]"
-                    style={{ borderColor: step.color }}
-                  >
-                    <Icon size={20} style={{ color: step.color }} />
-                    <div
-                      className="absolute inset-0 rounded-full opacity-20"
-                      style={{ background: step.color }}
-                    />
-                  </div>
-
-                  <span
-                    className="text-xs font-bold uppercase tracking-wider mb-1"
-                    style={{ color: step.color }}
-                  >
-                    {step.time}
-                  </span>
-                  <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-1">
-                    {step.name}
-                  </h3>
-                  <p className="text-xs text-[var(--color-text-muted)] leading-relaxed max-w-[120px] hidden lg:block">
-                    {step.desc}
-                  </p>
-                  <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed lg:hidden mt-1">
-                    {step.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+      <div className="relative container-wide">
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">
+          <div className="col-span-12 md:col-span-7">
+            <SectionReveal><Badge number="03">{t("badge")}</Badge></SectionReveal>
+            <SectionReveal delay={0.1}>
+              <h2
+                className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-balance leading-[0.95]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                <span className="text-white">{t("headline")}</span>{" "}
+                <span className="text-[var(--color-accent-bright)] italic">{t("headline2")}</span>
+              </h2>
+            </SectionReveal>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:pt-12">
+            <SectionReveal delay={0.2}>
+              <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
+                {t("subheadline")}
+              </p>
+            </SectionReveal>
           </div>
         </div>
 
-        <SectionReveal delay={0.4}>
-          <div className="mt-16 flex justify-center">
+        {/* Steps – vertical editorial list */}
+        <div ref={ref} className="relative">
+          {/* Connector line */}
+          <div className="absolute left-6 md:left-10 top-8 bottom-8 w-px bg-white/[0.08]" />
+          <motion.div
+            className="absolute left-6 md:left-10 top-8 w-px"
+            style={{ background: "var(--color-accent-bright)", transformOrigin: "top" }}
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : {}}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute left-6 md:left-10 top-8 w-px"
+            style={{
+              height: "calc(100% - 4rem)",
+              background: "linear-gradient(to bottom, transparent, var(--color-accent-bright))",
+              transformOrigin: "top",
+            }}
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : {}}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+          />
+
+          <div className="space-y-2">
+            {stepKeys.map((key, i) => (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.15 + i * 0.1, ease: "easeOut" }}
+                className="relative grid grid-cols-12 gap-4 md:gap-8 items-start py-6 md:py-8 pl-16 md:pl-24 border-b border-white/[0.06] last:border-b-0 group"
+              >
+                {/* Step node */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 md:left-4 flex items-center justify-center">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                    className="relative flex h-12 w-12 items-center justify-center rounded-full border bg-[var(--color-bg-elevated)] z-10"
+                    style={{ borderColor: "var(--color-accent-bright)" }}
+                  >
+                    <span
+                      className="text-sm font-bold"
+                      style={{ fontFamily: "var(--font-display)", color: "var(--color-accent-bright)" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="absolute inset-0 rounded-full opacity-20 blur-md" style={{ background: "var(--color-accent)" }} />
+                  </motion.div>
+                </div>
+
+                <div className="col-span-12 md:col-span-4">
+                  <h3
+                    className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:text-[var(--color-accent-bright)] transition-colors duration-300"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {t(`steps.${key}.name`)}
+                  </h3>
+                </div>
+                <div className="col-span-12 md:col-span-6">
+                  <p className="text-base text-[var(--color-text-muted)] leading-relaxed">
+                    {t(`steps.${key}.desc`)}
+                  </p>
+                </div>
+                <div className="col-span-12 md:col-span-2 md:text-right">
+                  <span
+                    className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase"
+                    style={{ color: "var(--color-accent-bright)" }}
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-accent-bright)" }} />
+                    {t(`steps.${key}.time`)}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <SectionReveal delay={0.3}>
+          <div className="mt-20 flex justify-center">
             <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-8 py-4 text-sm font-semibold text-black hover:bg-[var(--color-accent-hover)] transition-all duration-200 hover:shadow-[var(--shadow-glow)]"
+              href="/kontakt"
+              className="group inline-flex items-center justify-between gap-6 rounded-full pl-7 pr-2 py-2 text-sm font-semibold text-white transition-all duration-300 hover:gap-8"
+              style={{ background: "var(--color-accent)", boxShadow: "0 8px 32px var(--color-accent-glow)" }}
             >
-              <CalendarDays size={16} />
-              {t("cta")}
+              <span>{t("cta")}</span>
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:rotate-[-45deg]">
+                <ArrowRight size={18} />
+              </span>
             </Link>
           </div>
         </SectionReveal>

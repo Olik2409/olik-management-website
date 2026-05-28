@@ -1,206 +1,179 @@
 "use client";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { motion, type Variants } from "framer-motion";
-import { ArrowDown, CalendarDays, Play } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Badge } from "@/components/ui/Badge";
-
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
-  },
-} as Variants;
-const item: Variants = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0 },
-} as Variants;
 
 export function Hero() {
   const t = useTranslations("hero");
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[var(--color-bg)]">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(232,160,69,0.12) 0%, transparent 70%)",
-          }}
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
+    >
+      {/* Cinematic background photo with parallax */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: imageY }}>
+        <Image
+          src="/images/brand/bg-texture.jpeg"
+          alt=""
+          fill
+          priority
+          quality={90}
+          className="object-cover object-center scale-110"
+          sizes="100vw"
         />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
+      </motion.div>
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8 py-24 md:py-32 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
+      {/* Multi-layer cinematic overlay */}
+      <motion.div
+        className="absolute inset-0 z-10"
+        style={{ opacity: overlayOpacity }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(5,11,31,0.45) 0%, rgba(5,11,31,0.2) 40%, rgba(5,11,31,0.85) 90%, rgba(5,11,31,1) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 30% 50%, transparent 0%, rgba(5,11,31,0.55) 100%)",
+          }}
+        />
+      </motion.div>
+
+      {/* Film grain */}
+      <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.06] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        }}
+      />
+
+      {/* Content – editorial bottom-left layout */}
+      <motion.div
+        style={{ y: contentY }}
+        className="relative z-20 flex min-h-[100svh] flex-col container-wide pt-32 md:pt-40 pb-24 md:pb-32"
+      >
+        {/* Side annotation – top left */}
+        <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="hidden md:flex items-center gap-3 mb-auto"
+        >
+          <span className="num-marker">[01 / Performance Marketing & AI]</span>
+          <span className="h-px w-12 bg-[var(--color-text-faint)]" />
+        </motion.div>
+
+        {/* Headline block */}
+        <div className="grid grid-cols-12 gap-4 md:gap-8 items-end">
           <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="flex flex-col gap-6"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] as never }}
+            className="col-span-12 lg:col-span-9"
           >
-            <motion.div variants={item}>
-              <Badge>{t("badge")}</Badge>
-            </motion.div>
-
-            <motion.h1
-              variants={item}
-              className="text-5xl md:text-6xl xl:text-7xl font-bold text-[var(--color-text-primary)] text-balance"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              {t("headline1")}{" "}
-              <span className="text-[var(--color-text-secondary)]">{t("headline2")}</span>
-              <br />
-              <span className="text-[var(--color-text-primary)]">{t("headline3")}</span>{" "}
-              <span
-                className="relative inline-block"
-                style={{ color: "var(--color-accent)" }}
-              >
-                {t("headline4")}
-                <span
-                  className="absolute -bottom-1 left-0 right-0 h-px"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, var(--color-accent) 0%, transparent 100%)",
-                  }}
-                />
+            <h1 className="text-[44px] leading-[0.95] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px] font-bold text-white text-balance">
+              <span className="block">{t("headline1")}{" "}</span>
+              <span className="block text-[var(--color-text-muted)] italic" style={{fontStyle:"italic"}}>{t("headline2")}</span>
+              <span className="block mt-2 md:mt-4">{t("headline3")}</span>
+              <span className="block">
+                <span className="relative inline-block">
+                  <span style={{ color: "var(--color-accent-bright)" }}>{t("headline4")}</span>
+                </span>
               </span>
-            </motion.h1>
-
-            <motion.p
-              variants={item}
-              className="text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-xl"
-            >
-              {t("subheadline")}
-            </motion.p>
-
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Link
-                href="/#contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 py-3.5 text-sm font-semibold text-black hover:bg-[var(--color-accent-hover)] transition-all duration-200 hover:shadow-[var(--shadow-glow)]"
-              >
-                <CalendarDays size={16} />
-                {t("cta_primary")}
-              </Link>
-              <a
-                href="#system"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-border)] px-7 py-3.5 text-sm font-medium text-[var(--color-text-secondary)] hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text-primary)] transition-all duration-200"
-              >
-                <Play size={14} />
-                {t("cta_secondary")}
-              </a>
-            </motion.div>
-
-            <motion.p
-              variants={item}
-              className="text-xs text-[var(--color-text-muted)]"
-            >
-              {t("trust_label")}{" "}
-              {/* Placeholder na logotypy klientów */}
-              <span className="text-[var(--color-text-secondary)]">
-                E-commerce · B2B · Usługi
-              </span>
-            </motion.p>
+            </h1>
           </motion.div>
 
-          {/* Right – Dashboard mockup */}
           <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.96 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1, ease: "easeOut" }}
+            className="col-span-12 lg:col-span-3 lg:pb-3"
           >
-            <div className="relative">
-              {/* Glow */}
-              <div
-                className="absolute -inset-8 rounded-3xl opacity-30"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(232,160,69,0.2) 0%, transparent 70%)",
-                }}
-              />
-              {/* Dashboard card */}
-              <div className="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-elevated)]">
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-sm font-semibold text-[var(--color-text-primary)]">Live Dashboard</span>
-                  <span className="flex items-center gap-1.5 text-xs text-emerald-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    LIVE
-                  </span>
-                </div>
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  {[
-                    { label: "Leady dziś", value: "24", delta: "+12%" },
-                    { label: "Kwalifikowane", value: "18", delta: "+8%" },
-                    { label: "ROAS", value: "4.8x", delta: "+0.4" },
-                  ].map((s) => (
-                    <div key={s.label} className="rounded-xl bg-[var(--color-bg)] p-4">
-                      <p className="text-xs text-[var(--color-text-muted)] mb-1">{s.label}</p>
-                      <p className="text-2xl font-bold text-[var(--color-text-primary)]" style={{fontFamily:"var(--font-display)"}}>{s.value}</p>
-                      <p className="text-xs text-emerald-400 mt-0.5">{s.delta}</p>
-                    </div>
-                  ))}
-                </div>
-                {/* Funnel bars */}
-                <div className="space-y-3">
-                  {[
-                    { label: "Kliknięcia", val: 100, w: "100%" },
-                    { label: "Leady", val: 24, w: "42%" },
-                    { label: "Kwalifikowane", val: 18, w: "30%" },
-                    { label: "Umówione spotkania", val: 11, w: "18%" },
-                  ].map((row) => (
-                    <div key={row.label}>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-[var(--color-text-muted)]">{row.label}</span>
-                        <span className="text-[var(--color-text-secondary)]">{row.val}</span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-[var(--color-bg)] overflow-hidden">
-                        <motion.div
-                          className="h-full rounded-full"
-                          style={{ background: "var(--color-accent)", width: row.w }}
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-4 text-center text-xs text-[var(--color-text-muted)]">
-                  Ostatni lead: <span className="text-emerald-400">45 sekund temu</span>
-                </p>
-              </div>
-            </div>
+            <p className="text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed max-w-md">
+              {t("subheadline")}
+            </p>
           </motion.div>
         </div>
 
-        {/* Scroll hint */}
+        {/* CTA row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.2, ease: "easeOut" }}
+          className="mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10"
+        >
+          <Link
+            href="/kontakt"
+            className="group inline-flex items-center justify-between gap-6 rounded-full pl-7 pr-2 py-2 text-sm font-semibold text-white transition-all duration-300 hover:gap-8 self-start"
+            style={{
+              background: "var(--color-accent)",
+              boxShadow: "0 8px 32px var(--color-accent-glow)",
+            }}
+          >
+            <span>{t("cta_primary")}</span>
+            <span
+              className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-[-45deg]"
+              style={{ background: "rgba(255,255,255,0.18)" }}
+            >
+              <ArrowRight size={18} />
+            </span>
+          </Link>
+
+          <a
+            href="#system"
+            className="group inline-flex items-center gap-3 text-sm font-medium text-white/80 hover:text-white transition-colors"
+          >
+            <span className="link-underline">{t("cta_secondary")}</span>
+            <ArrowDown size={14} className="transition-transform group-hover:translate-y-0.5" />
+          </a>
+        </motion.div>
+
+        {/* Bottom row – trust line */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-text-muted)]"
+          transition={{ duration: 1, delay: 1.6 }}
+          className="mt-20 md:mt-32 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-t border-white/10 pt-6"
         >
-          <span className="text-xs tracking-widest uppercase">{t("scroll_hint")}</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <ArrowDown size={14} />
-          </motion.div>
+          <div className="flex items-center gap-4">
+            <span className="num-marker">{t("trust_label")}</span>
+            <div className="flex items-center gap-5 text-sm text-white/60">
+              <span>E-commerce</span>
+              <span className="h-1 w-1 rounded-full bg-white/30" />
+              <span>B2B</span>
+              <span className="h-1 w-1 rounded-full bg-white/30" />
+              <span>Usługi</span>
+            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-2 text-[var(--color-text-dim)]">
+            <span className="num-marker">{t("scroll_hint")}</span>
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <ArrowDown size={12} />
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,7 +1,3 @@
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileCtaBar } from "@/components/ui/MobileCtaBar";
 import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
 import { System } from "@/components/sections/System";
@@ -14,21 +10,16 @@ import { CTAFinal } from "@/components/sections/CTAFinal";
 
 export default function HomePage() {
   return (
-    <SmoothScroll>
-      <Header />
-      <main>
-        <Hero />
-        <Problem />
-        <System />
-        <Services />
-        <Comparison />
-        <Results />
-        <Process />
-        <FAQ />
-        <CTAFinal />
-      </main>
-      <Footer />
-      <MobileCtaBar />
-    </SmoothScroll>
+    <>
+      <Hero />
+      <Problem />
+      <System />
+      <Services />
+      <Results />
+      <Comparison />
+      <Process />
+      <FAQ />
+      <CTAFinal />
+    </>
   );
 }

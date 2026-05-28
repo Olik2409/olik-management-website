@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, Inter_Tight } from "next/font/google";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { MobileCtaBar } from "@/components/ui/MobileCtaBar";
 import "../globals.css";
 
 const syne = Syne({
@@ -13,11 +18,11 @@ const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
+const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-inter-tight",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export async function generateMetadata({
@@ -45,8 +50,8 @@ export async function generateMetadata({
     alternates: {
       canonical: locale === "pl" ? "https://olikmanagement.com" : "https://olikmanagement.com/en",
       languages: {
-        "pl": "https://olikmanagement.com",
-        "en": "https://olikmanagement.com/en",
+        pl: "https://olikmanagement.com",
+        en: "https://olikmanagement.com/en",
       },
     },
   };
@@ -67,10 +72,17 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as "pl" | "en")) notFound();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang={locale} className={`${syne.variable} ${interTight.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <SmoothScroll>
+            <Header />
+            <PageTransition>
+              <main>{children}</main>
+            </PageTransition>
+            <Footer />
+            <MobileCtaBar />
+          </SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>
