@@ -5,8 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SplitText } from "@/components/ui/SplitText";
-import { LedOrbs } from "@/components/ui/LedOrbs";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import Image from "next/image";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -30,20 +30,39 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
     >
-      <LedOrbs variant="hero" />
-      <div className="absolute inset-0 mesh-bg opacity-80" />
+      {/* Real hero photo background */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/brand/Hero background mood shot.png"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+          quality={85}
+        />
+      </div>
+      {/* Left-heavy gradient: dark on text side, reveals photo on right */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(105deg, rgba(5,5,7,0.88) 0%, rgba(5,5,7,0.70) 40%, rgba(5,5,7,0.30) 75%, rgba(5,5,7,0.10) 100%)",
+        }}
+      />
+      {/* Bottom fade into next section */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, transparent 0%, var(--color-bg) 100%)",
+        }}
+      />
+      {/* Film grain overlay for texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.035] mix-blend-overlay"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, rgba(5,5,7,0.5) 100%)",
         }}
       />
 

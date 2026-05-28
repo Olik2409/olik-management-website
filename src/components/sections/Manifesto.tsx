@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SplitText } from "@/components/ui/SplitText";
 import { Badge } from "@/components/ui/Badge";
+import Image from "next/image";
 
 export function Manifesto() {
   const t = useTranslations("manifesto");
@@ -71,6 +72,21 @@ export function Manifesto() {
             style={{ fontFamily: "var(--font-display)", color: "var(--color-led-green-bright)", textShadow: "0 0 30px var(--color-led-green-glow)" }}
           />
         </motion.div>
+
+        {/* Workspace photo */}
+        <SectionReveal>
+          <div className="mt-16 md:mt-20 relative rounded-3xl overflow-hidden aspect-[21/9] md:aspect-[16/6]">
+            <Image
+              src="/images/brand/Workspace shot.png"
+              alt="Olik Management workspace"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 768px) 80vw, 100vw"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,5,7,0.7) 0%, rgba(5,5,7,0.2) 50%, rgba(5,5,7,0.1) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,7,0.8) 100%)' }} />
+          </div>
+        </SectionReveal>
 
         {/* Pillars row */}
         <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">

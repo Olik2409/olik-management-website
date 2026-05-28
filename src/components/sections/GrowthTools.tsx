@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Target, Brain, Zap, BarChart3 } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 const tools = [
   {
@@ -14,6 +15,7 @@ const tools = [
     glow: "var(--color-led-blue-glow)",
     Icon: Target,
     accent: "PERFORMANCE",
+    photo: "/images/brand/Workspace shot.png",
   },
   {
     key: "t2",
@@ -21,6 +23,7 @@ const tools = [
     glow: "var(--color-led-violet-glow)",
     Icon: Brain,
     accent: "INTELLIGENCE",
+    photo: "/images/brand/Dashboard mockup.png",
   },
   {
     key: "t3",
@@ -28,6 +31,7 @@ const tools = [
     glow: "var(--color-led-green-glow)",
     Icon: Zap,
     accent: "AUTOMATION",
+    photo: "/images/brand/AI Chatbot scene.png",
   },
   {
     key: "t4",
@@ -35,6 +39,7 @@ const tools = [
     glow: "var(--color-led-pink-glow)",
     Icon: BarChart3,
     accent: "VISIBILITY",
+    photo: "/images/brand/Phone with notification.png",
   },
 ] as const;
 
@@ -128,6 +133,25 @@ export function GrowthTools() {
                       >
                         <ArrowUpRight size={16} className="text-white" />
                       </motion.div>
+                    </div>
+
+                    {/* Photo thumbnail */}
+                    <div className="relative mb-6 -mx-8 md:-mx-10 aspect-video overflow-hidden">
+                      <Image
+                        src={tool.photo}
+                        alt={t(`tools.${tool.key}.title`)}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(10,10,18,0.95) 100%)" }}
+                      />
+                      <div
+                        className="absolute inset-0 opacity-20"
+                        style={{ background: tool.color, mixBlendMode: "color" as const }}
+                      />
                     </div>
 
                     {/* Icon with LED ring */}

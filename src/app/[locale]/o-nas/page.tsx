@@ -48,10 +48,10 @@ export default function ONasPage() {
               <SectionReveal>
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08]">
                   <Image
-                    src="/images/brand/bg-texture.jpeg"
+                    src="/images/brand/Owner.png"
                     alt="Oliwier Kochanowicz – Olik Management"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="(min-width: 768px) 40vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

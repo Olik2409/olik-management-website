@@ -6,12 +6,18 @@ import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Badge } from "@/components/ui/Badge";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const caseKeys = ["c1", "c2", "c3"] as const;
 const caseColors = [
   "var(--color-led-blue-bright)",
   "var(--color-led-violet-bright)",
   "var(--color-led-green-bright)",
+];
+const caseCoverImages = [
+  "/images/brand/Case study cover 1.png",
+  "/images/brand/Case study cover 2.png",
+  "/images/brand/Case study cover 3.png",
 ];
 const metricKeys = ["m1", "m2", "m3"] as const;
 const metricColors = [
@@ -113,25 +119,15 @@ export function Results() {
                     transition={{ duration: 0.4 }}
                     className="relative h-full rounded-3xl overflow-hidden bg-[var(--color-bg)] border border-white/[0.06] hover:border-white/[0.14] transition-colors duration-500"
                   >
-                    <div
-                      className="aspect-[4/3] relative overflow-hidden"
-                      style={{
-                        background:
-                          i === 0
-                            ? "linear-gradient(135deg, #1e1b4b 0%, #2563eb 50%, #00ff9d 100%)"
-                            : i === 1
-                            ? "linear-gradient(135deg, #4c1d95 0%, #8b5cf6 50%, #ec4899 100%)"
-                            : "linear-gradient(135deg, #064e3b 0%, #00ff9d 50%, #2563eb 100%)",
-                      }}
-                    >
-                      <div
-                        className="absolute inset-0 mix-blend-overlay opacity-30"
-                        style={{
-                          backgroundImage:
-                            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                        }}
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image
+                        src={caseCoverImages[i]}
+                        alt={t(`cases.${key}.industry`)}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
                         <span className="num-marker text-white/80">CASE {String(i + 1).padStart(2, "0")}</span>
                         <span

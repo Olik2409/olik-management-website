@@ -13,21 +13,21 @@
     "cta": "Book a call"
   },
   "hero": {
-    "badge": "Performance Marketing & AI System",
+    "badge": "Performance Marketing – Lead Gen & E-commerce",
     "headline1": "Performance ads",
     "headline2": "are not enough.",
     "headline3": "We build a system",
     "headline4": "that sells 24/7.",
-    "subheadline": "Your ad generates a click. Our system qualifies the lead in 30 seconds, sends a follow-up automatically and books meetings while you sleep.",
+    "subheadline": "Your ad generates a click. Our system qualifies the lead in 30 seconds, tracks e-commerce conversions and sends follow-ups automatically – running 24/7 without your involvement.",
     "cta_primary": "Book a discovery call",
     "cta_secondary": "See how it works",
     "scroll_hint": "Scroll",
     "metric1_value": "30 sec",
-    "metric1_label": "lead qualification",
+    "metric1_label": "lead qualification / order confirmation",
     "metric2_value": "24/7",
     "metric2_label": "system active",
     "metric3_value": "+391%",
-    "metric3_label": "higher conversion",
+    "metric3_label": "higher ROAS / higher conversion",
     "metric4_value": "<2h",
     "metric4_label": "our response time"
   },
@@ -45,7 +45,7 @@
     "badge": "Manifesto",
     "line1": "Most agencies set up ads",
     "line2": "and send a PDF once a month.",
-    "line3": "We build a sales machine.",
+    "line3": "We build a sales system.",
     "pillars": {
       "p1": {
         "title": "Numbers, not promises",
@@ -65,7 +65,7 @@
     "badge": "Your growth tools",
     "headline1": "Four pillars",
     "headline2": "of one complete system.",
-    "subheadline": "Each element amplifies the others. Together they form a machine that generates, qualifies and closes leads – without your intervention.",
+    "subheadline": "Each element amplifies the others. Together they form a machine that generates B2B leads and scales e-commerce sales – without your intervention.",
     "outcome_label": "Outcome",
     "cta": "See full services breakdown",
     "tools": {

@@ -13,21 +13,21 @@
     "cta": "Umów call"
   },
   "hero": {
-    "badge": "Performance Marketing & AI System",
+    "badge": "Performance Marketing – Lead Gen & E-commerce",
     "headline1": "Performance ads",
     "headline2": "to za mało.",
     "headline3": "Budujemy system,",
     "headline4": "który sprzedaje 24/7.",
-    "subheadline": "Twoja reklama generuje kliknięcie. Nasz system kwalifikuje leada w 30 sekund, wysyła follow-up automatycznie i umawia spotkania, kiedy Ty śpisz.",
+    "subheadline": "Twoja reklama generuje kliknięcie. Nasz system kwalifikuje lead w 30 sekund, śledzi konwersje e-commerce i wysyła follow-up automatycznie – pracując 24/7 bez Twojego udziału.",
     "cta_primary": "Umów discovery call",
     "cta_secondary": "Zobacz jak to działa",
     "scroll_hint": "Przewiń",
     "metric1_value": "30 sek",
-    "metric1_label": "kwalifikacja leada",
+    "metric1_label": "kwalifikacja leada / potwierdzenie zamówienia",
     "metric2_value": "24/7",
     "metric2_label": "system aktywny",
     "metric3_value": "+391%",
-    "metric3_label": "wyższa konwersja",
+    "metric3_label": "wyższy ROAS / wyższa konwersja",
     "metric4_value": "<2h",
     "metric4_label": "czas naszej odpowiedzi"
   },
@@ -45,7 +45,7 @@
     "badge": "Manifest",
     "line1": "Większość agencji ustawia reklamy",
     "line2": "i wysyła PDF raz w miesiącu.",
-    "line3": "My budujemy maszynę sprzedaży.",
+    "line3": "My budujemy system sprzedaży.",
     "pillars": {
       "p1": {
         "title": "Liczby, nie obietnice",
@@ -65,20 +65,20 @@
     "badge": "Twoje narzędzia wzrostu",
     "headline1": "Cztery filary",
     "headline2": "kompletnego systemu.",
-    "subheadline": "Każdy element wzmacnia pozostałe. Razem tworzą maszynę, która generuje, kwalifikuje i zamyka leady – bez Twojej ingerencji.",
+    "subheadline": "Każdy element wzmacnia pozostałe. Razem tworzą maszynę, która generuje leady B2B i skaluje sprzedaż e-commerce – bez Twojej ingerencji.",
     "outcome_label": "Efekt",
     "cta": "Zobacz pełną ofertę usług",
     "tools": {
       "t1": {
         "title": "Performance Ads",
-        "desc": "Meta Ads i Google Ads zoptymalizowane pod konwersję. Server-side tracking, kreacje co tydzień, advantage+ od pierwszego dnia.",
+        "desc": "Meta Ads i Google Ads zoptymalizowane pod lead gen i e-commerce. Server-side tracking, kreacje co tydzień, Advantage+ i Performance Max od pierwszego dnia.",
         "features": [
           "Meta Ads (Advantage+) + Google Ads (Performance Max)",
           "Server-side tracking (CAPI) – odzyskujemy 20–30% danych",
           "15–20 kreacji reklamowych miesięcznie",
           "A/B testy i optymalizacja co tydzień"
         ],
-        "outcome": "Regularny napływ leadów ze zmierzonym CPL"
+        "outcome": "Stały napływ leadów i rosnący ROAS e-commerce"
       },
       "t2": {
         "title": "Brand & Tracking",
