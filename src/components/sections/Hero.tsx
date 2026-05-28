@@ -6,8 +6,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SplitText } from "@/components/ui/SplitText";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { LedOrbs } from "@/components/ui/LedOrbs";
-import Image from "next/image";
+import { AuroraShader } from "@/components/ui/animated-shader-background";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -31,22 +30,8 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
     >
-      {/* Abstract LED particle texture – subtle color base */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/brand/Texture abstract.png"
-          alt=""
-          fill
-          className="object-cover object-center opacity-40"
-          priority
-          sizes="100vw"
-          quality={80}
-        />
-      </div>
-      {/* Rich mesh gradient */}
-      <div className="absolute inset-0 mesh-bg opacity-90" />
-      {/* Animated LED orbs */}
-      <LedOrbs variant="hero" />
+      {/* WebGL Aurora Shader background */}
+      <AuroraShader />
 
       {/* Giant brand watermark behind content */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
