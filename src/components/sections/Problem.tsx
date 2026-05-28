@@ -11,6 +11,13 @@ export function Problem() {
 
   return (
     <section id="problem" className="relative py-32 md:py-48 overflow-hidden">
+      {/* Warm red ambient tint – signals problem/pain */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 70% 50% at 80% 20%, rgba(239,68,68,0.05) 0%, transparent 60%)",
+        }}
+      />
       <div className="container-wide">
         {/* Heading – editorial scale */}
         <div className="grid grid-cols-12 gap-6 mb-20 md:mb-32">

@@ -15,6 +15,13 @@ export function Results() {
 
   return (
     <section id="results" className="relative py-32 md:py-48 bg-[var(--color-bg-elevated)] overflow-hidden">
+      {/* Emerald ambient tint – signals success/growth */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 60% 50% at 20% 60%, rgba(16,185,129,0.06) 0%, transparent 60%)",
+        }}
+      />
       <div className="container-wide">
         {/* Heading */}
         <div className="grid grid-cols-12 gap-6 mb-20 md:mb-28">

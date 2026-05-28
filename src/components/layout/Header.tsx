@@ -43,19 +43,15 @@ export function Header() {
         )}
       >
         <div className="container-wide flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 shrink-0 z-10">
+          <Link href="/" className="flex items-center shrink-0 z-10">
             <Image
               src="/images/brand/logo.png"
               alt="Olik Management"
-              width={44}
-              height={44}
-              className="h-9 w-9 object-contain"
+              width={140}
+              height={70}
+              className="h-10 w-auto object-contain"
               priority
             />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span className="text-sm font-bold tracking-wide text-white" style={{fontFamily:"var(--font-display)"}}>OLIK</span>
-              <span className="text-[9px] font-medium tracking-[0.22em] uppercase text-[var(--color-text-muted)] mt-0.5">Management</span>
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
-import { Syne, Inter_Tight } from "next/font/google";
+import { Syne, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
@@ -23,6 +23,13 @@ const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export async function generateMetadata({
@@ -72,7 +79,7 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as "pl" | "en")) notFound();
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${syne.variable} ${interTight.variable}`}>
+    <html lang={locale} className={`${syne.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll>

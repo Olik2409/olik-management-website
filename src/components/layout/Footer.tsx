@@ -118,13 +118,13 @@ export function Footer() {
         {/* Bottom row with massive logo wordmark */}
         <div className="pt-8 border-t border-white/[0.06]">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <Image
                 src="/images/brand/logo.png"
                 alt=""
-                width={36}
-                height={36}
-                className="h-9 w-9 object-contain"
+                width={110}
+                height={55}
+                className="h-8 w-auto object-contain opacity-60"
               />
               <p className="text-xs text-[var(--color-text-dim)]">{t("copyright")}</p>
             </div>
