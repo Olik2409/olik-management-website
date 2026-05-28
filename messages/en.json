@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Olik Management – Performance Marketing & AI System for B2B",
+    "description": "Not just ads – we build a complete system that generates, qualifies and handles leads 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automations.",
+    "ogTitle": "Olik Management – A System That Sells 24/7",
+    "ogDescription": "Performance marketing + AI = leads qualified in 30 seconds, follow-up in 60 seconds, AI receptionist answers calls. Book a free discovery call."
+  },
+  "nav": {
+    "services": "Services",
+    "process": "Process",
+    "contact": "Contact",
+    "cta": "Book a call"
+  },
+  "hero": {
+    "badge": "Performance Marketing & AI",
+    "headline1": "Performance marketing",
+    "headline2": "is not enough.",
+    "headline3": "We build a system",
+    "headline4": "that sells 24/7.",
+    "subheadline": "Your ad generates a click. Our system qualifies the lead in 30 seconds, sends a follow-up automatically and books meetings while you sleep.",
+    "cta_primary": "Book a free discovery call",
+    "cta_secondary": "See how it works",
+    "trust_label": "Trusted by:",
+    "scroll_hint": "Scroll down"
+  },
+  "problem": {
+    "badge": "The Problem",
+    "headline": "Your leads are leaking.",
+    "subheadline": "A lead comes in at 10 PM. Nobody responds. In the morning the salesperson calls too late – the lead already bought from a competitor.",
+    "scenario": {
+      "step1": "Lead clicks the ad at 10 PM",
+      "step2": "Form submitted – no response",
+      "step3": "Lead goes cold overnight",
+      "step4": "Salesperson calls after 2 days",
+      "step5": "Lead already bought from a competitor"
+    },
+    "stats": {
+      "stat1_value": "+391%",
+      "stat1_label": "higher conversion when contacted within 1 minute",
+      "stat2_value": "78%",
+      "stat2_label": "of buyers choose the first company that responds",
+      "stat3_value": "42h",
+      "stat3_label": "average company response time to leads",
+      "stat4_value": "51%",
+      "stat4_label": "of leads are never contacted"
+    }
+  },
+  "system": {
+    "badge": "The Solution",
+    "headline": "A system that works",
+    "headline2": "while you sleep.",
+    "subheadline": "7 integrated steps turning a click into a booked meeting – fully automatically.",
+    "steps": {
+      "step1": { "name": "Ad", "desc": "Meta Ads or Google Ads generates precisely targeted traffic", "time": "0 sec" },
+      "step2": { "name": "Landing Page", "desc": "Conversion-optimized landing page captures the lead", "time": "~3 min" },
+      "step3": { "name": "AI Chatbot", "desc": "Qualifies the lead, asks qualifying questions and collects data", "time": "30 sec" },
+      "step4": { "name": "Follow-up", "desc": "Automatic email and SMS sent immediately after qualification", "time": "60 sec" },
+      "step5": { "name": "AI Receptionist", "desc": "Answers calls 24/7, responds to questions, books meetings", "time": "24/7" },
+      "step6": { "name": "CRM", "desc": "All lead data collected in one place, ready for the salesperson", "time": "Realtime" },
+      "step7": { "name": "Dashboard", "desc": "See the entire funnel – from click to closed deal", "time": "Live" }
+    },
+    "cta": "I want this system"
+  },
+  "services": {
+    "badge": "Services",
+    "headline": "Start with the basics.",
+    "headline2": "Scale when ready.",
+    "subheadline": "Every client starts at Tier 1 and expands the system as the business grows.",
+    "tiers": {
+      "t1": {
+        "name": "Tier 1 – Performance Ads",
+        "for": "For companies that want to start generating leads from ads",
+        "features": ["Meta Ads campaigns (Advantage+)", "Google Ads campaigns (Performance Max)", "Server-side tracking (CAPI)", "Monthly optimization and reporting", "15–20 ad creatives per month"],
+        "outcome": "Regular lead flow with a measured cost per acquisition"
+      },
+      "t2": {
+        "name": "Tier 2 – Creatives & Tracking",
+        "for": "For companies that want more data and better creatives",
+        "features": ["Everything in Tier 1", "Advanced server-side tracking", "Google Tag Manager setup", "Creative A/B testing", "Detailed attribution reports"],
+        "outcome": "Recover 20–30% of data lost to blockers and iOS"
+      },
+      "t3": {
+        "name": "Tier 3 – AI System",
+        "for": "For companies that want to handle leads automatically",
+        "features": ["Everything in Tier 1 & 2", "AI chatbot qualifying leads", "Voice AI – 24/7 receptionist", "Automatic follow-up (email + SMS)", "CRM integration"],
+        "outcome": "Lead qualified in 30 seconds, follow-up in 60 seconds"
+      },
+      "t4": {
+        "name": "Tier 4 – Growth Engine",
+        "for": "For companies that want a complete growth system",
+        "features": ["Everything in Tier 1, 2 & 3", "AEO – visibility in AI (ChatGPT, Perplexity)", "Live full-funnel dashboard", "Budget scaling strategy", "Dedicated account manager"],
+        "outcome": "A complete growth machine running 24/7"
+      }
+    },
+    "badge_popular": "Most popular",
+    "feature_label": "Includes:",
+    "outcome_label": "Outcome:"
+  },
+  "comparison": {
+    "badge": "Why Olik",
+    "headline": "Typical agency vs",
+    "headline2": "Olik Management.",
+    "rows": {
+      "r1": { "label": "Approach", "typical": "Sets up ads and waits", "olik": "Builds a complete sales system" },
+      "r2": { "label": "Lead response time", "typical": "Lead waits 48 hours", "olik": "Qualification in 30 seconds" },
+      "r3": { "label": "Reporting", "typical": "PDF once a month", "olik": "Live dashboard in real time" },
+      "r4": { "label": "Data tracking", "typical": "No CAPI – loses 20–30% of data", "olik": "Server-side tracking from day one" },
+      "r5": { "label": "Ad creatives", "typical": "3–5 similar creatives", "olik": "15–20 varied creatives per month" },
+      "r6": { "label": "Phone coverage", "typical": "Reception unavailable after hours", "olik": "AI receptionist answers 24/7" }
+    },
+    "col_typical": "Typical agency",
+    "col_olik": "Olik Management"
+  },
+  "results": {
+    "badge": "Results",
+    "headline": "Numbers that",
+    "headline2": "speak for themselves.",
+    "subheadline": "Real client results. We will add your case study after onboarding.",
+    "metrics": {
+      "m1_value": "€600,000",
+      "m1_label": "Managed ad spend",
+      "m2_value": "1,200+",
+      "m2_label": "Leads generated",
+      "m3_value": "4.8x",
+      "m3_label": "Average ROAS for e-commerce"
+    },
+    "cases": {
+      "c1": {
+        "industry": "E-commerce – fashion",
+        "problem": "High customer acquisition cost, inability to scale Meta Ads campaigns",
+        "action": "Implemented Advantage+, server-side tracking, 18 A/B creatives per month",
+        "result": "ROAS grew from 2.1x to 5.4x in 90 days"
+      },
+      "c2": {
+        "industry": "B2B – financial services",
+        "problem": "Form leads were never contacted within 24 hours",
+        "action": "Deployed AI chatbot, automatic follow-up and voice AI receptionist",
+        "result": "Response time: from 38 hours to 45 seconds, lead conversion +210%"
+      },
+      "c3": {
+        "industry": "Lead gen – renovation services",
+        "problem": "Google Ads campaigns with no conversions, no call tracking",
+        "action": "Performance Max, call tracking, landing page with chatbot",
+        "result": "Lead acquisition cost reduced by 64%, 3x more booked meetings"
+      }
+    },
+    "case_problem": "Problem:",
+    "case_action": "What we did:",
+    "case_result": "Result:"
+  },
+  "process": {
+    "badge": "How we work",
+    "headline": "From the first call",
+    "headline2": "to a working system.",
+    "steps": {
+      "s1": { "num": "01", "name": "Discovery Call", "desc": "A 30-minute no-obligation call. We analyse your business, current marketing activities and the goal you want to achieve." },
+      "s2": { "num": "02", "name": "Audit & strategy", "desc": "A free account audit and a full system strategy. You receive a concrete plan with numbers – before signing a contract." },
+      "s3": { "num": "03", "name": "System implementation", "desc": "Setup of all system components: campaigns, tracking, chatbot, automations. Full implementation in 14–21 days." },
+      "s4": { "num": "04", "name": "Optimisation & scaling", "desc": "Weekly data-driven optimisation. We scale what works and eliminate what does not." }
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "headline": "Frequently asked questions.",
+    "items": {
+      "q1": {
+        "q": "How much does it cost?",
+        "a": "Collaboration starts at Tier 1 – pricing depends on scope and ad budget. Everything is discussed on the discovery call and we present a concrete offer after the audit. No hidden costs."
+      },
+      "q2": {
+        "q": "How quickly will I see results?",
+        "a": "The first leads typically appear within 7–14 days of launching the campaigns. Full system optimisation takes 60–90 days – that is how long the algorithms need to learn and gather data."
+      },
+      "q3": {
+        "q": "Am I locked into a long contract?",
+        "a": "We work on monthly contracts with one month's notice. We want you to stay because you see results – not because you have to."
+      },
+      "q4": {
+        "q": "How are you different from other agencies?",
+        "a": "Most agencies set up ads and send a PDF once a month. We build a complete system: ad → landing page → AI chatbot → automatic follow-up → AI receptionist → CRM → dashboard. The system works 24/7, not just during agency office hours."
+      },
+      "q5": {
+        "q": "Which industries do you work with?",
+        "a": "We specialise in B2B (services, consulting, real estate, finance) and e-commerce. We have experience with companies generating €125k to €7.5M annual revenue."
+      },
+      "q6": {
+        "q": "What if I don't have an ad account yet?",
+        "a": "We set up and configure everything from scratch. Meta Business account, Google Ads, pixel, CAPI – we handle all the infrastructure."
+      }
+    }
+  },
+  "cta_final": {
+    "badge": "Ready to grow?",
+    "headline": "Book a free",
+    "headline2": "discovery call.",
+    "subheadline": "30 minutes. No obligations. You will find out if and how we can help you – concretely, with numbers.",
+    "cta": "Reserve your slot",
+    "form_name": "Full name",
+    "form_company": "Company name",
+    "form_email": "Email",
+    "form_phone": "Phone",
+    "form_message": "What do you do and what are you looking for? (optional)",
+    "form_submit": "Send enquiry",
+    "form_note": "We respond within 2 hours on business days.",
+    "or": "or use the calendar:"
+  },
+  "footer": {
+    "tagline": "A system that sells 24/7.",
+    "desc": "Performance marketing + AI automations. We build systems that generate leads and turn them into clients – without your involvement.",
+    "links_title": "Quick links",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "process": "Process",
+      "contact": "Contact"
+    },
+    "contact_title": "Contact",
+    "email": "contact@olikmanagement.com",
+    "phone": "+48 000 000 000",
+    "social_title": "Social media",
+    "copyright": "© 2025 Olik Management. All rights reserved.",
+    "privacy": "Privacy policy"
+  }
+}
