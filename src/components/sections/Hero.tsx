@@ -114,14 +114,14 @@ export function Hero() {
 
       <motion.div
         style={{ y: titleY, opacity: fadeOut }}
-        className="relative z-20 flex min-h-[100svh] flex-col container-wide pt-32 md:pt-40 pb-20 md:pb-28"
+        className="relative z-20 flex min-h-[100svh] flex-col justify-center container-wide pt-24 md:pt-28 pb-16 md:pb-24"
       >
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-10 md:mb-14"
+          className="mb-6 md:mb-8"
         >
           <div
             className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 border"
