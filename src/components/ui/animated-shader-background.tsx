@@ -84,8 +84,8 @@ export function AuroraShader({ className = "" }: { className?: string }) {
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: "low-power" });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
@@ -106,15 +106,44 @@ export function AuroraShader({ className = "" }: { className?: string }) {
 
     let frameId: number;
     let lastTime = performance.now();
+    let onScreen = true; // hero in viewport
+    let tabActive = !document.hidden; // tab visible
+    const FRAME_INTERVAL = 1000 / 30; // throttle to ~30fps
+    let accumulator = 0;
 
     const animate = (now: number) => {
       frameId = requestAnimationFrame(animate);
       const delta = (now - lastTime) / 1000;
       lastTime = now;
+
+      // Skip all GPU work when hero is scrolled away or tab is hidden
+      if (!onScreen || !tabActive) return;
+
+      // Frame-rate throttle — aurora is slow-moving, 30fps is plenty
+      accumulator += delta * 1000;
+      if (accumulator < FRAME_INTERVAL) return;
+      accumulator = 0;
+
       material.uniforms.iTime.value += delta;
       renderer.render(scene, camera);
     };
     frameId = requestAnimationFrame(animate);
+
+    // Pause rendering when the hero leaves the viewport
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    io.observe(container);
+
+    // Pause when the browser tab is hidden
+    const onVisibility = () => {
+      tabActive = !document.hidden;
+      lastTime = performance.now(); // avoid a large time jump on resume
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     const handleResize = () => {
       if (!container) return;
@@ -127,6 +156,8 @@ export function AuroraShader({ className = "" }: { className?: string }) {
 
     return () => {
       cancelAnimationFrame(frameId);
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();
       geometry.dispose();
