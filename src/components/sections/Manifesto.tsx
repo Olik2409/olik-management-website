@@ -75,7 +75,7 @@ export function Manifesto() {
 
         {/* Cinematic workspace mood photo */}
         <SectionReveal>
-          <div className="mt-14 md:mt-16 relative rounded-3xl overflow-hidden aspect-[16/9] md:aspect-[16/6]">
+          <div className="mt-14 md:mt-16 relative rounded-3xl overflow-hidden aspect-[16/9]">
             <Image
               src="/images/brand/Hero background mood shot.png"
               alt="Olik Management – system w akcji"
