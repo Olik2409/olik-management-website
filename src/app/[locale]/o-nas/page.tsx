@@ -36,7 +36,7 @@ export default function ONasPage() {
           }}
         />
         <div className="relative container-tight">
-          <div className="grid grid-cols-12 gap-6 mb-16">
+          <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
             <div className="col-span-12 md:col-span-8 md:col-start-3">
               <SectionReveal>
                 <p className="eyebrow mb-6">{t("manifest_eyebrow")}</p>
@@ -59,7 +59,7 @@ export default function ONasPage() {
       </section>
 
       {/* Founder */}
-      <section className="relative py-16 md:py-24 bg-[var(--color-bg-elevated)] overflow-hidden">
+      <section className="relative py-12 md:py-24 bg-[var(--color-bg-elevated)] overflow-hidden">
         {/* Aurora background effect */}
         <AuroraShader />
         <div
@@ -112,7 +112,7 @@ export default function ONasPage() {
       </section>
 
       {/* Values */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative py-12 md:py-24 overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -121,7 +121,7 @@ export default function ONasPage() {
           }}
         />
         <div className="relative container-wide">
-          <div className="grid grid-cols-12 gap-6 mb-16">
+          <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
             <div className="col-span-12 md:col-span-8">
               <SectionReveal><Badge number="02">{t("values_badge")}</Badge></SectionReveal>
               <SectionReveal delay={0.1}>
@@ -138,7 +138,7 @@ export default function ONasPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">
             {values.map((v, i) => (
               <SectionReveal key={v.num} delay={0.1 * i}>
-                <div className="bg-[var(--color-bg)] p-8 md:p-10 h-full flex flex-col">
+                <div className="bg-[var(--color-bg)] p-6 md:p-10 h-full flex flex-col">
                   <span
                     className="text-5xl md:text-6xl font-bold mb-6"
                     style={{ fontFamily: "var(--font-display)", color: "var(--color-accent-bright)" }}

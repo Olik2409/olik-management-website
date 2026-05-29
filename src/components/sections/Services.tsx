@@ -19,7 +19,7 @@ export function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="services" className="relative py-12 md:py-24 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -28,7 +28,7 @@ export function Services() {
         }}
       />
       <div className="relative container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
+        <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
           <div className="col-span-12 md:col-span-7">
             <SectionReveal>
               <Badge number="04">{t("badge")}</Badge>

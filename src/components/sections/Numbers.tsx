@@ -16,7 +16,7 @@ export function Numbers() {
   const t = useTranslations("numbers");
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden ambient-pink-violet">
+    <section className="relative py-12 md:py-24 overflow-hidden ambient-pink-violet">
       {/* Warm scenario ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -26,7 +26,7 @@ export function Numbers() {
       />
 
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
+        <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
           <div className="col-span-12 md:col-span-8">
             <SectionReveal>
               <Badge number="04">{t("badge")}</Badge>

@@ -33,7 +33,7 @@ export function System() {
     <section
       ref={ref}
       id="system"
-      className="relative py-20 md:py-28 overflow-hidden bg-[var(--color-bg-elevated)]"
+      className="relative py-12 md:py-24 overflow-hidden bg-[var(--color-bg-elevated)]"
     >
       {/* Ambient orbs – static, no infinite animation loop */}
       <div className="absolute inset-0 pointer-events-none">

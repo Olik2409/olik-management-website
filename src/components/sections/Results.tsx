@@ -29,7 +29,7 @@ export function Results() {
   const t = useTranslations("results");
 
   return (
-    <section id="results" className="relative pt-10 md:pt-14 pb-20 md:pb-28 overflow-hidden ambient-green-blue">
+    <section id="results" className="relative pt-10 md:pt-14 pb-14 md:pb-24 overflow-hidden ambient-green-blue">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

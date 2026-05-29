@@ -50,9 +50,9 @@ export function GrowthTools() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section id="services" className="relative py-20 md:py-28 overflow-hidden ambient-green-blue">
+    <section id="services" className="relative py-12 md:py-24 overflow-hidden ambient-green-blue">
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
+        <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
           <div className="col-span-12 md:col-span-8">
             <SectionReveal>
               <Badge number="02">{t("badge")}</Badge>

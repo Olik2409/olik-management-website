@@ -24,7 +24,7 @@ export function Testimonials() {
   const color = colors[idx];
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-[var(--color-bg-elevated)]">
+    <section className="relative py-12 md:py-24 overflow-hidden bg-[var(--color-bg-elevated)]">
       <div
         className="absolute inset-0 transition-all duration-1000 pointer-events-none"
         style={{
@@ -33,7 +33,7 @@ export function Testimonials() {
       />
 
       <div className="relative container-tight">
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-20">
+        <div className="grid grid-cols-12 gap-6 mb-10 md:mb-16">
           <div className="col-span-12 md:col-span-8">
             <SectionReveal>
               <Badge number="05">{t("badge")}</Badge>
@@ -71,7 +71,7 @@ export function Testimonials() {
               />
             </div>
 
-            <div className="relative h-full p-8 md:p-16 flex flex-col justify-between gap-10">
+            <div className="relative h-full p-6 md:p-16 flex flex-col justify-between gap-8 md:gap-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={cur}
@@ -87,7 +87,7 @@ export function Testimonials() {
                     &ldquo;{t(`items.${cur}.quote`)}&rdquo;
                   </p>
 
-                  <div className="mt-10 flex items-center gap-3">
+                  <div className="mt-6 md:mt-10 flex items-center gap-3">
                     <span
                       className="h-2 w-2 rounded-full"
                       style={{ background: color, boxShadow: `0 0 12px ${color}` }}

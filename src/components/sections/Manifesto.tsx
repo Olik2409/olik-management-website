@@ -17,7 +17,7 @@ export function Manifesto() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.2, 1, 1, 0.2]);
 
   return (
-    <section ref={ref} id="manifesto" className="relative py-20 md:py-28 overflow-hidden ambient-blue-violet">
+    <section ref={ref} id="manifesto" className="relative py-12 md:py-24 overflow-hidden ambient-blue-violet">
       {/* LED line on left */}
       <motion.div
         initial={{ scaleY: 0 }}
@@ -41,7 +41,7 @@ export function Manifesto() {
           <Badge number="01">{t("badge")}</Badge>
         </SectionReveal>
 
-        <motion.div style={{ opacity }} className="mt-10 md:mt-16 max-w-5xl">
+        <motion.div style={{ opacity }} className="mt-8 md:mt-16 max-w-5xl">
           <SplitText
             as="h2"
             text={t("line1")}
@@ -75,7 +75,7 @@ export function Manifesto() {
 
         {/* Cinematic workspace mood photo */}
         <SectionReveal>
-          <div className="mt-14 md:mt-16 relative rounded-3xl overflow-hidden aspect-[16/9]">
+          <div className="mt-10 md:mt-16 relative rounded-3xl overflow-hidden aspect-[16/9]">
             <Image
               src="/images/brand/Hero background mood shot.png"
               alt="Olik Management – system w akcji"
