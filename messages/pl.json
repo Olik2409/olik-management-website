@@ -29,7 +29,22 @@
     "metric3_value": "+391%",
     "metric3_label": "wyższy ROAS / wyższa konwersja",
     "metric4_value": "<2h",
-    "metric4_label": "czas naszej odpowiedzi"
+    "metric4_label": "czas naszej odpowiedzi",
+    "metric1_delta_label": "vs. średnia rynkowa",
+    "metric2_delta_label": "uptime · 0 przestojów",
+    "metric3_delta_label": "ostatnie 90 dni",
+    "metric4_delta": "śr. 47 min",
+    "metric4_delta_label": "follow-up automatyczny"
+  },
+  "dashboard": {
+    "live_update": "aktualizacja w czasie rzeczywistym",
+    "activity_title": "Ostatnia aktywność",
+    "a1_text": "Nowy lead zakwalifikowany przez AI",
+    "a1_time": "teraz",
+    "a2_text": "Kampania Meta – konwersja +12%",
+    "a2_time": "2 min",
+    "a3_text": "Follow-up wysłany automatycznie",
+    "a3_time": "5 min"
   },
   "marquee_top": [
     "Meta Ads",

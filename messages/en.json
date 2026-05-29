@@ -29,7 +29,22 @@
     "metric3_value": "+391%",
     "metric3_label": "higher ROAS / higher conversion",
     "metric4_value": "<2h",
-    "metric4_label": "our response time"
+    "metric4_label": "our response time",
+    "metric1_delta_label": "vs. market average",
+    "metric2_delta_label": "uptime · 0 downtime",
+    "metric3_delta_label": "last 90 days",
+    "metric4_delta": "avg 47 min",
+    "metric4_delta_label": "automatic follow-up"
+  },
+  "dashboard": {
+    "live_update": "real-time updates",
+    "activity_title": "Recent activity",
+    "a1_text": "New lead qualified by AI",
+    "a1_time": "now",
+    "a2_text": "Meta campaign – conversion +12%",
+    "a2_time": "2 min",
+    "a3_text": "Follow-up sent automatically",
+    "a3_time": "5 min"
   },
   "marquee_top": [
     "Meta Ads",

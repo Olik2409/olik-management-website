@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import type { LucideIcon } from "lucide-react";
 
 interface Metric {
@@ -18,13 +19,14 @@ interface Props {
   compact?: boolean;
 }
 
-const activity = [
-  { dot: "var(--color-led-green-bright)", text: "Nowy lead zakwalifikowany przez AI", time: "teraz" },
-  { dot: "var(--color-led-blue-bright)", text: "Kampania Meta – konwersja +12%", time: "2 min" },
-  { dot: "var(--color-led-violet-bright)", text: "Follow-up wysłany automatycznie", time: "5 min" },
-];
-
 export function DashboardCard({ metrics, compact = false }: Props) {
+  const t = useTranslations("dashboard");
+  const activity = [
+    { dot: "var(--color-led-green-bright)", text: t("a1_text"), time: t("a1_time") },
+    { dot: "var(--color-led-blue-bright)", text: t("a2_text"), time: t("a2_time") },
+    { dot: "var(--color-led-violet-bright)", text: t("a3_text"), time: t("a3_time") },
+  ];
+
   return (
     <div
       className="relative rounded-2xl border overflow-hidden flex flex-col h-full"
@@ -59,7 +61,7 @@ export function DashboardCard({ metrics, compact = false }: Props) {
           />
           <span className="num-marker text-white/75 text-[11px] tracking-widest">OLIK DASHBOARD · LIVE</span>
         </div>
-        <span className="text-[10px] text-white/30 font-mono">aktualizacja w czasie rzeczywistym</span>
+        <span className="text-[10px] text-white/30 font-mono">{t("live_update")}</span>
       </div>
 
       {/* Metric rows – vertical, fill height */}
@@ -142,7 +144,7 @@ export function DashboardCard({ metrics, compact = false }: Props) {
         className={`relative border-t shrink-0 ${compact ? "px-4 py-3.5" : "px-5 py-4"}`}
         style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.015)" }}
       >
-        <p className="eyebrow text-[10px] text-white/40 mb-3 tracking-widest">OSTATNIA AKTYWNOŚĆ</p>
+        <p className="eyebrow text-[10px] text-white/40 mb-3 tracking-widest uppercase">{t("activity_title")}</p>
         <div className="space-y-2.5">
           {activity.map((ev, i) => (
             <motion.div
