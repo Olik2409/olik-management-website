@@ -105,7 +105,7 @@ export function Results() {
           </div>
         </SectionReveal>
 
-        <p className="eyebrow mb-8">Wybrane realizacje</p>
+        <p className="eyebrow mb-8">{t("selected_label")}</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {caseKeys.map((key, i) => {
@@ -187,7 +187,7 @@ export function Results() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
             >
-              <span className="link-underline">Zobacz wszystkie case studies</span>
+              <span className="link-underline">{t("view_all")}</span>
               <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>

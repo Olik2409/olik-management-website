@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Olik Management – Performance Marketing & AI System",
-    "description": "Not just ads – we build a complete system that generates, qualifies and handles leads 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automations.",
+    "description": "Not just ads – we build a complete system that generates leads, drives sales and product campaigns, and handles customers 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automations.",
     "ogTitle": "Olik Management – A System That Sells 24/7",
-    "ogDescription": "Performance marketing + AI = leads qualified in 30 seconds, follow-up in 60 seconds, AI receptionist answers calls. Book a free discovery call."
+    "ogDescription": "Performance marketing + AI = lead, sales and product campaigns, leads qualified in 30 seconds and follow-up in 60 seconds. Book a free discovery call."
   },
   "nav": {
     "services": "Services",
@@ -13,12 +13,12 @@
     "cta": "Book a call"
   },
   "hero": {
-    "badge": "Performance Marketing – Lead Gen & E-commerce",
+    "badge": "Performance Marketing – Leads, Sales & E-commerce",
     "headline1": "Performance ads",
     "headline2": "are not enough.",
     "headline3": "We build a system",
     "headline4": "that sells 24/7.",
-    "subheadline": "Your ad generates a click. Our system qualifies the lead in 30 seconds, tracks e-commerce conversions and sends follow-ups automatically – running 24/7 without your involvement.",
+    "subheadline": "Your ad generates a click. Our system qualifies leads, drives sales and product campaigns and tracks e-commerce conversions – sending follow-ups automatically, 24/7 without your involvement.",
     "cta_primary": "Book a discovery call",
     "cta_secondary": "See how it works",
     "scroll_hint": "Scroll",
@@ -65,20 +65,20 @@
     "badge": "Your growth tools",
     "headline1": "Four pillars",
     "headline2": "of one complete system.",
-    "subheadline": "Each element amplifies the others. Together they form a machine that generates B2B leads and scales e-commerce sales – without your intervention.",
+    "subheadline": "Each element amplifies the others. Together they form a machine that generates leads, drives sales and product campaigns and scales e-commerce – without your intervention.",
     "outcome_label": "Outcome",
     "cta": "See full services breakdown",
     "tools": {
       "t1": {
         "title": "Performance Ads",
-        "desc": "Meta Ads and Google Ads optimised for lead gen and e-commerce. Server-side tracking, weekly creatives, Advantage+ and Performance Max from day one.",
+        "desc": "Meta Ads and Google Ads for lead, sales and product campaigns and e-commerce. Server-side tracking, weekly creatives, Advantage+ and Performance Max from day one.",
         "features": [
           "Meta Ads (Advantage+) + Google Ads (Performance Max)",
+          "Lead, sales and product campaigns",
           "Server-side tracking (CAPI) – recovers 20–30% of data",
-          "15–20 ad creatives per month",
-          "Weekly A/B testing and optimisation"
+          "15–20 ad creatives and A/B tests every week"
         ],
-        "outcome": "Steady lead flow and growing e-commerce ROAS"
+        "outcome": "Steady flow of leads, sales and growing ROAS"
       },
       "t2": {
         "title": "Brand & Tracking",
@@ -119,7 +119,7 @@
     "badge": "The System",
     "headline": "From a click",
     "headline2": "to a booked meeting.",
-    "subheadline": "7 integrated steps turning a click into a booked meeting – fully automatically, without your involvement.",
+    "subheadline": "7 integrated steps turning a click into a booked meeting or a sale – fully automatically, without your involvement.",
     "steps": {
       "step1": { "name": "Ad", "desc": "Meta Ads or Google Ads generates precisely targeted traffic", "time": "0 sec" },
       "step2": { "name": "Landing Page", "desc": "Conversion-optimised page captures the lead and their intent", "time": "~3 min" },
@@ -151,18 +151,18 @@
     "badge": "How we work together",
     "headline": "How we can",
     "headline2": "work together.",
-    "subheadline": "From first campaigns to a complete sales system running 24/7. Every engagement is tailored to the stage of your business.",
+    "subheadline": "From first campaigns – lead, sales and product – to a complete sales system running 24/7. Every engagement is tailored to the stage of your business.",
     "tiers": {
       "t1": {
         "name": "Performance Advertising",
-        "for": "For companies that want a steady flow of leads from paid ads",
+        "for": "For companies that want to generate leads and run sales and product campaigns from paid ads",
         "features": [
           "Meta Ads (Advantage+) and Google Ads (Performance Max)",
+          "Lead, sales and product campaigns",
           "Server-side tracking (CAPI) – recovers 20–30% of lost data",
-          "15–20 varied ad creatives per month",
-          "Weekly A/B testing and cost optimisation"
+          "15–20 varied creatives and weekly A/B tests"
         ],
-        "outcome": "Steady lead flow with a measured CPL"
+        "outcome": "Steady flow of leads and sales with a measured cost"
       },
       "t2": {
         "name": "Brand & Tracking",
@@ -200,7 +200,8 @@
     },
     "badge_popular": "Most popular",
     "feature_label": "Includes:",
-    "outcome_label": "Outcome:"
+    "outcome_label": "Outcome:",
+    "cta_call": "Book a discovery call"
   },
   "comparison": {
     "badge": "Why Olik",
@@ -222,7 +223,7 @@
     "badge": "Results",
     "headline": "Numbers that",
     "headline2": "speak for themselves.",
-    "subheadline": "Real client results. After onboarding we will add your case study.",
+    "subheadline": "Real results from our clients. After onboarding we'll add your case study here too.",
     "metrics": {
       "m1_value": "+€700K",
       "m1_label": "Managed ad spend",
@@ -253,7 +254,9 @@
     },
     "case_problem": "Problem:",
     "case_action": "What we did:",
-    "case_result": "Result:"
+    "case_result": "Result:",
+    "selected_label": "Selected work",
+    "view_all": "See all case studies"
   },
   "testimonials": {
     "badge": "What clients say",
@@ -281,7 +284,8 @@
       "s2": { "num": "02", "name": "Audit & strategy", "desc": "A free account audit and a full system strategy. You receive a concrete plan with numbers – before signing a contract." },
       "s3": { "num": "03", "name": "System implementation", "desc": "Setup of all system components: campaigns, tracking, chatbot, automations. Full implementation in 14–21 days." },
       "s4": { "num": "04", "name": "Optimisation & scaling", "desc": "Weekly data-driven optimisation. We scale what works and eliminate what doesn't." }
-    }
+    },
+    "step_counter": "step {n} / 4"
   },
   "faq": {
     "badge": "FAQ",
@@ -330,7 +334,10 @@
   },
   "footer": {
     "tagline": "A system that sells 24/7.",
-    "desc": "Performance marketing + AI automations. We build systems that generate leads and turn them into clients – without your involvement.",
+    "desc": "Performance marketing + AI automations. We build systems that generate leads, drive sales and turn interest into clients – without your involvement.",
+    "cta_call": "Book a discovery call",
+    "nav_title": "Navigation",
+    "services_title": "Services",
     "links_title": "Quick links",
     "links": {
       "home": "Home",
@@ -344,5 +351,71 @@
     "social_title": "Social media",
     "copyright": "© 2025 Olik Management. All rights reserved.",
     "privacy": "Privacy policy"
+  },
+  "pages": {
+    "services_hero": {
+      "number": "SERVICES",
+      "eyebrow": "What we build",
+      "title": "A growth system",
+      "titleAccent": "tailored to your business.",
+      "description": "Performance ads (lead, sales and product campaigns) + AI automations + a live dashboard. We tailor the scope to your stage – from first campaigns to a complete 24/7 sales machine."
+    },
+    "case_hero": {
+      "number": "RESULTS",
+      "eyebrow": "Case Studies",
+      "title": "Results that",
+      "titleAccent": "transform companies.",
+      "description": "Real projects, real numbers. Every case is a system we tested, optimised and scaled together with the client."
+    },
+    "about_hero": {
+      "number": "ABOUT",
+      "eyebrow": "Who we are",
+      "title": "Performance + AI",
+      "titleAccent": "without the agency theatre.",
+      "description": "We don't sell PDF reports. We build systems that generate leads, drive sales and close deals – while the competition is still writing an email."
+    },
+    "contact_hero": {
+      "number": "CONTACT",
+      "eyebrow": "Let's start",
+      "title": "30 minutes.",
+      "titleAccent": "No obligations.",
+      "description": "Pick a convenient slot in the calendar. We'll talk about your business, your goals and whether our system is what you need."
+    },
+    "about": {
+      "manifest_eyebrow": "Manifesto",
+      "manifest_1": "Most agencies sell",
+      "manifest_quote": "“running campaigns”",
+      "manifest_2": "– we build",
+      "manifest_accent": "a complete sales machine",
+      "manifest_3": ". Ads, website, AI chatbot, follow-up, voice AI, CRM and a live dashboard – all connected, all working 24/7.",
+      "founder_badge": "Founder",
+      "founder_title": "Performance marketing",
+      "founder_title_accent": "is my language.",
+      "founder_p1": "I've managed B2B and e-commerce ad budgets for years – from lead campaigns, through sales, to product campaigns. I've seen how much money companies lose because their leads wait 48 hours for a reply. So I built a system where that never happens.",
+      "founder_p2": "I work with companies that want to scale – not with those looking for an agency to “babysit campaigns”. Every decision must have its number. Every client sees their dashboard live.",
+      "values_badge": "Principles",
+      "values_title": "How we work.",
+      "v1_title": "Numbers, not promises",
+      "v1_desc": "Every decision is data-driven. Every client sees their live dashboard. Every report has a specific number – not a vague claim.",
+      "v2_title": "Speed, always",
+      "v2_desc": "A lead is contacted in 30 seconds, we respond in 2 hours. Average campaign launch time: 7 days. New creatives every week.",
+      "v3_title": "System, not one-off actions",
+      "v3_desc": "We don't take credit for a “single win”. We build infrastructure that works when nobody is watching – at night, on weekends, on vacation."
+    },
+    "contact": {
+      "widget_label": "Discovery call · 30 min",
+      "widget_status": "Online · Google Meet",
+      "expect_badge": "What to expect",
+      "expect_1": "A short overview of your business",
+      "expect_2": "Analysis of your current marketing",
+      "expect_3": "Concrete ideas – before you sign anything",
+      "expect_4": "A decision whether to go further (no pressure)",
+      "other_badge": "Other ways",
+      "email_label": "Email",
+      "instagram_label": "Instagram",
+      "response_badge": "Response time",
+      "response_value": "< 2 hours",
+      "response_note": "on business days. We move the way our system does."
+    }
   }
 }

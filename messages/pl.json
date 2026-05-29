@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Olik Management – Performance Marketing & System AI",
-    "description": "Nie tylko reklamy – budujemy kompletny system, który generuje, kwalifikuje i obsługuje leady 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automatyzacje.",
+    "description": "Nie tylko reklamy – budujemy kompletny system, który generuje leady, napędza kampanie sprzedażowe i produktowe oraz obsługuje klientów 24/7. Meta Ads, Google Ads, AI chatbot, voice AI, automatyzacje.",
     "ogTitle": "Olik Management – System, który sprzedaje 24/7",
-    "ogDescription": "Performance marketing + AI = leady kwalifikowane w 30 sekund, follow-up w 60 sekund, AI sekretarka odbiera telefony. Umów bezpłatny discovery call."
+    "ogDescription": "Performance marketing + AI = kampanie leadowe, sprzedażowe i produktowe, leady kwalifikowane w 30 sekund i follow-up w 60 sekund. Umów bezpłatny discovery call."
   },
   "nav": {
     "services": "Usługi",
@@ -13,12 +13,12 @@
     "cta": "Umów call"
   },
   "hero": {
-    "badge": "Performance Marketing – Lead Gen & E-commerce",
+    "badge": "Performance Marketing – Leady, Sprzedaż & E-commerce",
     "headline1": "Performance ads",
     "headline2": "to za mało.",
     "headline3": "Budujemy system,",
     "headline4": "który sprzedaje 24/7.",
-    "subheadline": "Twoja reklama generuje kliknięcie. Nasz system kwalifikuje lead w 30 sekund, śledzi konwersje e-commerce i wysyła follow-up automatycznie – pracując 24/7 bez Twojego udziału.",
+    "subheadline": "Twoja reklama generuje kliknięcie. Nasz system kwalifikuje leady, napędza kampanie sprzedażowe i produktowe oraz śledzi konwersje e-commerce – wysyłając follow-up automatycznie, 24/7 bez Twojego udziału.",
     "cta_primary": "Umów discovery call",
     "cta_secondary": "Zobacz jak to działa",
     "scroll_hint": "Przewiń",
@@ -65,20 +65,20 @@
     "badge": "Twoje narzędzia wzrostu",
     "headline1": "Cztery filary",
     "headline2": "kompletnego systemu.",
-    "subheadline": "Każdy element wzmacnia pozostałe. Razem tworzą maszynę, która generuje leady B2B i skaluje sprzedaż e-commerce – bez Twojej ingerencji.",
+    "subheadline": "Każdy element wzmacnia pozostałe. Razem tworzą maszynę, która generuje leady, napędza kampanie sprzedażowe i produktowe oraz skaluje e-commerce – bez Twojej ingerencji.",
     "outcome_label": "Efekt",
     "cta": "Zobacz pełną ofertę usług",
     "tools": {
       "t1": {
         "title": "Performance Ads",
-        "desc": "Meta Ads i Google Ads zoptymalizowane pod lead gen i e-commerce. Server-side tracking, kreacje co tydzień, Advantage+ i Performance Max od pierwszego dnia.",
+        "desc": "Meta Ads i Google Ads pod kampanie leadowe, sprzedażowe i produktowe oraz e-commerce. Server-side tracking, kreacje co tydzień, Advantage+ i Performance Max od pierwszego dnia.",
         "features": [
           "Meta Ads (Advantage+) + Google Ads (Performance Max)",
+          "Kampanie leadowe, sprzedażowe i produktowe",
           "Server-side tracking (CAPI) – odzyskujemy 20–30% danych",
-          "15–20 kreacji reklamowych miesięcznie",
-          "A/B testy i optymalizacja co tydzień"
+          "15–20 kreacji reklamowych i testy A/B co tydzień"
         ],
-        "outcome": "Stały napływ leadów i rosnący ROAS e-commerce"
+        "outcome": "Stały napływ leadów, sprzedaży i rosnący ROAS"
       },
       "t2": {
         "title": "Brand & Tracking",
@@ -119,7 +119,7 @@
     "badge": "System",
     "headline": "Od kliknięcia",
     "headline2": "do umówionego spotkania.",
-    "subheadline": "7 zintegrowanych kroków zamieniających kliknięcie w umówione spotkanie – w pełni automatycznie, bez Twojego udziału.",
+    "subheadline": "7 zintegrowanych kroków zamieniających kliknięcie w umówione spotkanie lub sprzedaż – w pełni automatycznie, bez Twojego udziału.",
     "steps": {
       "step1": { "name": "Reklama", "desc": "Meta Ads lub Google Ads generuje precyzyjnie targetowany ruch", "time": "0 sek" },
       "step2": { "name": "Landing Page", "desc": "Zoptymalizowana pod konwersję strona zbiera lead i jego intencję", "time": "~3 min" },
@@ -151,18 +151,18 @@
     "badge": "Zakres współpracy",
     "headline": "Jak możemy",
     "headline2": "razem pracować.",
-    "subheadline": "Od pierwszych kampanii po kompletny system sprzedaży działający 24/7. Każdy zakres dostosowujemy do etapu rozwoju Twojej firmy.",
+    "subheadline": "Od pierwszych kampanii – leadowych, sprzedażowych i produktowych – po kompletny system sprzedaży działający 24/7. Każdy zakres dostosowujemy do etapu rozwoju Twojej firmy.",
     "tiers": {
       "t1": {
         "name": "Performance Advertising",
-        "for": "Dla firm, które chcą generować stały napływ leadów z reklam płatnych",
+        "for": "Dla firm, które chcą generować leady oraz prowadzić kampanie sprzedażowe i produktowe z reklam płatnych",
         "features": [
           "Meta Ads (Advantage+) i Google Ads (Performance Max)",
+          "Kampanie leadowe, sprzedażowe i produktowe",
           "Server-side tracking (CAPI) – odzyskujemy 20–30% danych",
-          "15–20 różnorodnych kreacji reklamowych miesięcznie",
-          "Cotygodniowe testy A/B i optymalizacja kosztów"
+          "15–20 różnorodnych kreacji i cotygodniowe testy A/B"
         ],
-        "outcome": "Regularny napływ leadów ze zmierzonym CPL"
+        "outcome": "Regularny napływ leadów i sprzedaży ze zmierzonym kosztem"
       },
       "t2": {
         "name": "Brand & Tracking",
@@ -200,7 +200,8 @@
     },
     "badge_popular": "Najpopularniejszy",
     "feature_label": "Co zawiera:",
-    "outcome_label": "Efekt:"
+    "outcome_label": "Efekt:",
+    "cta_call": "Umów discovery call"
   },
   "comparison": {
     "badge": "Dlaczego Olik",
@@ -222,7 +223,7 @@
     "badge": "Wyniki",
     "headline": "Rezultaty,",
     "headline2": "które mówią same za siebie.",
-    "subheadline": "Rzeczywiste wyniki klientów. Po onboardingu podstawimy Twoje case study.",
+    "subheadline": "Rzeczywiste wyniki naszych klientów. Po onboardingu dodamy tutaj również Twój case study.",
     "metrics": {
       "m1_value": "+3 mln zł",
       "m1_label": "Zarządzany budżet reklamowy",
@@ -253,7 +254,9 @@
     },
     "case_problem": "Problem:",
     "case_action": "Co zrobiliśmy:",
-    "case_result": "Wynik:"
+    "case_result": "Wynik:",
+    "selected_label": "Wybrane realizacje",
+    "view_all": "Zobacz wszystkie case studies"
   },
   "testimonials": {
     "badge": "Co mówią klienci",
@@ -281,7 +284,8 @@
       "s2": { "num": "02", "name": "Audyt i strategia", "desc": "Bezpłatny audyt kont reklamowych i pełna strategia systemu. Otrzymujesz konkretny plan z liczbami – zanim podpiszesz umowę." },
       "s3": { "num": "03", "name": "Wdrożenie systemu", "desc": "Konfiguracja wszystkich elementów: kampanie, tracking, chatbot, automatyzacje. Pełne wdrożenie w 14–21 dni." },
       "s4": { "num": "04", "name": "Optymalizacja i skalowanie", "desc": "Cotygodniowa optymalizacja na podstawie danych. Skalujemy to, co działa, eliminujemy to, co nie przynosi efektów." }
-    }
+    },
+    "step_counter": "krok {n} / 4"
   },
   "faq": {
     "badge": "FAQ",
@@ -330,7 +334,10 @@
   },
   "footer": {
     "tagline": "System, który sprzedaje 24/7.",
-    "desc": "Performance marketing + automatyzacje AI. Budujemy systemy, które generują leady i zamieniają je w klientów – bez Twojego udziału.",
+    "desc": "Performance marketing + automatyzacje AI. Budujemy systemy, które generują leady, napędzają sprzedaż i zamieniają zainteresowanie w klientów – bez Twojego udziału.",
+    "cta_call": "Umów discovery call",
+    "nav_title": "Nawigacja",
+    "services_title": "Usługi",
     "links_title": "Szybkie linki",
     "links": {
       "home": "Strona główna",
@@ -344,5 +351,71 @@
     "social_title": "Social media",
     "copyright": "© 2025 Olik Management. Wszelkie prawa zastrzeżone.",
     "privacy": "Polityka prywatności"
+  },
+  "pages": {
+    "services_hero": {
+      "number": "USŁUGI",
+      "eyebrow": "Co budujemy",
+      "title": "System wzrostu",
+      "titleAccent": "szyty pod Twój biznes.",
+      "description": "Performance ads (kampanie leadowe, sprzedażowe i produktowe) + AI automatyzacje + live dashboard. Dostosowujemy zakres do etapu Twojej firmy – od pierwszych kampanii po kompletną maszynę sprzedaży 24/7."
+    },
+    "case_hero": {
+      "number": "REZULTATY",
+      "eyebrow": "Case Studies",
+      "title": "Wyniki, które",
+      "titleAccent": "zmieniają firmy.",
+      "description": "Realne projekty, realne liczby. Każdy case to system, który przetestowaliśmy, zoptymalizowaliśmy i przeskalowaliśmy razem z klientem."
+    },
+    "about_hero": {
+      "number": "O NAS",
+      "eyebrow": "Kim jesteśmy",
+      "title": "Performance + AI",
+      "titleAccent": "bez agencyjnej teatralności.",
+      "description": "Nie sprzedajemy raportów PDF. Budujemy systemy, które generują leady, napędzają sprzedaż i zamykają transakcje – kiedy konkurencja jeszcze pisze maila."
+    },
+    "contact_hero": {
+      "number": "KONTAKT",
+      "eyebrow": "Zacznijmy",
+      "title": "30 minut.",
+      "titleAccent": "Bez zobowiązań.",
+      "description": "Wybierz dogodny termin w kalendarzu. Porozmawiamy o Twoim biznesie, celach i o tym, czy nasz system jest tym, czego potrzebujesz."
+    },
+    "about": {
+      "manifest_eyebrow": "Manifest",
+      "manifest_1": "Większość agencji sprzedaje",
+      "manifest_quote": "„prowadzenie kampanii”",
+      "manifest_2": "– my budujemy",
+      "manifest_accent": "kompletną maszynę sprzedaży",
+      "manifest_3": ". Reklama, strona, chatbot AI, follow-up, voice AI, CRM i live dashboard – wszystko ze sobą połączone, wszystko działa 24/7.",
+      "founder_badge": "Założyciel",
+      "founder_title": "Performance marketing",
+      "founder_title_accent": "to mój język.",
+      "founder_p1": "Zarządzam budżetami reklamowymi B2B i e-commerce od kilku lat – od kampanii leadowych, przez sprzedażowe, po produktowe. Widziałem, ile pieniędzy klienci tracą, bo ich leady czekają 48 godzin na odpowiedź. Dlatego zbudowałem system, w którym to się nigdy nie zdarza.",
+      "founder_p2": "Pracuję z firmami, które chcą skalować – nie z tymi, które szukają agencji do „pilnowania kampanii”. Każda decyzja musi mieć swoją liczbę. Każdy klient widzi swój dashboard live.",
+      "values_badge": "Zasady",
+      "values_title": "Jak pracujemy.",
+      "v1_title": "Liczby, nie obietnice",
+      "v1_desc": "Każda decyzja opiera się o dane. Każdy klient widzi swój live dashboard. Każdy raport ma konkretną liczbę – nie ogólnik.",
+      "v2_title": "Szybkość, zawsze",
+      "v2_desc": "Lead odpowiada w 30 sekund, my odpowiadamy w 2 godziny. Średni czas wdrożenia kampanii: 7 dni. Nowe kreacje co tydzień.",
+      "v3_title": "System, nie pojedyncze akcje",
+      "v3_desc": "Nie podpisujemy się pod „pojedynczym sukcesem”. Budujemy infrastrukturę, która działa, gdy nikt jej nie pilnuje – w nocy, w weekendy, na wakacjach."
+    },
+    "contact": {
+      "widget_label": "Discovery call · 30 min",
+      "widget_status": "Online · Google Meet",
+      "expect_badge": "Czego się spodziewać",
+      "expect_1": "Krótka prezentacja Twojego biznesu",
+      "expect_2": "Analiza obecnych działań marketingowych",
+      "expect_3": "Konkretne pomysły – zanim cokolwiek podpiszesz",
+      "expect_4": "Decyzja czy chcesz iść dalej (bez presji)",
+      "other_badge": "Inne sposoby",
+      "email_label": "Email",
+      "instagram_label": "Instagram",
+      "response_badge": "Czas odpowiedzi",
+      "response_value": "< 2 godziny",
+      "response_note": "w dni robocze. Działamy tak, jak działa nasz system."
+    }
   }
 }

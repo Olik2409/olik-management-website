@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { CalendlyInline } from "@/components/ui/CalendlyInline";
@@ -5,14 +6,18 @@ import { Badge } from "@/components/ui/Badge";
 import { AuroraShader } from "@/components/ui/animated-shader-background";
 
 export default function KontaktPage() {
+  const h = useTranslations("pages.contact_hero");
+  const t = useTranslations("pages.contact");
+  const expectItems = [t("expect_1"), t("expect_2"), t("expect_3"), t("expect_4")];
+
   return (
     <>
       <PageHero
-        number="KONTAKT"
-        eyebrow="Zacznijmy"
-        title="30 minut."
-        titleAccent="Bez zobowiązań."
-        description="Wybierz dogodny termin w kalendarzu. Porozmawiamy o Twoim biznesie, celach i o tym, czy nasz system jest tym, czego potrzebujesz."
+        number={h("number")}
+        eyebrow={h("eyebrow")}
+        title={h("title")}
+        titleAccent={h("titleAccent")}
+        description={h("description")}
       />
 
       <section className="relative py-10 md:py-16 pb-16 md:pb-24 overflow-hidden">
@@ -31,11 +36,11 @@ export default function KontaktPage() {
                 <div className="rounded-3xl border border-white/[0.08] bg-[var(--color-bg-elevated)] overflow-hidden">
                   <div className="px-6 py-4 border-b border-white/[0.06] flex items-center justify-between">
                     <span className="eyebrow" style={{ color: "var(--color-accent-bright)" }}>
-                      Discovery call · 30 min
+                      {t("widget_label")}
                     </span>
                     <span className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)]">
                       <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-emerald)] animate-pulse" />
-                      Online · Google Meet
+                      {t("widget_status")}
                     </span>
                   </div>
                   <CalendlyInline url="https://calendly.com/olik-management/30min" minHeight={760} />
@@ -47,14 +52,9 @@ export default function KontaktPage() {
             <div className="col-span-12 lg:col-span-4 flex flex-col gap-6">
               <SectionReveal delay={0.1}>
                 <div className="rounded-3xl border border-white/[0.08] bg-[var(--color-bg-elevated)] p-8">
-                  <Badge number="01">Czego się spodziewać</Badge>
+                  <Badge number="01">{t("expect_badge")}</Badge>
                   <ul className="mt-6 space-y-4">
-                    {[
-                      "Krótka prezentacja Twojego biznesu",
-                      "Analiza obecnych działań marketingowych",
-                      "Konkretne pomysły – zanim cokolwiek podpiszesz",
-                      "Decyzja czy chcesz iść dalej (bez presji)",
-                    ].map((p, i) => (
+                    {expectItems.map((p, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-white/90">
                         <span className="num-marker pt-0.5 shrink-0">{String(i + 1).padStart(2, "0")}</span>
                         <span>{p}</span>
@@ -66,10 +66,10 @@ export default function KontaktPage() {
 
               <SectionReveal delay={0.15}>
                 <div className="rounded-3xl border border-white/[0.08] bg-[var(--color-bg-elevated)] p-8">
-                  <Badge number="02">Inne sposoby</Badge>
+                  <Badge number="02">{t("other_badge")}</Badge>
                   <ul className="mt-6 space-y-4">
                     <li>
-                      <p className="eyebrow mb-1.5">Email</p>
+                      <p className="eyebrow mb-1.5">{t("email_label")}</p>
                       <a
                         href="mailto:kontakt@olikmanagement.com"
                         className="text-base text-white hover:text-[var(--color-accent-bright)] transition-colors link-underline"
@@ -78,7 +78,7 @@ export default function KontaktPage() {
                       </a>
                     </li>
                     <li>
-                      <p className="eyebrow mb-1.5">Instagram</p>
+                      <p className="eyebrow mb-1.5">{t("instagram_label")}</p>
                       <a
                         href="https://www.instagram.com/oliwier.kochanowicz/"
                         target="_blank"
@@ -95,16 +95,16 @@ export default function KontaktPage() {
               <SectionReveal delay={0.2}>
                 <div className="rounded-3xl border border-[var(--color-accent)]/30 p-8" style={{ background: "var(--color-accent-soft)" }}>
                   <p className="eyebrow mb-3" style={{ color: "var(--color-accent-bright)" }}>
-                    Czas odpowiedzi
+                    {t("response_badge")}
                   </p>
                   <p
                     className="text-3xl font-bold text-white"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    &lt; 2 godziny
+                    {t("response_value")}
                   </p>
                   <p className="mt-2 text-sm text-[var(--color-text-muted)]">
-                    w dni robocze. Działamy tak, jak działa nasz system.
+                    {t("response_note")}
                   </p>
                 </div>
               </SectionReveal>

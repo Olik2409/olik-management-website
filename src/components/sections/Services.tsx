@@ -144,7 +144,7 @@ export function Services() {
               href="/kontakt"
               className="group inline-flex items-center gap-3 text-sm text-white/80 hover:text-white transition-colors"
             >
-              <span className="link-underline">Umów discovery call</span>
+              <span className="link-underline">{t("cta_call")}</span>
               <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>

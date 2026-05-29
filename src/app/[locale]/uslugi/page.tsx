@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/sections/PageHero";
 import { Services } from "@/components/sections/Services";
 import { Comparison } from "@/components/sections/Comparison";
@@ -6,14 +7,15 @@ import { FAQ } from "@/components/sections/FAQ";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 
 export default function UslugiPage() {
+  const t = useTranslations("pages.services_hero");
   return (
     <>
       <PageHero
-        number="USŁUGI"
-        eyebrow="Co budujemy"
-        title="System wzrostu"
-        titleAccent="szyty pod Twój biznes."
-        description="Performance ads + AI automatyzacje + live dashboard. Dostosowujemy zakres do etapu Twojej firmy – od pierwszych kampanii po kompletną maszynę sprzedaży 24/7."
+        number={t("number")}
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        titleAccent={t("titleAccent")}
+        description={t("description")}
       />
       <Services />
       <Comparison />

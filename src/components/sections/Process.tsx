@@ -69,7 +69,7 @@ export function Process() {
                         }}
                       />
                       <span className="num-marker" style={{ color }}>
-                        krok {i + 1} / 4
+                        {t("step_counter", { n: i + 1 })}
                       </span>
                     </div>
                   </div>

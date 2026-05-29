@@ -33,7 +33,7 @@ export function Footer() {
               className="group mt-8 inline-flex items-center gap-3 text-base transition-colors font-semibold"
               style={{ color: "var(--color-led-blue-bright)" }}
             >
-              <span className="link-underline">Umów discovery call</span>
+              <span className="link-underline">{t("cta_call")}</span>
               <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -45,7 +45,7 @@ export function Footer() {
         {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 pb-16 border-b border-white/[0.07]">
           <div>
-            <p className="eyebrow mb-5 text-xs tracking-widest text-[var(--color-text-dim)]">Nawigacja</p>
+            <p className="eyebrow mb-5 text-xs tracking-widest text-[var(--color-text-dim)]">{t("nav_title")}</p>
             <ul className="space-y-4">
               {(["home", "services", "process", "contact"] as const).map((k) => (
                 <li key={k}>
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow mb-5 text-xs tracking-widest text-[var(--color-text-dim)]">Usługi</p>
+            <p className="eyebrow mb-5 text-xs tracking-widest text-[var(--color-text-dim)]">{t("services_title")}</p>
             <ul className="space-y-4">
               {[
                 { name: "Performance Ads", color: "var(--color-led-blue-bright)" },

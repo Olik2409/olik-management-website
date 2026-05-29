@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";
@@ -6,14 +7,23 @@ import { AuroraShader } from "@/components/ui/animated-shader-background";
 import Image from "next/image";
 
 export default function ONasPage() {
+  const h = useTranslations("pages.about_hero");
+  const t = useTranslations("pages.about");
+
+  const values = [
+    { num: "01", title: t("v1_title"), desc: t("v1_desc") },
+    { num: "02", title: t("v2_title"), desc: t("v2_desc") },
+    { num: "03", title: t("v3_title"), desc: t("v3_desc") },
+  ];
+
   return (
     <>
       <PageHero
-        number="O NAS"
-        eyebrow="Kim jesteśmy"
-        title="Performance + AI"
-        titleAccent="bez agencyjnej teatralności."
-        description="Nie sprzedajemy raportów PDF. Budujemy systemy, które generują leady i zamykają sprzedaż – kiedy konkurencja jeszcze pisze maila."
+        number={h("number")}
+        eyebrow={h("eyebrow")}
+        title={h("title")}
+        titleAccent={h("titleAccent")}
+        description={h("description")}
       />
 
       {/* Manifesto */}
@@ -29,18 +39,18 @@ export default function ONasPage() {
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8 md:col-start-3">
               <SectionReveal>
-                <p className="eyebrow mb-6">Manifest</p>
+                <p className="eyebrow mb-6">{t("manifest_eyebrow")}</p>
               </SectionReveal>
               <SectionReveal delay={0.1}>
                 <p
                   className="text-xl md:text-2xl lg:text-3xl text-white leading-tight font-medium text-balance"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Większość agencji sprzedaje
-                  <span className="text-[var(--color-text-muted)] italic"> &ldquo;prowadzenie kampanii&rdquo;</span>
-                  &nbsp;– my budujemy
-                  <span className="text-[var(--color-accent-bright)] italic"> kompletną maszynę sprzedaży</span>.
-                  Reklama, strona, chatbot AI, follow-up, voice AI, CRM i live dashboard – wszystko ze sobą połączone, wszystko działa 24/7.
+                  {t("manifest_1")}
+                  <span className="text-[var(--color-text-muted)] italic"> {t("manifest_quote")}</span>
+                  &nbsp;{t("manifest_2")}
+                  <span className="text-[var(--color-accent-bright)] italic"> {t("manifest_accent")}</span>
+                  {t("manifest_3")}
                 </p>
               </SectionReveal>
             </div>
@@ -75,25 +85,25 @@ export default function ONasPage() {
             </div>
             <div className="col-span-12 md:col-span-7 md:pl-8">
               <SectionReveal delay={0.1}>
-                <Badge number="01">Założyciel</Badge>
+                <Badge number="01">{t("founder_badge")}</Badge>
               </SectionReveal>
               <SectionReveal delay={0.15}>
                 <h2
                   className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[0.95]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Performance marketing &nbsp;
-                  <span className="text-[var(--color-text-muted)] italic">to mój język.</span>
+                  {t("founder_title")} &nbsp;
+                  <span className="text-[var(--color-text-muted)] italic">{t("founder_title_accent")}</span>
                 </h2>
               </SectionReveal>
               <SectionReveal delay={0.2}>
                 <p className="mt-6 text-lg text-[var(--color-text-muted)] leading-relaxed">
-                  Zarządzam budżetami reklamowymi B2B i e-commerce od kilku lat. Widziałem, ile pieniędzy klienci tracą, bo ich leady czekają 48 godzin na odpowiedź. Dlatego zbudowałem system, w którym to się nigdy nie zdarza.
+                  {t("founder_p1")}
                 </p>
               </SectionReveal>
               <SectionReveal delay={0.25}>
                 <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-                  Pracuję z firmami, które chcą skalować – nie z tymi, które szukają agencji do &ldquo;pilnowania kampanii&rdquo;. Każda decyzja musi mieć swoją liczbę. Każdy klient widzi swój dashboard live.
+                  {t("founder_p2")}
                 </p>
               </SectionReveal>
             </div>
@@ -113,24 +123,20 @@ export default function ONasPage() {
         <div className="relative container-wide">
           <div className="grid grid-cols-12 gap-6 mb-16">
             <div className="col-span-12 md:col-span-8">
-              <SectionReveal><Badge number="02">Zasady</Badge></SectionReveal>
+              <SectionReveal><Badge number="02">{t("values_badge")}</Badge></SectionReveal>
               <SectionReveal delay={0.1}>
                 <h2
                   className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance leading-[0.95]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Jak pracujemy.
+                  {t("values_title")}
                 </h2>
               </SectionReveal>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-3xl overflow-hidden">
-            {[
-              { num: "01", title: "Liczby, nie obietnice", desc: "Każda decyzja opiera się o dane. Każdy klient widzi swój live dashboard. Każdy raport ma konkretną liczbę – nie ogólnik." },
-              { num: "02", title: "Szybkość, zawsze", desc: "Lead odpowiada w 30 sekund, my odpowiadamy w 2 godziny. Średni czas wdrożenia kampanii: 7 dni. Nowe kreacje co tydzień." },
-              { num: "03", title: "System, nie pojedyncze akcje", desc: "Nie podpisujemy się pod &ldquo;pojedynczym sukcesem&rdquo;. Budujemy infrastrukturę, która działa, gdy nikt jej nie pilnuje – w nocy, w weekendy, na wakacjach." },
-            ].map((v, i) => (
+            {values.map((v, i) => (
               <SectionReveal key={v.num} delay={0.1 * i}>
                 <div className="bg-[var(--color-bg)] p-8 md:p-10 h-full flex flex-col">
                   <span
@@ -145,7 +151,7 @@ export default function ONasPage() {
                   >
                     {v.title}
                   </h3>
-                  <p className="text-sm text-[var(--color-text-muted)] leading-relaxed" dangerouslySetInnerHTML={{ __html: v.desc }} />
+                  <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{v.desc}</p>
                 </div>
               </SectionReveal>
             ))}
