@@ -114,7 +114,7 @@ export function Hero() {
 
       <motion.div
         style={{ y: titleY, opacity: fadeOut }}
-        className="relative z-20 flex min-h-[100svh] flex-col justify-center container-wide pt-24 md:pt-28 pb-16 md:pb-24"
+        className="relative z-20 flex min-h-[100svh] flex-col justify-center container-wide pt-24 md:pt-28 pb-8 md:pb-24"
       >
         {/* Badge */}
         <motion.div
