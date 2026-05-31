@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown, Zap, Activity, TrendingUp, Clock } from "lucide-react";
@@ -18,6 +18,18 @@ export function Hero() {
   });
   const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  // Disable the scroll parallax/fade on mobile/tablet — the content column is
+  // very tall there, so the -15% upward shift would reveal a large empty gap
+  // below the dashboard card (section has no fixed height on mobile).
+  const [enableParallax, setEnableParallax] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setEnableParallax(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const metrics = [
     {
@@ -113,7 +125,7 @@ export function Hero() {
       />
 
       <motion.div
-        style={{ y: titleY, opacity: fadeOut }}
+        style={enableParallax ? { y: titleY, opacity: fadeOut } : undefined}
         className="relative z-20 flex md:min-h-[100svh] flex-col justify-start md:justify-center container-wide pt-24 md:pt-28 pb-8 md:pb-24"
       >
         {/* Badge */}
