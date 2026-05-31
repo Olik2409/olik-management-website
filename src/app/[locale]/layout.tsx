@@ -10,6 +10,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCtaBar } from "@/components/ui/MobileCtaBar";
 import { CursorGlow } from "@/components/ui/CursorGlow";
+import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import "../globals.css";
 
 const syne = Syne({
@@ -41,13 +42,18 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
-    title: t("title"),
+    metadataBase: new URL("https://olikmanagement.com"),
+    title: {
+      default: t("title"),
+      template: "%s | Olik Management",
+    },
     description: t("description"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
       type: "website",
       locale: locale === "pl" ? "pl_PL" : "en_US",
+      siteName: "Olik Management",
       images: [{ url: "/images/brand/OLIK - szerszy.jpg", width: 1024, height: 320, alt: "Olik Management" }],
     },
     twitter: {
@@ -66,6 +72,7 @@ export async function generateMetadata({
       languages: {
         pl: "https://olikmanagement.com",
         en: "https://olikmanagement.com/en",
+        "x-default": "https://olikmanagement.com",
       },
     },
   };
@@ -88,6 +95,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${syne.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
       <body>
+        <OrganizationSchema />
         <NextIntlClientProvider messages={messages}>
           <CursorGlow />
           <SmoothScroll>

@@ -1,4 +1,54 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+
+const BASE = "https://olikmanagement.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isPl = locale === "pl";
+
+  const plUrl = `${BASE}/kontakt`;
+  const enUrl = `${BASE}/en/kontakt`;
+  const canonical = isPl ? plUrl : enUrl;
+
+  const title = isPl
+    ? "Kontakt | Bezpłatny Discovery Call 30 min – Olik Management"
+    : "Contact | Free 30-min Discovery Call – Olik Management";
+  const description = isPl
+    ? "Umów bezpłatny 30-minutowy discovery call. Analizujemy Twój biznes i sprawdzamy czy nasz system może Ci pomóc generować więcej klientów. Odpowiadamy w < 2h."
+    : "Book a free 30-minute discovery call. We analyse your business and check if our system can help you generate more clients. We respond in under 2 hours.";
+  const ogTitle = isPl
+    ? "Umów bezpłatny discovery call | Olik Management"
+    : "Book a free discovery call | Olik Management";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        pl: plUrl,
+        en: enUrl,
+        "x-default": plUrl,
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description,
+      url: canonical,
+      locale: isPl ? "pl_PL" : "en_US",
+    },
+    twitter: {
+      title: ogTitle,
+      description,
+    },
+    robots: { index: true, follow: true },
+  };
+}
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { CalendlyInline } from "@/components/ui/CalendlyInline";

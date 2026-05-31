@@ -1,4 +1,51 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+
+const BASE = "https://olikmanagement.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isPl = locale === "pl";
+
+  const plUrl = `${BASE}/o-nas`;
+  const enUrl = `${BASE}/en/o-nas`;
+  const canonical = isPl ? plUrl : enUrl;
+
+  const title = isPl
+    ? "O nas | Kim jesteśmy – Olik Management"
+    : "About us | Who we are – Olik Management";
+  const description = isPl
+    ? "Olik Management to polska agencja performance marketingu. Budujemy systemy sprzedaży oparte o Meta Ads, Google Ads i automatyzacje AI dla firm B2B i e-commerce."
+    : "Olik Management is a Polish performance marketing agency. We build sales systems based on Meta Ads, Google Ads and AI automations for B2B and e-commerce companies.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        pl: plUrl,
+        en: enUrl,
+        "x-default": plUrl,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      locale: isPl ? "pl_PL" : "en_US",
+    },
+    twitter: {
+      title,
+      description,
+    },
+    robots: { index: true, follow: true },
+  };
+}
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { Badge } from "@/components/ui/Badge";

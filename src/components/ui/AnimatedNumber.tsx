@@ -14,11 +14,19 @@ function parseValue(val: string): { prefix: string; number: number; suffix: stri
   return { prefix: match[1], number: isNaN(num) ? 0 : num, suffix: match[3] };
 }
 
+function formatFinal(number: number): string {
+  return Number.isInteger(number)
+    ? Math.round(number).toLocaleString("pl-PL")
+    : number.toFixed(1).replace(".", ",");
+}
+
 export function AnimatedNumber({ value, duration = 2000 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
-  const [display, setDisplay] = useState("0");
   const { prefix, number, suffix } = parseValue(value);
+  // SSR renders the final value so crawlers see real numbers (not "0").
+  // The count-up animation still plays from 0 to the final value on the client.
+  const [display, setDisplay] = useState(() => formatFinal(number));
 
   useEffect(() => {
     if (!isInView) return;
