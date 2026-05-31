@@ -145,7 +145,7 @@ export function Hero() {
         </motion.div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-12 gap-6 lg:gap-10 flex-1 items-center lg:items-stretch">
+        <div className="grid grid-cols-12 gap-6 lg:gap-10 lg:flex-1 items-center lg:items-stretch">
           {/* Headline column */}
           <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
             <h1
