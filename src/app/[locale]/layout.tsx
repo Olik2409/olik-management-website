@@ -54,17 +54,22 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "pl" ? "pl_PL" : "en_US",
       siteName: "Olik Management",
-      images: [{ url: "/images/brand/OLIK - szerszy.jpg", width: 1024, height: 320, alt: "Olik Management" }],
+      images: [{ url: "/images/brand/olik-og.jpg", width: 1024, height: 320, alt: "Olik Management" }],
     },
     twitter: {
       card: "summary_large_image",
       title: t("ogTitle"),
       description: t("ogDescription"),
-      images: ["/images/brand/OLIK - szerszy.jpg"],
+      images: ["/images/brand/olik-og.jpg"],
     },
     icons: {
-      icon: "/images/brand/OLIK 1.jpg",
-      apple: "/images/brand/OLIK 1.jpg",
+      icon: [
+        { url: "/favicons/favicon.ico",  sizes: "32x32",  type: "image/x-icon" },
+        { url: "/favicons/favicon.svg",  type: "image/svg+xml" },
+        { url: "/favicons/icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/favicons/icon-512.png", sizes: "512x512", type: "image/png" },
+      ],
+      apple: { url: "/favicons/apple-touch-icon.png", sizes: "180x180" },
     },
     robots: { index: true, follow: true },
     alternates: {
