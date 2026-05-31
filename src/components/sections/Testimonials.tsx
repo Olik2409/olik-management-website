@@ -51,7 +51,7 @@ export function Testimonials() {
         </div>
 
         <SectionReveal>
-          <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-[var(--color-bg)] min-h-[480px] md:min-h-[420px]">
+          <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-[var(--color-bg)] md:min-h-[420px]">
             {/* Animated LED border */}
             <motion.div
               className="absolute inset-0 rounded-3xl pointer-events-none"

@@ -89,8 +89,8 @@ export function Footer() {
             <p className="eyebrow mb-5 text-xs tracking-widest text-[var(--color-text-dim)]">{t("contact_title")}</p>
             <ul className="space-y-4">
               <li>
-                <a href={`mailto:${t("email")}`} className="text-base text-white/70 hover:text-white transition-colors link-underline font-medium break-all">
-                  {t("email")}
+                <a href={`mailto:${t("email")}`} className="text-base text-white/70 hover:text-white transition-colors link-underline font-medium">
+                  {t("email").split("@")[0]}@<wbr />{t("email").split("@")[1]}
                 </a>
               </li>
               <li>
