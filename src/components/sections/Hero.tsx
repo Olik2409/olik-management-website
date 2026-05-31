@@ -65,7 +65,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
+      className="relative md:min-h-[100svh] w-full overflow-hidden bg-[var(--color-bg)]"
     >
       {/* WebGL Aurora Shader background */}
       <AuroraShader />
