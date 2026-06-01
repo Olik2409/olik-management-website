@@ -24,11 +24,17 @@ export function Testimonials() {
   const color = colors[idx];
 
   return (
-    <section className="relative py-12 md:py-24 overflow-hidden bg-[var(--color-bg-elevated)]">
+    <section
+      className="relative py-12 md:py-24 overflow-hidden transition-all duration-1000"
+      style={{
+        background:
+          "linear-gradient(160deg, #0c0c1a 0%, #08080f 50%, #0b0b18 100%)",
+      }}
+    >
       <div
         className="absolute inset-0 transition-all duration-1000 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 60% 50% at 50% 50%, ${color}15 0%, transparent 60%)`,
+          background: `radial-gradient(ellipse 70% 60% at 15% 0%, ${color}33 0%, transparent 55%), radial-gradient(ellipse 60% 60% at 90% 100%, ${color}26 0%, transparent 55%)`,
         }}
       />
 
