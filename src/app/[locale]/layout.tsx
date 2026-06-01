@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileCtaBar } from "@/components/ui/MobileCtaBar";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { SITE_URL, localeUrl } from "@/lib/site";
 import "../globals.css";
 
 const syne = Syne({
@@ -42,7 +43,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
-    metadataBase: new URL("https://olikmanagement.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: t("title"),
       template: "%s | Olik Management",
@@ -54,7 +55,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "pl" ? "pl_PL" : "en_US",
       siteName: "Olik Management",
-      images: [{ url: "/images/brand/olik-og.jpg", width: 1024, height: 320, alt: "Olik Management" }],
+      images: [{ url: "/images/brand/olik-og.jpg", width: 1200, height: 630, alt: "Olik Management" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -72,11 +73,11 @@ export async function generateMetadata({
     },
     robots: { index: true, follow: true },
     alternates: {
-      canonical: locale === "pl" ? "https://olikmanagement.com" : "https://olikmanagement.com/en",
+      canonical: localeUrl(locale),
       languages: {
-        pl: "https://olikmanagement.com",
-        en: "https://olikmanagement.com/en",
-        "x-default": "https://olikmanagement.com",
+        pl: localeUrl("pl"),
+        en: localeUrl("en"),
+        "x-default": localeUrl("pl"),
       },
     },
   };

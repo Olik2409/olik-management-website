@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-
-const BASE = "https://olikmanagement.com";
+import { SITE_URL as BASE } from "@/lib/site";
 
 export async function generateMetadata({
   params,

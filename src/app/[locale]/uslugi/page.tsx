@@ -8,8 +8,8 @@ import { FAQ } from "@/components/sections/FAQ";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { FAQPageSchema } from "@/components/seo/FAQPageSchema";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { SITE_URL as BASE } from "@/lib/site";
 
-const BASE = "https://olikmanagement.com";
 const FAQ_KEYS = ["q1", "q2", "q3", "q4", "q5", "q6"] as const;
 
 export async function generateMetadata({

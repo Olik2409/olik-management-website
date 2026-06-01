@@ -8,8 +8,7 @@ import { Numbers } from "@/components/sections/Numbers";
 import { Process } from "@/components/sections/Process";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { MarqueeTicker } from "@/components/ui/MarqueeTicker";
-
-const BASE = "https://olikmanagement.com";
+import { SITE_URL as BASE } from "@/lib/site";
 
 export async function generateMetadata({
   params,

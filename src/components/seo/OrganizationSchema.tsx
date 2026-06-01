@@ -1,20 +1,22 @@
+import { SITE_URL, CONTACT_EMAIL, SOCIAL } from "@/lib/site";
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Olik Management",
-  url: "https://olikmanagement.com",
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicons/icon-512.png`,
   telephone: "+48788589821",
-  email: "kontakt@olikmanagement.com",
+  email: CONTACT_EMAIL,
   areaServed: "PL",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
+    telephone: "+48788589821",
+    email: CONTACT_EMAIL,
     availableLanguage: ["Polish", "English"],
   },
-  sameAs: [
-    "https://www.instagram.com/olik.management/",
-    "https://www.linkedin.com/in/olik-management/",
-  ],
+  sameAs: [SOCIAL.instagram, SOCIAL.linkedin],
 };
 
 export function OrganizationSchema() {

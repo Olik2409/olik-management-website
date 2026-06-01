@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site";
+
 interface Props {
   locale: string;
 }
@@ -72,7 +74,7 @@ export function ServiceSchema({ locale }: Props) {
         provider: {
           "@type": "Organization",
           name: "Olik Management",
-          url: "https://olikmanagement.com",
+          url: SITE_URL,
         },
         serviceType: service.serviceType,
         areaServed: "PL",
