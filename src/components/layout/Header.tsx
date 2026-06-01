@@ -5,7 +5,6 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -46,14 +45,12 @@ export function Header() {
       >
         <div className="container-wide flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center shrink-0 z-10 group" aria-label="Olik Management">
-            <Image
-              src="/images/brand/olik-logo.png"
-              alt="Olik Management"
-              height={36}
-              width={67}
-              className="h-9 w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_20px_var(--color-led-blue-glow)]"
-              priority
-            />
+            <span
+              className="text-xl sm:text-2xl font-bold tracking-tight text-white transition-all duration-500 group-hover:drop-shadow-[0_0_20px_var(--color-led-blue-glow)] select-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              OLIK<span style={{ color: "var(--color-led-blue-bright)" }}> Management</span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">

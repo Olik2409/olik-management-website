@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -134,13 +133,12 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Image
-              src="/images/brand/olik-logo.png"
-              alt="Olik Management"
-              height={28}
-              width={52}
-              className="h-7 w-auto opacity-80"
-            />
+            <span
+              className="text-lg font-bold text-white/80 tracking-tight select-none"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              OLIK<span style={{ color: "var(--color-led-blue-bright)" }}> Management</span>
+            </span>
             <span className="text-xs text-[var(--color-text-dim)]">{t("copyright")}</span>
           </div>
         </div>
