@@ -55,26 +55,26 @@ export function Testimonials() {
             className="relative rounded-3xl overflow-hidden border border-white/[0.08] md:min-h-[420px] transition-all duration-1000"
             style={{
               background:
-                "linear-gradient(135deg, #0d0d1a 0%, #08080f 45%, #0a0a16 100%)",
+                "linear-gradient(135deg, #1b1b33 0%, #101022 45%, #0a0a16 100%)",
             }}
           >
             {/* Brand accent gradient – tinted to the active testimonial color */}
             <motion.div
               className="absolute inset-0 rounded-3xl pointer-events-none transition-all duration-1000"
               style={{
-                background: `radial-gradient(ellipse 70% 90% at 0% 0%, ${color}22 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 100% 100%, ${color}1a 0%, transparent 55%)`,
+                background: `radial-gradient(ellipse 80% 100% at 0% 0%, ${color}55 0%, transparent 60%), radial-gradient(ellipse 70% 90% at 100% 100%, ${color}40 0%, transparent 60%)`,
               }}
-              animate={{ opacity: [0.7, 1, 0.7] }}
+              animate={{ opacity: [0.8, 1, 0.8] }}
               transition={{ duration: 6, repeat: Infinity }}
             />
             {/* Soft LED border sheen */}
             <motion.div
               className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{
-                background: `linear-gradient(135deg, ${color}30, transparent 55%)`,
-                opacity: 0.35,
+                background: `linear-gradient(135deg, ${color}55, transparent 55%)`,
+                opacity: 0.5,
               }}
-              animate={{ opacity: [0.25, 0.4, 0.25] }}
+              animate={{ opacity: [0.4, 0.6, 0.4] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
 
