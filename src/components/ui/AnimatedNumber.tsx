@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { useLocale } from "next-intl";
 
 interface Props {
   value: string;
@@ -14,19 +15,21 @@ function parseValue(val: string): { prefix: string; number: number; suffix: stri
   return { prefix: match[1], number: isNaN(num) ? 0 : num, suffix: match[3] };
 }
 
-function formatFinal(number: number): string {
+function format(number: number, locale: string): string {
+  const intl = locale === "pl" ? "pl-PL" : "en-US";
   return Number.isInteger(number)
-    ? Math.round(number).toLocaleString("pl-PL")
-    : number.toFixed(1).replace(".", ",");
+    ? Math.round(number).toLocaleString(intl)
+    : number.toLocaleString(intl, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 }
 
 export function AnimatedNumber({ value, duration = 2000 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
+  const locale = useLocale();
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
   const { prefix, number, suffix } = parseValue(value);
   // SSR renders the final value so crawlers see real numbers (not "0").
   // The count-up animation still plays from 0 to the final value on the client.
-  const [display, setDisplay] = useState(() => formatFinal(number));
+  const [display, setDisplay] = useState(() => format(number, locale));
 
   useEffect(() => {
     if (!isInView) return;
@@ -36,15 +39,11 @@ export function AnimatedNumber({ value, duration = 2000 }: Props) {
       const progress = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = number * eased;
-      setDisplay(
-        Number.isInteger(number)
-          ? Math.round(current).toLocaleString("pl-PL")
-          : current.toFixed(1).replace(".", ",")
-      );
+      setDisplay(format(current, locale));
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [isInView, number, duration]);
+  }, [isInView, number, duration, locale]);
 
   return (
     <span ref={ref}>

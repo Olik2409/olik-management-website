@@ -10,7 +10,9 @@
     "process": "Process",
     "about": "About",
     "contact": "Contact",
-    "cta": "Book a call"
+    "cta": "Book a call",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "badge": "Performance Marketing – Leads, Sales & E-commerce",

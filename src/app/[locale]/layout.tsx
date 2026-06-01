@@ -102,11 +102,17 @@ export default async function LocaleLayout({
       <body>
         <OrganizationSchema />
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-black"
+          >
+            {locale === "pl" ? "Przejdź do treści" : "Skip to content"}
+          </a>
           <CursorGlow />
           <SmoothScroll>
             <Header />
             <PageTransition>
-              <main>{children}</main>
+              <main id="main-content">{children}</main>
             </PageTransition>
             <Footer />
             <MobileCtaBar />

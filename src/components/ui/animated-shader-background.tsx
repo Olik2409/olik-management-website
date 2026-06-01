@@ -104,6 +104,7 @@ export function AuroraShader({ className = "" }: { className?: string }) {
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frameId: number;
     let lastTime = performance.now();
     let onScreen = true; // hero in viewport
@@ -125,7 +126,13 @@ export function AuroraShader({ className = "" }: { className?: string }) {
       material.uniforms.iTime.value += delta;
       renderer.render(scene, camera);
     };
-    frameId = requestAnimationFrame(animate);
+    if (prefersReduced) {
+      // Respect prefers-reduced-motion: paint one static frame, no loop.
+      material.uniforms.iTime.value = 8.0;
+      renderer.render(scene, camera);
+    } else {
+      frameId = requestAnimationFrame(animate);
+    }
 
     // Pause rendering when the hero leaves the viewport
     const io = new IntersectionObserver(
@@ -149,6 +156,8 @@ export function AuroraShader({ className = "" }: { className?: string }) {
       const h = container.clientHeight;
       renderer.setSize(w, h);
       material.uniforms.iResolution.value.set(w, h);
+      // Static mode never re-renders via the loop, so repaint on resize.
+      if (prefersReduced) renderer.render(scene, camera);
     };
     window.addEventListener("resize", handleResize);
 

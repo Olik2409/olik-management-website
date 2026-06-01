@@ -16,7 +16,7 @@ export function Footer() {
         }}
       />
 
-      <div className="relative container-wide pt-12 md:pt-16 pb-10 md:pb-14">
+      <div className="relative container-wide pt-12 md:pt-16 pb-28 lg:pb-14">
 
         {/* Top CTA row */}
         <div className="mb-16 md:mb-20 grid grid-cols-12 gap-6 items-start">

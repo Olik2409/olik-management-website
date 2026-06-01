@@ -96,7 +96,8 @@ export function Header() {
           <button
             className="lg:hidden p-2 -mr-2 text-white z-10"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -110,7 +111,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 lg:hidden bg-[var(--color-bg)] overflow-hidden"
+            className="fixed inset-0 z-[45] lg:hidden bg-[var(--color-bg)] overflow-hidden"
           >
             {/* LED orbs in menu bg */}
             <div className="absolute inset-0 pointer-events-none">

@@ -10,7 +10,9 @@
     "process": "Proces",
     "about": "O nas",
     "contact": "Kontakt",
-    "cta": "Umów call"
+    "cta": "Umów call",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
   },
   "hero": {
     "badge": "Performance Marketing – Leady, Sprzedaż & E-commerce",
