@@ -24,11 +24,10 @@ export function CTAFinal() {
       {/* Faint brand mark – right edge, never covered by widget */}
       <div className="absolute -bottom-10 right-0 w-[28vw] max-w-xs aspect-square opacity-[0.08] pointer-events-none hidden lg:block">
         <Image
-          src="/images/brand/Logo #1.png"
+          src="/images/brand/olik-mark.png"
           alt="Olik Management"
           fill
           className="object-contain"
-          style={{ mixBlendMode: "screen" }}
           sizes="28vw"
         />
       </div>
