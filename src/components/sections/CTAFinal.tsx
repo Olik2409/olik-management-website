@@ -22,7 +22,7 @@ export function CTAFinal() {
         }}
       />
       {/* Faint brand mark – right edge, never covered by widget */}
-      <div className="absolute -bottom-10 right-0 w-[28vw] max-w-xs aspect-square opacity-[0.08] pointer-events-none hidden lg:block">
+      <div className="absolute bottom-8 right-12 xl:right-20 w-[22vw] max-w-xs aspect-square opacity-[0.08] pointer-events-none hidden lg:block">
         <Image
           src="/images/brand/olik-mark.png"
           alt="Olik Management"
