@@ -28,13 +28,13 @@ export function Testimonials() {
       className="relative py-12 md:py-24 overflow-hidden transition-all duration-1000"
       style={{
         background:
-          "linear-gradient(160deg, #0c0c1a 0%, #08080f 50%, #0b0b18 100%)",
+          "linear-gradient(160deg, #18203f 0%, #0a0b1a 55%, #121a38 100%)",
       }}
     >
       <div
         className="absolute inset-0 transition-all duration-1000 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 70% 60% at 15% 0%, ${color}33 0%, transparent 55%), radial-gradient(ellipse 60% 60% at 90% 100%, ${color}26 0%, transparent 55%)`,
+          background: `radial-gradient(ellipse 90% 80% at 10% -10%, ${color}80 0%, transparent 55%), radial-gradient(ellipse 80% 80% at 95% 110%, ${color}66 0%, transparent 55%)`,
         }}
       />
 
