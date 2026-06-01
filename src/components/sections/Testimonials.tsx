@@ -7,6 +7,13 @@ import { Badge } from "@/components/ui/Badge";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const keys = ["q1", "q2", "q3"] as const;
+
+// Real RGBA values – CSS var() refs can't be used with hex opacity in inline styles
+const gradientColors = [
+  { strong: "rgba(59,130,246,0.55)",  mid: "rgba(59,130,246,0.18)",  soft: "rgba(59,130,246,0.25)" },
+  { strong: "rgba(168,85,247,0.55)",  mid: "rgba(168,85,247,0.18)",  soft: "rgba(168,85,247,0.25)" },
+  { strong: "rgba(0,255,157,0.50)",   mid: "rgba(0,255,157,0.15)",   soft: "rgba(0,255,157,0.22)" },
+];
 const colors = [
   "var(--color-led-blue-bright)",
   "var(--color-led-violet-bright)",
@@ -22,15 +29,16 @@ export function Testimonials() {
 
   const cur = keys[idx];
   const color = colors[idx];
+  const gc = gradientColors[idx];
 
   return (
     <section className="relative py-12 md:py-24 overflow-hidden bg-[#08080f]">
-      {/* Directional brand gradient – clearly sweeps from a tinted corner to dark.
-          Color changes when the active testimonial switches. */}
+      {/* Directional brand gradient using real RGBA values (CSS var() can't take hex-opacity suffix) */}
       <div
-        className="absolute inset-0 transition-all duration-[1200ms] ease-in-out pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          background: `linear-gradient(125deg, ${color}66 0%, ${color}1f 28%, transparent 55%, ${color}14 80%, ${color}40 100%)`,
+          background: `linear-gradient(125deg, ${gc.strong} 0%, ${gc.mid} 30%, transparent 58%, ${gc.soft} 85%, ${gc.strong} 100%)`,
+          transition: "background 1.2s ease-in-out",
         }}
       />
 
@@ -60,11 +68,12 @@ export function Testimonials() {
                 "linear-gradient(135deg, #1b1b33 0%, #101022 45%, #0a0a16 100%)",
             }}
           >
-            {/* Brand accent gradient – tinted to the active testimonial color */}
+            {/* Brand accent gradient – corner radials with real RGBA */}
             <motion.div
-              className="absolute inset-0 rounded-3xl pointer-events-none transition-all duration-1000"
+              className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{
-                background: `radial-gradient(ellipse 80% 100% at 0% 0%, ${color}55 0%, transparent 60%), radial-gradient(ellipse 70% 90% at 100% 100%, ${color}40 0%, transparent 60%)`,
+                background: `radial-gradient(ellipse 80% 100% at 0% 0%, ${gc.strong} 0%, transparent 60%), radial-gradient(ellipse 70% 90% at 100% 100%, ${gc.mid} 0%, transparent 60%)`,
+                transition: "background 1.2s ease-in-out",
               }}
               animate={{ opacity: [0.8, 1, 0.8] }}
               transition={{ duration: 6, repeat: Infinity }}
@@ -73,10 +82,11 @@ export function Testimonials() {
             <motion.div
               className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{
-                background: `linear-gradient(135deg, ${color}55, transparent 55%)`,
-                opacity: 0.5,
+                background: `linear-gradient(135deg, ${gc.soft}, transparent 55%)`,
+                transition: "background 1.2s ease-in-out",
+                opacity: 0.6,
               }}
-              animate={{ opacity: [0.4, 0.6, 0.4] }}
+              animate={{ opacity: [0.5, 0.7, 0.5] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
 
