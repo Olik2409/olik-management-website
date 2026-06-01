@@ -51,15 +51,30 @@ export function Testimonials() {
         </div>
 
         <SectionReveal>
-          <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-[var(--color-bg)] md:min-h-[420px]">
-            {/* Animated LED border */}
+          <div
+            className="relative rounded-3xl overflow-hidden border border-white/[0.08] md:min-h-[420px] transition-all duration-1000"
+            style={{
+              background:
+                "linear-gradient(135deg, #0d0d1a 0%, #08080f 45%, #0a0a16 100%)",
+            }}
+          >
+            {/* Brand accent gradient – tinted to the active testimonial color */}
+            <motion.div
+              className="absolute inset-0 rounded-3xl pointer-events-none transition-all duration-1000"
+              style={{
+                background: `radial-gradient(ellipse 70% 90% at 0% 0%, ${color}22 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 100% 100%, ${color}1a 0%, transparent 55%)`,
+              }}
+              animate={{ opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 6, repeat: Infinity }}
+            />
+            {/* Soft LED border sheen */}
             <motion.div
               className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{
-                background: `linear-gradient(135deg, ${color}40, transparent 60%)`,
-                opacity: 0.4,
+                background: `linear-gradient(135deg, ${color}30, transparent 55%)`,
+                opacity: 0.35,
               }}
-              animate={{ opacity: [0.3, 0.5, 0.3] }}
+              animate={{ opacity: [0.25, 0.4, 0.25] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
 
