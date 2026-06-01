@@ -24,17 +24,13 @@ export function Testimonials() {
   const color = colors[idx];
 
   return (
-    <section
-      className="relative py-12 md:py-24 overflow-hidden transition-all duration-1000"
-      style={{
-        background:
-          "linear-gradient(160deg, #18203f 0%, #0a0b1a 55%, #121a38 100%)",
-      }}
-    >
+    <section className="relative py-12 md:py-24 overflow-hidden bg-[#08080f]">
+      {/* Directional brand gradient – clearly sweeps from a tinted corner to dark.
+          Color changes when the active testimonial switches. */}
       <div
-        className="absolute inset-0 transition-all duration-1000 pointer-events-none"
+        className="absolute inset-0 transition-all duration-[1200ms] ease-in-out pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 90% 80% at 10% -10%, ${color}80 0%, transparent 55%), radial-gradient(ellipse 80% 80% at 95% 110%, ${color}66 0%, transparent 55%)`,
+          background: `linear-gradient(125deg, ${color}66 0%, ${color}1f 28%, transparent 55%, ${color}14 80%, ${color}40 100%)`,
         }}
       />
 
